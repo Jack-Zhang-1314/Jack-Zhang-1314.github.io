@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="迭代器与生成器, 苍穹之下">
+    <meta name="keywords" content="vue3组件通信的方式, 苍穹之下">
     <meta name="description" content="想要属于一个自己的网站,菜鸡前端拼命前行">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>迭代器与生成器 | 苍穹之下</title>
+    <title>vue3组件通信的方式 | 苍穹之下</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -409,12 +409,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">迭代器与生成器</h1>
+                    <h1 class="description center-align post-title">vue3组件通信的方式</h1>
                 </div>
             </div>
         </div>
@@ -534,8 +534,8 @@
                                 <span class="chip bg-color">JS</span>
                             </a>
                         
-                            <a href="/tags/TS/">
-                                <span class="chip bg-color">TS</span>
+                            <a href="/tags/vue3/">
+                                <span class="chip bg-color">vue3</span>
                             </a>
                         
                     </div>
@@ -546,8 +546,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/TS/" class="post-category">
-                                TS
+                            <a href="/categories/vue/" class="post-category">
+                                vue
                             </a>
                         
                     </div>
@@ -559,28 +559,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-26
+                    2021-09-24
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-19
+                    2022-03-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    6 分
                 </div>
                 
 
@@ -608,254 +608,279 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="迭代-iteration"><a href="#迭代-iteration" class="headerlink" title="迭代(iteration)"></a>迭代(iteration)</h2><blockquote>
-<p>循环时迭代的基础:循环可以指定迭代的次数,以及每次需要执行什么操作</p>
-</blockquote>
-<h3 id="迭代器模式"><a href="#迭代器模式" class="headerlink" title="迭代器模式"></a>迭代器模式</h3><blockquote>
-<p>把实现了正式的<code>Iterable</code>接口的,并且可以通过迭代器<code>Iterator</code>使用的称做可选迭代器</p>
-</blockquote>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">&#x2F;&#x2F;集合的元素可以按插入顺序访问每一个元素
-let set &#x3D; new Set&lt;number&gt;().add(1).add(2).add(3)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>实现可迭代协议(Iterable接口):要求同时具备两种能力</p>
-</blockquote>
+                <h2 id="父传子的方式"><a href="#父传子的方式" class="headerlink" title="父传子的方式"></a>父传子的方式</h2><h3 id="使用props"><a href="#使用props" class="headerlink" title="使用props"></a>使用props</h3><ul>
+<li><p>关于props</p>
 <ul>
-<li>支持迭代的自我识别能力和创建实现<code>Iterator</code>接口的对象能力</li>
-<li>在ESMA中,必须暴露一个属性<code>Symbol.iterator</code>作为默认迭代器</li>
-<li>这个默认的迭代器属性必须使用一个迭代器工厂函数(调用时返回一个迭代器)</li>
+<li>Props是你可以在组件上注册一些自定义的attribute；</li>
+<li>父组件给这些attribute赋值，子组件通过attribute的名称获取到对应的值</li>
 </ul>
-<blockquote>
-<p>实现<code>Iterable</code>接口的类型</p>
-</blockquote>
+</li>
+<li><p>语法</p>
 <ul>
-<li>string</li>
+<li>字符串数组:数组中的字符串就是<code>attribute</code>的名称</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//父组件传递数据</span>
+<span class="token operator">&lt;</span>Demo <span class="token operator">:</span>name<span class="token operator">=</span><span class="token string">"xxx"</span><span class="token operator">/</span><span class="token operator">></span><span class="token comment">//可以动态的绑定</span>
+
+<span class="token comment">//子组件接收数据</span>
+props<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>对象类型，对象类型我们可以在指定attribute名称的同时，可以传入限制<ul>
+<li>指定传入的<span style="color:red">attribute的类型(type)</span></li>
+<li>指定传入的<span style="color:red">attribute是否是必传的(require)</span></li>
+<li>指定没有传入时，<span style="color:red">attribute的默认值(default)</span></li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//父组件传递数据</span>
+<span class="token operator">&lt;</span>Demo id<span class="token operator">=</span><span class="token string">"123"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"aaa"</span> tittle<span class="token operator">=</span><span class="token string">"hhh"</span> content<span class="token operator">=</span><span class="token string">"ggg"</span> <span class="token operator">:</span>a<span class="token operator">=</span><span class="token string">"a"</span><span class="token operator">></span>
+
+<span class="token comment">//子组件接收父组件数据</span>
+<span class="token keyword">const</span> props<span class="token operator">=</span> defineProps<span class="token operator">&lt;</span><span class="token punctuation">&#123;</span>
+  tittle<span class="token operator">:</span> String<span class="token punctuation">,</span>
+  content<span class="token operator">:</span> String<span class="token punctuation">,</span>
+  a<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    type<span class="token operator">:</span> String<span class="token punctuation">,</span>
+    require<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token keyword">default</span><span class="token operator">:</span> <span class="token string">"111"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>type类型</p>
+<ul>
+<li>String</li>
+<li>Number</li>
+<li>Boolean</li>
 <li>Array</li>
-<li>Map</li>
-<li>Set</li>
-<li>arguments</li>
-<li>NodeList等DOM集合</li>
+<li>Object</li>
+<li>Date</li>
+<li>Function</li>
+<li>Symbol</li>
 </ul>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">&#x2F;&#x2F;可以通过这种方式是否存在默认的迭代器属性
-console.log([][Symbol.iterator])
-&#x2F;&#x2F;[Function: values]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>迭代器对象的原生语言</p>
-</blockquote>
-<ul>
-<li><p><code>for...of</code>循环</p>
 </li>
-<li><p>数组解构</p>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">const num:number[] &#x3D; [1,2,3];
-let [a,b,c] &#x3D; num;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-</li>
-<li><p>扩展操作符<code>...</code></p>
-</li>
-<li><p><code>Array.from()</code></p>
-</li>
-<li><p><code>new Set()</code></p>
-</li>
-<li><p><code>new Map()</code></p>
-</li>
-<li><p><code>Promise.all()</code>接收promise组成的可迭代对象</p>
-</li>
-<li><p><code>Promise.race()</code>接收有promise组成的可迭代对象</p>
-</li>
-<li><p><code>yield*</code>操作符,在生成器中使用</p>
+<li><p>注意点:类型有关对象的,默认值要写成一个工厂函数(例如<code>Array</code>,<code>Object</code>,<code>Date</code>,<code>Function</code>)<span style="color:red">建议全写成函数</span></p>
 </li>
 </ul>
 <blockquote>
-<p>迭代器使用<code>next()</code>方法在可迭代对象中遍历数据.</p>
+<p>vue3的顶层setup中使用<code>defineprops</code>如果使用的是泛型,不能设置默认值,如果使用定义值的写法,有默认值,但比较繁琐</p>
 </blockquote>
 <ul>
-<li>每成功调用<code>next()</code>都会返回一个<code>IteratorResult</code>对象,其中包含迭代器返回的下一个值</li>
-<li><code>IteratorResult</code>包含两个属性:<code>done</code>和<code>value</code>.<ul>
-<li>done是一个布尔值,表示是否<code>next()</code>还可以再次调用取得下一个值</li>
-<li>value是包含可迭代对象的下一个值(<code>done:false</code>或者undefined),如果done位true表示结束</li>
+<li>并且如果使用泛型,ts会对其进行检查,但是自定义值不会</li>
 </ul>
-</li>
-</ul>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">let num: number[] &#x3D; [1, 2]
-let arr &#x3D; num[Symbol.iterator]()
-console.log(arr.next())&#x2F;&#x2F;&#123; value: 1, done: false &#125;
-console.log(arr.next())&#x2F;&#x2F;&#123; value: 2, done: false &#125;
-console.log(arr.next())&#x2F;&#x2F;&#123; value: undefined, done: true &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li>只要迭代器对象到达<code>done:true</code>状态,后续调用<code>next</code>都是一样的值</li>
-</ul>
-<h2 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h2><blockquote>
-<p>生成器可以在一个函数块内暂停和恢复代码执行的功能(自定义迭代器或者实现协程)</p>
-</blockquote>
-<ul>
-<li>一般只需要在函数名前加一个<code>*</code>表示他是一个生成器.只要是可以定义函数的地方,就可以定义生成器</li>
-<li>调用生成器函数会返回一个<strong>生成器对象</strong>.<ul>
-<li>生成器对象一开始处于暂停执行的状态.与迭代器相似</li>
-<li>生成器对象同样实现了<code>Iterator</code>接口,因此具有next()方法</li>
-<li>在迭代器中,value值是函数的返回值.默认是undefined</li>
-</ul>
-</li>
-</ul>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">function* gen() &#123;
-  return &quot;value&quot;
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">&#x2F;&#x2F;使用泛型的写法
+interface test &#123;
+  test: number
+  test2: Object
 &#125;
-console.log(gen().next)&#x2F;&#x2F;[Function: next]
-console.log(gen().next())&#x2F;&#x2F;&#123; value: &#39;value&#39;, done: true &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li><span style="color:red">生成器只会在初次调用<code>next()</code>方法后执行</span>.直接调用(例如<code>gen()</code>)并不会执行</li>
-<li>生成器对象实现了<code>Iterable</code>接口,默认的迭代器是自引用的</li>
-</ul>
-<h3 id="yield"><a href="#yield" class="headerlink" title="yield"></a>yield</h3><blockquote>
-<p>yield可以让生成器停止或者开始执行</p>
-</blockquote>
-<ul>
-<li>生成器函数在遇到<code>yield</code>关键字之前会正常执行.遇到关键字之后,停止执行,函数作用域的状态会被保留</li>
-<li>停止执行的生成器函数只能通过在生成器对象上调用<code>next()</code>方法来恢复执行</li>
-</ul>
-<blockquote>
-<p>通过<code>yield</code>关键字退出的生成器函数会处于<code>done:false</code>状态.而<code>return</code>关键字退出会处于<code>done:true</code></p>
-</blockquote>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">function* gen() &#123;
-  yield &quot;done&quot;
-  yield &quot;data&quot;
-  return &quot;value&quot;
-&#125;
-let genObj &#x3D; gen()
-console.log(genObj.next())&#x2F;&#x2F;&#123; value: &#39;done&#39;, done: false &#125;
-console.log(genObj.next())&#x2F;&#x2F;&#123; value: &#39;data&#39;, done: false &#125;
-console.log(genObj.next())&#x2F;&#x2F;&#123; value: &#39;value&#39;, done: true &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>使用yield实现输入输出</p>
-</blockquote>
-<ul>
-<li>yield除了作为中间返回语句使用,还可以作为函数的中间参数使用.</li>
-<li>上一次上生成器函数暂停的<code>yield</code>关键字会接收到传给<code>next()</code>方法的第一个值</li>
-<li>但是第一次调用next()传入的值不会被使用,因为第一次是为了开始执行生成器函数</li>
-</ul>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">function* gen() &#123;
-  console.log(yield)
-  console.log(yield)
-&#125;
-let genObj &#x3D; gen()
-genObj.next(1)&#x2F;&#x2F;不会打印任何东西
-genObj.next(2)&#x2F;&#x2F;2
-genObj.next(3)&#x2F;&#x2F;3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li>实现输入和输出</li>
-</ul>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">function* gen() &#123;
-  return yield 1
-&#125;
-let genObj &#x3D; gen()
-console.log(genObj.next(3))&#x2F;&#x2F;&#123; value: 1, done: false &#125;
-console.log(genObj.next(2))&#x2F;&#x2F;&#123; value: 2, done: true &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ol>
-<li>因为函数需要对整个表达式求值才能确定需要返回的值,所以在遇到yield关键字暂停并执行计算要产生的值<code>1</code></li>
-<li>下一次调用<code>next()</code>会传入<code>2</code>,作为交给<code>yield</code>的值.确定位本次生成器函数要返回的值</li>
-</ol>
-<blockquote>
-<p>产生可迭代对象:可以使用<code>*</code>加强yield的行为,让他可以迭代一个可迭代对象,从而一次产出一个值</p>
-</blockquote>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">function* gen() &#123;
-  yield* [1, 2, 3]
-&#125;
-for (let x of gen()) &#123;
-  console.log(x)
-&#125;&#x2F;&#x2F;1  &#x2F;&#x2F;2  &#x2F;&#x2F;3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li>实际上<code>yield*</code>只是将一个可迭代的对象序列化为一连串的可以单独产出的值,所以这跟把<code>yield</code>凡在一个有循环里一样</li>
-</ul>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">function* gen() &#123;
-  for (let x of [1,2,3])&#123;
-    yield x
+const prop &#x3D; defineProps&lt;&#123;
+  msg: &#123; type: string &#125;
+  obj: test
+&#125;&gt;()
+&#x2F;&#x2F;使用自定义值
+const prop &#x3D; defineProps(&#123;
+  msg: String,
+  obj: &#123;
+    type: Object,
+    default: () &#x3D;&gt; (&#123;&#125;)
   &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<blockquote>
-<p>提前终止生成器</p>
-</blockquote>
+<h3 id="非Prop的Attribute"><a href="#非Prop的Attribute" class="headerlink" title="非Prop的Attribute"></a>非Prop的Attribute</h3><ul>
+<li><p>定义</p>
 <ul>
-<li>一个实现<code>Iterator</code>接口的对象一定有next()方法,还有一个可选的<code>return()</code>方法用于提前终止迭代器.生成器除了有这两个方法,还有第三个方法<code>throw()</code></li>
+<li>当我们传递给一个组件某个属性，但是该属性并没有定义对应的props或者emits时，就称之为 非Prop的Attribute</li>
+<li>常见的包括<code>class</code>,<code>style</code>,<code>id属性</code>等</li>
 </ul>
+</li>
+<li><p><strong>Attribute继承</strong></p>
+<ul>
+<li>当组件有单个根节点时，非Prop的Attribute将自动添加到根节点的Attribute中</li>
+</ul>
+</li>
+<li><p><strong>注意</strong>:</p>
 <ol>
-<li><p><code>return()</code>:强制生成器进入关闭状态.提供给return()方法的值,就是迭代器对象的值</p>
+<li><p>如果我们<strong>不希望组件的根元素继承attribute</strong>，可以在组件中设置 <strong>inheritAttrs: false</strong></p>
 <ul>
-<li>在ts中,如果<code>reuturn()</code>需要传入参数,那么返回值return要定义好类型才能使用,否则<code>void</code></li>
+<li><span style="color:red">但是<code>class</code> , <code>style</code></span>，不是 的一部分<code>$attrs</code>，仍将应用于组件的根元素</li>
 </ul>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">function* gen() &#123;
-  yield 1
-  return 3
-&#125;
-console.log(gen().return(4))
-&#x2F;&#x2F;&#123; value: 1, done: true &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p><code>throw</code>:会在暂停的时候将一个提供的错误注入到生成器对象.如果错误未被处理,生成器将会关闭</p>
-<ul>
-<li>如果生成器函数内部处理了这个错误,那么生成器就不会关闭,而且还可以恢复执行</li>
-<li>不过错误也会跳过相对应的yield.</li>
-</ul>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">function* gen() &#123;
-  for (const x of [1, 2, 3]) &#123;
-    try &#123;
-      yield x
-    &#125; catch (e) &#123;&#125;
-  &#125;
-&#125;
-const g &#x3D; gen()
-console.log(g.next())&#x2F;&#x2F;&#123; value: 1, done: false &#125;
-g.throw(&quot;foo&quot;)
-console.log(g.next())&#x2F;&#x2F;&#123; value: 3, done: false &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>通过 <code>$attrs</code>来访问所有的 非props的attribute</p>
+</li>
+<li><p>使用<code>v-bind</code>可以直接解构绑定的对象,而不需要一个个单独传递</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html">//父组件传值
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-component</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>my-id<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>my-class<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-component</span><span class="token punctuation">></span></span>
+   
+//子组件取值
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">v-bind</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$attrs<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+   <span class="token comment">&lt;!-- 访问所有的属性,且class属性绑定到根节点label上 --></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">:id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$attrs.id<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+   <span class="token comment">&lt;!-- 拿到id属性 --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
+  inheritAttrs<span class="token operator">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">&#125;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>多个根节点的attribute如果没有显示的绑定，那么会报警告，我们必须手动的指定要绑定到哪一个属性上(由于vue3取消div根元素包裹)</p>
+</li>
 </ol>
-<ul>
-<li><p>如果生成器对象还没有被执行,那么调用throw()抛出的错误不会在函数内部被捕获.因为这相当于在函数块外抛出了错误</p>
-<ul>
-<li>以下依然会抛出错误</li>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>$attrs.class<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>伞兵一号<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>伞兵2号<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>伞兵3号<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">function* gen() &#123;
-  for (const x of [1, 2, 3]) &#123;
-      try &#123;
-        yield x
-      &#125; catch (e) &#123;&#125;
-      yield x
-    &#125;
-&#125;
-const g &#x3D; gen()
-g.throw(&quot;foo&quot;)
-console.log(g.next())
-console.log(g.next())<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-<blockquote>
-<p>最后看一下Generator接口的写法</p>
-</blockquote>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">&#x2F;&#x2F;Generator
-interface Generator&lt;T &#x3D; unknown, TReturn &#x3D; any, TNext &#x3D; unknown&gt; extends 
-Iterator&lt;T, TReturn, TNext&gt; &#123;
-    next(...args: [] | [TNext]): IteratorResult&lt;T, TReturn&gt;;
-    return(value: TReturn): IteratorResult&lt;T, TReturn&gt;;
-    throw(e: any): IteratorResult&lt;T, TReturn&gt;;
-    [Symbol.iterator](): Generator&lt;T, TReturn, TNext&gt;;
-&#125;
-
-&#x2F;&#x2F;Iterator
-interface Iterator&lt;T, TReturn &#x3D; any, TNext &#x3D; undefined&gt; &#123;
-    next(...args: [] | [TNext]): IteratorResult&lt;T, TReturn&gt;;
-    return?(value?: TReturn): IteratorResult&lt;T, TReturn&gt;;
-    throw?(e?: any): IteratorResult&lt;T, TReturn&gt;;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<h2 id="子组件传递给父组件"><a href="#子组件传递给父组件" class="headerlink" title="子组件传递给父组件"></a>子组件传递给父组件</h2><h3 id="defineEmits"><a href="#defineEmits" class="headerlink" title="defineEmits"></a>defineEmits</h3><ul>
+<li><p>使用情景</p>
 <ul>
-<li><code>Generator</code>泛型接收三个类型<ul>
-<li><strong>T</strong>:yield后的参数类型</li>
-<li><strong>Treturn</strong>:return后的返回值类型</li>
-<li><strong>TNext</strong>:next()函数中的实参类型,不过如果指定了类型,可以不写,或者必须写对应的类型</li>
+<li>当子组件有一些事件发生的时候，比如在组件中发生了点击，父组件需要切换内容</li>
+<li>子组件有一些内容想要传递给父组件的时候</li>
 </ul>
 </li>
+<li><p>流程</p>
+<ul>
+<li>我们需要在子组件中定义好在某些情况下触发的事件名称</li>
+<li>和<code>defineProps</code>一样,使用泛型可以得到很好的代码提示</li>
+</ul>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>butFn<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>green<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>&#123;&#123; msg &#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">setup</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ts<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+<span class="token comment">//子组件中给定绑定的名称</span>
+<span class="token keyword">interface</span> <span class="token class-name">testEmits</span> <span class="token punctuation">&#123;</span>
+  <span class="token punctuation">(</span>e<span class="token operator">:</span> <span class="token string">'em'</span><span class="token punctuation">,</span> data<span class="token operator">:</span> number<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span>
+  <span class="token punctuation">(</span>e<span class="token operator">:</span> <span class="token string">'ws'</span><span class="token punctuation">,</span> data<span class="token operator">:</span> string<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">const</span> emits <span class="token operator">=</span> defineEmits<span class="token operator">&lt;</span>testEmits<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token function-variable function">butFn</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token function">emits</span><span class="token punctuation">(</span><span class="token string">'em'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token comment">&lt;!-- 父组件 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>HelloWorld</span> <span class="token attr-name">@em</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pageFn<span class="token punctuation">"</span></span> <span class="token attr-name">msg</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>You did it!<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">setup</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ts<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">const</span> <span class="token function-variable function">pageFn</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">val<span class="token operator">:</span> number</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h3 id="defineExpose"><a href="#defineExpose" class="headerlink" title="defineExpose"></a>defineExpose</h3><blockquote>
+<p>在&lt;script setup&gt;中使用的组件默认是关闭setup函数中的<code>retrun</code>,向外暴露属性的,不过可以使用<code>defineExpose</code>来暴露子组件的属性</p>
+</blockquote>
+<ul>
+<li>问题:如果使用ts,父组件中的ref不能自动推断出子组件暴露的类型</li>
+</ul>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;!-- 子组件 --&gt;
+&lt;script setup lang&#x3D;&quot;ts&quot;&gt;
+const testExpose &#x3D; ref(&#123; name: &#39;zhagnsan&#39; &#125;)
+const fn &#x3D; () &#x3D;&gt; &#123;
+  console.log(&#39;testExpose&#39;)
+&#125;
+defineExpose(&#123; testExpose, fn &#125;)
+&lt;&#x2F;script&gt;
+&lt;!-- 父组件 --&gt;
+&lt;script setup lang&#x3D;&quot;ts&quot;&gt;
+const testE &#x3D; ref()
+const hello &#x3D; () &#x3D;&gt; &#123;
+  console.log(testE.value.testExpose.name)
+  testE.value.fn()
+&#125;
+&lt;&#x2F;script&gt;
+...
+&lt;template&gt;
+ &lt;div class&#x3D;&quot;wrapper&quot; @click&#x3D;&quot;hello&quot;&gt;
+    &lt;HelloWorld ref&#x3D;&quot;testE&quot; @em&#x3D;&quot;pageFn&quot; msg&#x3D;&quot;You did it!&quot; &#x2F;&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="provide和inject"><a href="#provide和inject" class="headerlink" title="provide和inject"></a>provide和inject</h2><blockquote>
+<p>用于深层嵌套的组件,子组件想获取父组件甚至父父的部分内容</p>
+</blockquote>
+<ul>
+<li>父组件有一个 <code>provide</code> 选项来提供数据(强烈建议写成函数的形式)<ul>
+<li><span style="color:red">写成对象模式,这里的this并不会绑定到vm身上,而是一个未定义</sapn></li>
+</ul>
+</li>
+<li>子组件有一个 <code>inject</code>选项来开始使用这些数据</li>
+<li>组件层级<code>App.vue-&gt;Home.vue-&gt;HomeContent.vue</code></li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//App组件</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+      names<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"d"</span><span class="token punctuation">,</span> <span class="token string">"v"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token function">provide</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+      name<span class="token operator">:</span> <span class="token string">"zhangsan"</span><span class="token punctuation">,</span>
+      age<span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span>
+      names<span class="token operator">:</span><span class="token keyword">this</span><span class="token punctuation">.</span>names<span class="token punctuation">.</span>length
+      <span class="token comment">//names:computed(()=>this.names.length)响应式的数据</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token comment">//HomeContent组件</span>
+  inject<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">"name"</span><span class="token punctuation">,</span><span class="token string">"age"</span><span class="token punctuation">,</span><span class="token string">"names"</span><span class="token punctuation">]</span>
+  <span class="token comment">//names.value拿取数据</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><p><strong>关于响应式数据的处理</strong></p>
+</li>
+<li><p><span style="color:red">修改了<code>this.names</code>的内容，使用length的子组件会并不会不会是响应式的</span></p>
+</li>
+<li><p>provide中的内容并不是响应式的,而是及时通信,修改内容后并不会引起子组件反应</p>
+</li>
+<li><p>解决:</p>
+<ul>
+<li>使用vue3中的<code>computed</code>函数,他返回的是一个ref对象,需要用value取出</li>
+</ul>
+</li>
+</ul>
+<h2 id="全局事件总线mitt"><a href="#全局事件总线mitt" class="headerlink" title="全局事件总线mitt"></a>全局事件总线mitt</h2><ul>
+<li><p>Vue3从实例中移除了 <code>$on</code>、<code>$off</code> 和 <code>$once</code> 方法</p>
+</li>
+<li><p>安装mitt库:<code>npm install mitt</code></p>
+</li>
+<li><p>在utils中封装一个<code>eventbus.js</code>工具</p>
+</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> mitt <span class="token keyword">from</span> <span class="token string">'mitt'</span>
+<span class="token keyword">const</span> emitter<span class="token operator">=</span><span class="token function">mitt</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> emitter<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>监听与取消监听</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//Header组件中传入数据</span>
+  methods<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">btnClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"点击Header"</span><span class="token punctuation">)</span>
+      emitter<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">"why"</span><span class="token punctuation">,</span><span class="token punctuation">&#123;</span>name<span class="token operator">:</span><span class="token string">"why"</span><span class="token punctuation">,</span>age<span class="token operator">:</span><span class="token number">18</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token comment">//Footer组件中接收数据</span>
+  methods<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">infomation</span><span class="token punctuation">(</span><span class="token parameter">info</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>info<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    emitter<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"why"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>infomation<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    emitter<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"*"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">type<span class="token punctuation">,</span> info</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>type<span class="token punctuation">,</span> info<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token comment">//取消单独事件监听</span>
+  <span class="token function">unmounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    emitter<span class="token punctuation">.</span><span class="token function">off</span><span class="token punctuation">(</span><span class="token string">"why"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>infomation<span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>是通配符打印所有事件,type是接收类型即(“why”),info是传入信息</li>
+<li>取消所有监听<code>emitter.all.clear</code></li>
 </ul>
 
                 
@@ -883,7 +908,7 @@ interface Iterator&lt;T, TReturn &#x3D; any, TNext &#x3D; undefined&gt; &#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://mail.zyjcould.ltd/2022/02/26/die-dai-qi-yu-sheng-cheng-qi/">http://mail.zyjcould.ltd/2022/02/26/die-dai-qi-yu-sheng-cheng-qi/</a>
+                    <a href="http://mail.zyjcould.ltd/2021/09/24/vue3-zu-jian-tong-xin-de-fang-shi/">http://mail.zyjcould.ltd/2021/09/24/vue3-zu-jian-tong-xin-de-fang-shi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -925,8 +950,8 @@ interface Iterator&lt;T, TReturn &#x3D; any, TNext &#x3D; undefined&gt; &#123;
                                     <span class="chip bg-color">JS</span>
                                 </a>
                             
-                                <a href="/tags/TS/">
-                                    <span class="chip bg-color">TS</span>
+                                <a href="/tags/vue3/">
+                                    <span class="chip bg-color">vue3</span>
                                 </a>
                             
                         </div>
@@ -1368,31 +1393,31 @@ interface Iterator&lt;T, TReturn &#x3D; any, TNext &#x3D; undefined&gt; &#123;
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/02/27/han-shu-zu-he-ji-yi/">
+                <a href="/2021/09/24/vue3-zhong-zu-jian-jian-tong-xin/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="函数组合&amp;记忆">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="vue3中组件间通信">
                         
-                        <span class="card-title">函数组合&amp;记忆</span>
+                        <span class="card-title">vue3中组件间通信</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            函数组合&记忆
+                            关于vue3组件间通信的应用,兼容vue2
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-27
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-24
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/TS/" class="post-category">
-                                    TS
+                            <a href="/categories/vue/" class="post-category">
+                                    vue
                                 </a>
                             
                             
@@ -1406,8 +1431,8 @@ interface Iterator&lt;T, TReturn &#x3D; any, TNext &#x3D; undefined&gt; &#123;
                         <span class="chip bg-color">JS</span>
                     </a>
                     
-                    <a href="/tags/TS/">
-                        <span class="chip bg-color">TS</span>
+                    <a href="/tags/vue3/">
+                        <span class="chip bg-color">vue3</span>
                     </a>
                     
                 </div>
@@ -1421,31 +1446,31 @@ interface Iterator&lt;T, TReturn &#x3D; any, TNext &#x3D; undefined&gt; &#123;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/24/han-shu-ke-li-hua-pian-han-shu-duo-xing-han-shu/">
+                <a href="/2021/09/22/axios/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="函数柯里化&amp;偏函数&amp;惰性函数">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="关于axios的使用">
                         
-                        <span class="card-title">函数柯里化&amp;偏函数&amp;惰性函数</span>
+                        <span class="card-title">关于axios的使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            函数柯里化&偏函数&惰性函数
+                            axios使用以及封装
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/TS/" class="post-category">
-                                    TS
+                            <a href="/categories/JS/" class="post-category">
+                                    JS
                                 </a>
                             
                             
@@ -1459,8 +1484,8 @@ interface Iterator&lt;T, TReturn &#x3D; any, TNext &#x3D; undefined&gt; &#123;
                         <span class="chip bg-color">JS</span>
                     </a>
                     
-                    <a href="/tags/TS/">
-                        <span class="chip bg-color">TS</span>
+                    <a href="/tags/Axios/">
+                        <span class="chip bg-color">Axios</span>
                     </a>
                     
                 </div>
