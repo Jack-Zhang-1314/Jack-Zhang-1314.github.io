@@ -566,21 +566,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-19
+                    2022-03-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.4k
+                    3.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    14 分
                 </div>
                 
 
@@ -1156,7 +1156,45 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <blockquote>
 <p><strong>designMode</strong>和<strong>contentEditable</strong>(略)</p>
 </blockquote>
-<h2 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h2><blockquote>
+<h2 id="表单属性"><a href="#表单属性" class="headerlink" title="表单属性"></a>表单属性</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>test<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>account<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>账号
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>account<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>账号
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>密码
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol>
+<li><p>在html5中可以直接使用id的签名获取标签对象</p>
+</li>
+<li><p>如果只有一个不重名的name属性,使用<code>document.name</code>会获取该对象</p>
+<ul>
+<li>如果有多个重名的name属性,会<span style="color:red">获取一个数组</span>(这个方式就是<code>nameItem()</code>的简写)</li>
+<li>同样可以使用<code>document.forms.namedItem(&#39;test&#39;)</code>获取元素,’test’是<code>name</code>属性的名称<ul>
+<li>如果<strong>有重名的name属性</strong>,只会获取第一个name属性</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span>test <span class="token operator">===</span> form<span class="token punctuation">)</span><span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><code>document.forms</code>获得的是一个表单的集合(<code>HTMLCollection</code>)</p>
+<ul>
+<li>可以使用索引的方式:<code>document.forms[0]</code>.其实这也就是<code>document.forms.item(0)</code>的属性的简写</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>获取表单的元素.同样,由于forms返回的是<code>HTMLCollections</code>,完全可以使用Item,nameItem()等或者简写的方式</p>
+</blockquote>
+<ul>
+<li><p>当然同样可以使用id元素或者索引来获取元素</p>
+ <pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>form<span class="token punctuation">.</span>accountOne <span class="token operator">===</span> form<span class="token punctuation">.</span>elements<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>和表单元素不同的是,获取表单内元素需要使用<code>elements</code>属性</p>
+<ul>
+<li>可以使用<code>name</code>属性的名称来获取表单元素</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>form<span class="token punctuation">.</span>elements<span class="token punctuation">[</span><span class="token string">"account"</span><span class="token punctuation">]</span> <span class="token operator">===</span> form<span class="token punctuation">.</span>elements<span class="token punctuation">.</span>account<span class="token punctuation">)</span><span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<h3 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h3><blockquote>
 <p><code>required</code>可用在大多数元素上(除了隐藏元素,图片元素按钮上)</p>
 </blockquote>
 <ul>
@@ -2193,7 +2231,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数
                                             :&nbsp;<span class="white-color">
-                                                136.7k
+                                                137k
                                             </span>
                                             
                                                 
