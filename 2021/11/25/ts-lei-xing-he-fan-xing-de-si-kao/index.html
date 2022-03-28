@@ -566,21 +566,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-19
+                    2022-03-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    8 分
                 </div>
                 
 
@@ -885,6 +885,39 @@ const Person:person&lt;IPerson&gt;&#x3D;&#123;
 <blockquote>
 <p>参考:<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/361968852">https://zhuanlan.zhihu.com/p/361968852</a></p>
 </blockquote>
+<h2 id="类型递归"><a href="#类型递归" class="headerlink" title="类型递归"></a>类型递归</h2><blockquote>
+<p>像大多数编程语言中一样,类型也是可以递归的</p>
+</blockquote>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">type FillArray&lt;
+  Item,
+  N extends number,
+  Arr extends Item[] &#x3D; []
+&gt; &#x3D; Arr[&quot;length&quot;] extends N ? Arr : FillArray&lt;Item, N, [...Arr, Item]&gt;
+
+type Foos &#x3D; FillArray&lt;number, 3&gt;&#x2F;&#x2F;[number,number,number]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol>
+<li>对于特定number类型的约束,例如,<code>N extends 3</code>,N必须是3才能成功的约束(true)</li>
+<li><code>[number] extends number[]</code>这样返回的是true,<span style="color:red">数组的约束,只要实现数组类型的约束,和长度无关</span><ul>
+<li><code>Arr extends Item[] = []</code>,Arr这个数组受到Item[]的约束.每次只能返回特定的(这里是Item类型的)元组</li>
+</ul>
+</li>
+<li>递归边界:<code>Arr[&quot;length&quot;] extends N</code>,只有数组的长度达到N,才可以结束</li>
+</ol>
+<h2 id="类型展平"><a href="#类型展平" class="headerlink" title="类型展平"></a>类型展平</h2><blockquote>
+<p>依然使用递归的方式</p>
+</blockquote>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">type Flattern&lt;T&gt; &#x3D; T extends Array&lt;any&gt; ? T[number] : T<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>使用<code>T[number]</code>的方式去掉数组的一层嵌套</li>
+</ul>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">let str:Flattern&lt;string[]&gt; &#x3D; &quot;str&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>如果想去掉多层嵌套可以使用递归这个条件类型的方式</li>
+</ul>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">type Flattern&lt;T&gt; &#x3D; T extends Array&lt;any&gt; ? Flattern&lt;T[number]&gt; : T<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
                 
             </div>
@@ -1739,7 +1772,7 @@ const Person:person&lt;IPerson&gt;&#x3D;&#123;
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数
                                             :&nbsp;<span class="white-color">
-                                                138.6k
+                                                137.3k
                                             </span>
                                             
                                                 
