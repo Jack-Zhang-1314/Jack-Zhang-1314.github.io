@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="remoteGitTags, 苍穹之下">
+    <meta name="keywords" content="URL, 苍穹之下">
     <meta name="description" content="想要属于一个自己的网站,菜鸡前端拼命前行">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>remoteGitTags | 苍穹之下</title>
+    <title>URL | 苍穹之下</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -409,12 +409,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">remoteGitTags</h1>
+                    <h1 class="description center-align post-title">URL</h1>
                 </div>
             </div>
         </div>
@@ -530,12 +530,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/git/">
-                                <span class="chip bg-color">git</span>
-                            </a>
-                        
-                            <a href="/tags/sourceCode/">
-                                <span class="chip bg-color">sourceCode</span>
+                            <a href="/tags/JS/">
+                                <span class="chip bg-color">JS</span>
                             </a>
                         
                     </div>
@@ -546,8 +542,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/sourceCode/" class="post-category">
-                                sourceCode
+                            <a href="/categories/JS/" class="post-category">
+                                JS
                             </a>
                         
                     </div>
@@ -559,28 +555,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-31
+                    2022-03-28
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-19
+                    2022-03-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    802
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    5 分
                 </div>
                 
 
@@ -608,133 +604,148 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="unknown"><a href="#unknown" class="headerlink" title="unknown"></a>unknown</h2><h3 id="gitattributes"><a href="#gitattributes" class="headerlink" title=".gitattributes"></a>.gitattributes</h3><ul>
-<li>文本换行的方式:<ol>
-<li><code>CRLF</code>:对应<code>\r\n</code>两个字符(Windows 系统)</li>
-<li><code>LF</code>:对应<code>\n</code>,Uninx(Linux,MacOS)</li>
-</ol>
-</li>
-</ul>
-<blockquote>
-<p><code>.gitattributes</code>文件:文件中的一行定义一个路径的若干个属性,主要用于定义每种文件的属性,以方便<code>git</code>帮我们统一管理</p>
+                <h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><blockquote>
+<p>URL用于解析,构造,规范化和编码urls.如果浏览器不支持<code>new URL()</code>构造函数.可以使用<code>new window.URL()</code></p>
 </blockquote>
-<ol>
-<li><strong>text</strong>控制行尾的规范性,其行尾将在存储库中转换为<code>LF</code></li>
-<li><strong>eol</strong>设定行末规范<ul>
-<li><code>eol=lf</code>,检入时将行尾规范为<code>LF</code>,检出时将行尾转换为<code>LF</code></li>
-<li><code>eol=crlf</code>,检入时将行尾规范为<code>LF</code>,检出时将行尾转换为<code>CRLF</code></li>
-</ul>
-</li>
-<li>关于<code>eol=lf</code>和<code>text</code>的区别<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/32854978/what-is-the-difference-between-eol-lf-and-text-in-a-gitattributes-file">https://stackoverflow.com/questions/32854978/what-is-the-difference-between-eol-lf-and-text-in-a-gitattributes-file</a></li>
-<li><strong>diff</strong>:<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/section/1138630">https://cloud.tencent.com/developer/section/1138630</a></li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>案例</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>*  text&#x3D;auto</td>
-<td>文件自动换行.如果是文件,则在文件入Git库时,行尾自动转换为LF如果已经在入Git库中的文件的行尾为CRLF,则该文件在入Git库时,不再转换为LF</td>
-</tr>
-<tr>
-<td>*.txt  text</td>
-<td>只有<code>txt</code>文件会进行行尾规范化</td>
-</tr>
-<tr>
-<td>*.jpg  -text</td>
-<td><code>jpg</code>文件不会进行任何行尾规范化.</td>
-</tr>
-<tr>
-<td>*.vcproj  text eol&#x3D;crlf</td>
-<td>只有<code>vcproj</code>文件见如是行尾为<code>LF</code>,检出是自动转换为<code>CRLF</code></td>
-</tr>
-<tr>
-<td>*.sh  text eol&#x3D;lf</td>
-<td>只有sh文件检入时行尾为<code>LF</code>,检出时行尾不会转换为<code>CRLF</code></td>
-</tr>
-<tr>
-<td>*.py  eol&#x3D;lf</td>
-<td>只针对工作目录中的文件</td>
-</tr>
-</tbody></table>
-<h3 id="npmrc"><a href="#npmrc" class="headerlink" title=".npmrc"></a>.npmrc</h3><blockquote>
-<p>npm 从命令行、环境变量和npmrc文件中获取其配置设置该npm config命令可用于更新和编辑用户和全局<code>npmrc</code>文件的内容</p>
-</blockquote>
-<ol>
-<li>每个项目的配置文件(&#x2F;path&#x2F;to&#x2F;my&#x2F;project&#x2F;.npmrc)</li>
-<li>每个用户的配置文件(~&#x2F;.npmrc)</li>
-<li>全局配置文件($PREFIX&#x2F;etc&#x2F;npmrc)</li>
-<li>npm 内置配置文件(&#x2F;path&#x2F;to&#x2F;npm&#x2F;npmrc)</li>
-</ol>
-<h2 id="remote-git-tags"><a href="#remote-git-tags" class="headerlink" title="remote-git-tags"></a>remote-git-tags</h2><blockquote>
-<p>关于<code>node:</code>前缀</p>
-<blockquote>
-<p>核心模块也可以使用 node: 前缀来标识,在这种情况下,它会绕过 require 缓存例如, <code>require(&#39;node:http&#39;)</code> 将始终返回内置的 HTTP 模块,即使该名称存在 <code>require.cache</code> 条目</p>
-</blockquote>
+<h3 id="new-URL"><a href="#new-URL" class="headerlink" title="new URL()"></a>new URL()</h3><blockquote>
+<p>构造函数:new URL(url[,base])</p>
 </blockquote>
 <ul>
-<li>本质:<code>git ls-remote --tags repoUrl</code>,获取远程仓库的标签</li>
+<li><code>url</code>:表示绝对或者相对的url.如果是绝对的url,无论baseurl有没有参数都会被忽略.如果是相对的url,则参数会添加到baseurl后</li>
+<li><code>base</code>:可选的,表示基准的url.只有url是带协议才可以生效.<span style="color:red">否则报一个TypeError</span></li>
 </ul>
-<h3 id="promisify"><a href="#promisify" class="headerlink" title="promisify"></a>promisify</h3><ul>
-<li>将回调函数转换成<code>promise</code>的形式</li>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> baseurl <span class="token operator">=</span> <span class="token string">"https://www.baidu.com/laji"</span>
+
+<span class="token comment">//忽略参数</span>
+<span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">"/zhenlan"</span><span class="token punctuation">,</span>baseurl<span class="token punctuation">)</span><span class="token comment">//https://www.baidu.com/zhenlan</span>
+
+<span class="token comment">//TypeError</span>
+<span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">"www.baidu.com"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">"https://www.baidu.com"</span><span class="token punctuation">)</span><span class="token comment">//https://www.baidu.com</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>属性</p>
+</blockquote>
+<ul>
+<li><code>hash</code>:返回包含URL标识中的’#’和fragment标识符</li>
+<li><code>host</code>:返回一个主机信息.即<code>hostname</code>,如果URL接口有端口号(如果是默认端口号,则不会包含),也会包含端口号</li>
+<li><code>hostname</code>:不包含端口号的主机信息</li>
+<li><code>href</code>:返回一个完整的url</li>
+<li><code>origin</code>:只读属性.<ul>
+<li>如果是<code>http</code>或者是<code>https</code>,返回<code>协议名+&#39;://&#39;+域名+&#39;:&#39;+端口号</code></li>
+<li>如果是ftp协议,视浏览器而定</li>
+<li>如果是<code>blob:</code>协议,返回的是<code>blob:</code>紧跟的源地址<ul>
+<li><code>&quot;blob:https://mozilla.org&quot;</code>返回<code>https://mozilla.org</code></li>
 </ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">&#123;</span> execFile <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"node:child_process"</span><span class="token punctuation">)</span>
-<span class="token keyword">function</span> <span class="token function">promisify</span><span class="token punctuation">(</span><span class="token parameter">original</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token parameter"><span class="token operator">...</span>args</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-      args<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> <span class="token operator">...</span>values</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-          <span class="token keyword">return</span> <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-        <span class="token function">resolve</span><span class="token punctuation">(</span>values<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token function">Reflect</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>original<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span>
-  <span class="token keyword">return</span> fn<span class="token punctuation">;</span>
+</li>
+</ul>
+</li>
+<li><code>pathname</code>返回一个初始<code>/</code>和URL的路径(如果没有路径,则为空字符串)</li>
+<li><code>port</code>:如果url中包含明确的端口信息,则返回一个端口号.否则返回<code>&quot;&quot;</code></li>
+<li><code>protocol</code>:返回一个url的协议值</li>
+<li><code>search</code>:返回一个查询字符串.<code>?</code>紧跟的</li>
+<li><code>searchParams</code>:返回一个<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/URLSearchParams">URLSearchParams</a>.这个对象包含当前URL中解码后的GET查询参数</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">'https://developer.mozilla.org:3300/en-US/docs/Web/API/URL/href?q=123#Examples'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> hash <span class="token operator">=</span> url<span class="token punctuation">.</span>hash <span class="token comment">//#Examples</span>
+<span class="token keyword">const</span> host <span class="token operator">=</span> url<span class="token punctuation">.</span>host <span class="token comment">//developer.mozilla.org:3300</span>
+<span class="token keyword">const</span> host <span class="token operator">=</span> url<span class="token punctuation">.</span>hostname <span class="token comment">//developer.mozilla.org</span>
+<span class="token keyword">const</span> host <span class="token operator">=</span> url<span class="token punctuation">.</span>href <span class="token comment">//https://developer.mozilla.org:3300/en-US/docs/Web/API/URL/href#Examples</span>
+<span class="token keyword">const</span> origin <span class="token operator">=</span> url<span class="token punctuation">.</span>origin <span class="token comment">//https://developer.mozilla.org</span>
+<span class="token keyword">const</span> pathname <span class="token operator">=</span> url<span class="token punctuation">.</span>pathname <span class="token comment">///en-US/docs/Web/API/URL/href</span>
+<span class="token keyword">const</span> port <span class="token operator">=</span> url<span class="token punctuation">.</span>port <span class="token comment">//3300</span>
+<span class="token keyword">const</span> protocol <span class="token operator">=</span> url<span class="token punctuation">.</span>protocol <span class="token comment">//https</span>
+<span class="token keyword">const</span> search <span class="token operator">=</span> url<span class="token punctuation">.</span>search <span class="token comment">//?q=123</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><code>username</code>:包含域名前指定的username</li>
+<li><code>password</code>:返回域名之前指定的密码</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">'https://anonymous:flabada@developer.mozilla.org/en-US/docs/Web/API/URL/password'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> password <span class="token operator">=</span> url<span class="token punctuation">.</span>password <span class="token comment">//flabada</span>
+<span class="token keyword">const</span> username <span class="token operator">=</span> url<span class="token punctuation">.</span>username <span class="token comment">//anonymous</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>静态方法</p>
+</blockquote>
+<ol>
+<li><code>URL.createObjectURL(object)</code>:创建一个表示参数中给出的对象的URL<ul>
+<li>这个新的URL对象表示指定的<code>File</code>对象或<code>Blob</code>对象</li>
+<li><code>object</code>:用于创建URL的<code>File</code>对象,<code>Blob</code>对象或者<code>MediaSource</code>对象</li>
+<li>返回一个用于指定源的URL</li>
+</ul>
+</li>
+<li><code>URL.revokeObjectURL(objectURL)</code>:释放一个之前已经存在的,通过调用<code>URL.createObjectURL()</code>创建的URL对象<ul>
+<li><code>objectURL</code>:通过调用<code>URL.createObjectURL()</code>方法产生的URL对象</li>
+</ul>
+</li>
+<li><code>URL.toString()</code>与<code>URL.toJSON()</code>与<code>url.href</code>一样,返回序列化的url</li>
+</ol>
+<h3 id="URLSearchParams"><a href="#URLSearchParams" class="headerlink" title="URLSearchParams"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/URLSearchParams/append">URLSearchParams</a></h3><blockquote>
+<p>接口定义了一些实用的方法来处理URL的查询字符串</p>
+</blockquote>
+<h4 id="new-URLSearchParams"><a href="#new-URLSearchParams" class="headerlink" title="new URLSearchParams()"></a>new URLSearchParams()</h4><blockquote>
+<p><code>URLSearchParams()</code>构造器创建并返回一个新的<code>URLSearchParams</code>对象.并且会忽略<code>?</code></p>
+</blockquote>
+<ul>
+<li><code>const URLSearchParams = new URLSearchParams(init)</code></li>
+<li><code>init</code>:需要USVString(对应 unicode 标量值的所有可能序列的集合)</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">new</span> <span class="token class-name">URLSearchParams</span><span class="token punctuation">(</span><span class="token string">'?foo=1&amp;bar=2'</span><span class="token punctuation">)</span>
+<span class="token keyword">new</span> <span class="token class-name">URLSearchParams</span><span class="token punctuation">(</span>url<span class="token punctuation">.</span>search<span class="token punctuation">)</span>
+<span class="token keyword">new</span> <span class="token class-name">URLSearchParams</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"foo"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">"bar"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">new</span> <span class="token class-name">URLSearchParams</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"foo"</span> <span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">,</span> <span class="token string">"bar"</span> <span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>方法</p>
+</blockquote>
+<ul>
+<li><code>append(name, value)</code>:可以插入一个新搜索参数</li>
+<li><code>getAll(name)</code>:以数组的形式返回与指定搜索参数对应的所有值</li>
+<li><code>get(name)</code>:返回第一个与搜索参数对应的值</li>
+<li><code>has(name)</code>:返回一个布尔值,表示查找的键名是否存在</li>
+<li><code>set()</code>:设置和搜索参数相关联的值.如果设置前已经存在匹配的值,该方法会删除多余的,如果将要设置的值不存在,则创建它</li>
+<li><code>delete(name)</code>:可以删除指定名称的所有搜索参数</li>
+<li><code>sort()</code>:对对象中的所有键&#x2F;值对进行排序.按unicode编码</li>
+<li><code>entries()</code>:返回一个<code>iterator</code>,允许遍历该对象中包含的所有键&#x2F;值对</li>
+<li><code>forEach(callback)</code>:该回调函数可以接收到3个参数value,key,searchParams</li>
+<li><code>keys()</code>:返回一个iterator,遍历器允许遍历对象中包含的所有键</li>
+<li><code>values()</code>:返回一个iterator,遍历器允许遍历对象中包含的所有值</li>
+<li><code>toString()</code>:返回适用在URL中的查询字符串</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> url <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">'https://example.com?foo=1&amp;bar=2'</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> params <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URLSearchParams</span><span class="token punctuation">(</span>url<span class="token punctuation">.</span>search<span class="token punctuation">)</span>
+params<span class="token punctuation">.</span><span class="token function">getAll</span><span class="token punctuation">(</span><span class="token string">"foo"</span><span class="token punctuation">)</span> <span class="token comment">//['1', '4']</span>
+params<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"foo"</span><span class="token punctuation">)</span> <span class="token comment">//'1'</span>
+params<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token comment">//foo=1&amp;bar=2&amp;foo=4</span>
+params<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span><span class="token string">'bar'</span><span class="token punctuation">)</span> <span class="token comment">// true</span>
+params<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"foo"</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">//foo=2&amp;bar=2</span>
+params<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token string">"foo"</span><span class="token punctuation">)</span><span class="token comment">//bar=2</span>
+params<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span>
+
+<span class="token comment">//entries</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> <span class="token punctuation">[</span>key<span class="token punctuation">,</span>value<span class="token punctuation">]</span> <span class="token keyword">of</span> params<span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span>value<span class="token punctuation">)</span>
+  <span class="token comment">//bar 2</span>
+  <span class="token comment">//foo 4   </span>
 <span class="token punctuation">&#125;</span>
 
-<span class="token keyword">const</span> execFile1 <span class="token operator">=</span> <span class="token function">promisify</span><span class="token punctuation">(</span>execFile<span class="token punctuation">)</span>
-<span class="token function">execFile1</span><span class="token punctuation">(</span><span class="token string">"git"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'ls-remote'</span><span class="token punctuation">,</span> <span class="token string">'--tags'</span><span class="token punctuation">,</span> <span class="token string">"git@github.com:vuejs/create-vue.git"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>
-  <span class="token parameter">value</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token parameter">error</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">//forEach</span>
+params<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span>key</span><span class="token punctuation">)</span><span class="token operator">=></span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token comment">//bar 2</span>
+  <span class="token comment">//foo 4  </span>
 
-<ul>
-<li>难点:<ol>
-<li><code>Reflect.apply</code>:this是没有必要的,可以改成null</li>
-<li>关于使用<code>apply</code>绑定<code>execFile</code>执行此函数</li>
-<li>还需将<code>execFile</code>所需的回调函数push进入args</li>
-</ol>
-</li>
-</ul>
-<h3 id="execFile"><a href="#execFile" class="headerlink" title="execFile"></a>execFile</h3><ul>
-<li>在子进程中生成shell命令,并执行</li>
-<li>参考:<a target="_blank" rel="noopener" href="https://www.nodeapp.cn/child_process.html">https://www.nodeapp.cn/child_process.html</a></li>
-</ul>
-<blockquote>
-<ul>
-<li><code>execFile</code>:在<code>child_process</code>模块中,可以直接衍生命令,而无需像<code>exec</code>一样先生成shell(<strong>解码输出为UTF-8,并将字符串传给回调</strong>)</li>
-<li><code>child_process.execFile(file[, args][, options][, callback])</code></li>
-<li>返回一个<code>childProcess</code></li>
-</ul>
-</blockquote>
-<ul>
-<li>参考:<a target="_blank" rel="noopener" href="https://juejin.cn/post/7028731182216904740">https://juejin.cn/post/7028731182216904740</a></li>
-</ul>
-<h2 id="总结与感受"><a href="#总结与感受" class="headerlink" title="总结与感受"></a>总结与感受</h2><ol>
-<li>对于源码里很多文件不够了解,接触的太少</li>
-<li>实现<code>promisify</code>发现自己对promise的操作还是不熟</li>
-<li>对于node很多模块也不是很熟,还需要多练习</li>
-<li>基础还不是很扎实,还需要加强练习</li>
-</ol>
+<span class="token comment">//keys()</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token operator">...</span>params<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">//bar foo</span>
+
+<span class="token comment">//values()</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token operator">...</span>params<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">//2 4</span>
+
+params<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">//'bar=2&amp;foo=4'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -761,7 +772,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://mail.zyjcould.ltd/2021/12/31/remotegittags/">http://mail.zyjcould.ltd/2021/12/31/remotegittags/</a>
+                    <a href="http://mail.zyjcould.ltd/2022/03/28/url/">http://mail.zyjcould.ltd/2022/03/28/url/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -799,12 +810,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/git/">
-                                    <span class="chip bg-color">git</span>
-                                </a>
-                            
-                                <a href="/tags/sourceCode/">
-                                    <span class="chip bg-color">sourceCode</span>
+                                <a href="/tags/JS/">
+                                    <span class="chip bg-color">JS</span>
                                 </a>
                             
                         </div>
@@ -1242,54 +1249,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/01/02/validatenpn/">
+                <a href="/2022/03/28/url/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="validateNPN">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="URL">
                         
-                        <span class="card-title">validateNPN</span>
+                        <span class="card-title">URL</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            检测npm包是否符合标准
+                            浏览器原生的URL方法
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/sourceCode/" class="post-category">
-                                    sourceCode
+                            <a href="/categories/JS/" class="post-category">
+                                    JS
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/config/">
-                        <span class="chip bg-color">config</span>
-                    </a>
-                    
                     <a href="/tags/JS/">
                         <span class="chip bg-color">JS</span>
-                    </a>
-                    
-                    <a href="/tags/sourceCode/">
-                        <span class="chip bg-color">sourceCode</span>
                     </a>
                     
                 </div>
@@ -1303,31 +1304,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/15/githubpages/">
+                <a href="/2022/03/28/drag/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="githubPages">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="drag">
                         
-                        <span class="card-title">githubPages</span>
+                        <span class="card-title">drag</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用github部署网站
+                            html中的元素拖放操作
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-28
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/git/" class="post-category">
-                                    git
+                            <a href="/categories/JS/" class="post-category">
+                                    JS
                                 </a>
                             
                             
@@ -1337,8 +1338,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/git/">
-                        <span class="chip bg-color">git</span>
+                    <a href="/tags/JS/">
+                        <span class="chip bg-color">JS</span>
                     </a>
                     
                 </div>

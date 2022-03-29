@@ -562,21 +562,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-19
+                    2022-03-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    7 分
                 </div>
                 
 
@@ -604,13 +604,24 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="浏览器窗口大小"><a href="#浏览器窗口大小" class="headerlink" title="浏览器窗口大小"></a>浏览器窗口大小</h2><ol>
+                <h2 id="Viewport"><a href="#Viewport" class="headerlink" title="Viewport"></a>Viewport</h2><blockquote>
+<p>视口代表一个可看见的多边形区域(通常是矩形).在浏览器的范畴里,他代表的就是浏览器网站中可见内容的部分,视口外的内容在被滚动进来前都是不可见的</p>
+</blockquote>
+<ul>
+<li><strong>可见视口</strong>:视口当前可见的部分.可见视口可能回避布局视口更小,因为当用户缩小浏览器的比例,布局视口不变,而可见视口会变小</li>
+<li><strong>布局视口</strong>:是浏览器在其中绘制网页的视口.从本质上讲,它表示可查看的内容,而可视视口表示用户显示设备上当前可见的内容</li>
+</ul>
+<h3 id="浏览器窗口大小"><a href="#浏览器窗口大小" class="headerlink" title="浏览器窗口大小"></a>浏览器窗口大小</h3><ol>
 <li><code>innerWidth</code>,<code>innerHeight</code>:返回浏览器窗口中页面<strong>可见视口</strong>的大小(不包含边框,工具栏)  <ul>
 <li>使用:<code>window.innerWidth</code></li>
 </ul>
 </li>
 <li><code>outerWidth</code>,<code>outerHeight</code>:返回浏览器窗口自身的大小(整个浏览器,包含边框,工具栏)<ul>
 <li>使用:<code>window.outerWidth</code></li>
+</ul>
+</li>
+<li><code>scrollX</code>,<code>scrollY</code>:返回文档当前水平滚动和垂直滚动的像素数<ul>
+<li>使用<code>window.scroll(0,0)</code>:这样会把文档重新滚动到左上角</li>
 </ul>
 </li>
 <li><code>clientWidth</code>,<code>clientHeight</code>: 返回**布局视口(元素)**的大小<ul>
@@ -627,7 +638,7 @@
 <ul>
 <li><strong>移动窗口</strong>(moveTo,moveBy)和<strong>缩放窗口</strong>(resizeTo,resizeBy)方法一般浏览器会禁用</li>
 </ul>
-<h2 id="DOM元素大小"><a href="#DOM元素大小" class="headerlink" title="DOM元素大小"></a>DOM元素大小</h2><ol>
+<h3 id="DOM元素大小"><a href="#DOM元素大小" class="headerlink" title="DOM元素大小"></a>DOM元素大小</h3><ol>
 <li><code>clientWidth</code>,<code>clientHeight</code>:CSS的width&#x2F;height和padding属性值之和<ul>
 <li>元素边框和滚动条不包括在内,也不包含任何可能的滚动区域</li>
 </ul>
@@ -638,7 +649,7 @@
 </ul>
 </li>
 </ol>
-<h2 id="event事件上的元素大小"><a href="#event事件上的元素大小" class="headerlink" title="event事件上的元素大小"></a>event事件上的元素大小</h2><blockquote>
+<h3 id="event事件上的元素大小"><a href="#event事件上的元素大小" class="headerlink" title="event事件上的元素大小"></a>event事件上的元素大小</h3><blockquote>
 <p>该元素只会在event(如click,mousemove等)上才有的属性</p>
 </blockquote>
 <ul>
@@ -1691,7 +1702,7 @@ history<span class="token punctuation">.</span><span class="token function">go</
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数
                                             :&nbsp;<span class="white-color">
-                                                139.6k
+                                                140.9k
                                             </span>
                                             
                                                 
