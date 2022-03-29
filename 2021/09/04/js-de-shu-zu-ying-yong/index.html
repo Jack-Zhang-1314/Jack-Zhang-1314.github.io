@@ -562,21 +562,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-19
+                    2022-03-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.1k
+                    3.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    13 分
                 </div>
                 
 
@@ -756,7 +756,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token comment">//[5,2,4,4,9,11]</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arrRemove3<span class="token punctuation">)</span><span class="token comment">//[7]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="indexOf-和-lastIndexOf"><a href="#indexOf-和-lastIndexOf" class="headerlink" title="indexOf()和 lastIndexOf()"></a>indexOf()和 lastIndexOf()</h3><ol>
+<h3 id="indexOf-和lastIndexOf"><a href="#indexOf-和lastIndexOf" class="headerlink" title="indexOf()和lastIndexOf()"></a>indexOf()和lastIndexOf()</h3><ol>
 <li>indexOf()：接收两个参数：要查找的项和（可选的）表示查找起点位置的索引.其中. 从数组的开头（位置 0）开始向后查找.</li>
 <li>lastIndexOf：接收两个参数：要查找的项和（可选的）表示查找起点位置的索引.其中. 从数组的末尾开始向前查找.</li>
 </ol>
@@ -770,7 +770,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">//2</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"5"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">//-1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="includes判断一个数组是否包含一个指定的值"><a href="#includes判断一个数组是否包含一个指定的值" class="headerlink" title="includes判断一个数组是否包含一个指定的值"></a>includes判断一个数组是否包含一个指定的值</h3><table>
+<h3 id="includes"><a href="#includes" class="headerlink" title="includes()"></a>includes()</h3><blockquote>
+<p>用于判断一个数组是否包含一个指定的值</p>
+</blockquote>
+<table>
 <thead>
 <tr>
 <th>参数</th>
@@ -793,10 +796,37 @@ console<span class="token punctuation">.</span><span class="token function">log<
 arr<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'c'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//false</span>
 arr<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'c'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
+<h3 id="fill-改变原数组"><a href="#fill-改变原数组" class="headerlink" title="fill()(改变原数组)"></a>fill()(改变原数组)</h3><blockquote>
+<p>将数组用其他元素填充或者替换</p>
+</blockquote>
+<ol>
+<li><code>value</code>:填充的值</li>
+<li><code>start</code>?:开始填充的位置</li>
+<li><code>end</code>?:结束填充的位置</li>
+</ol>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token comment">//如果end越界,会按照最后一个值计算</span>
+<span class="token comment">//如果start为负数:start+数组的索引>0,则会按照此时的索引位置计算</span>
+<span class="token comment">//如果start+数组的索引&lt;=0,则会按照=0计算</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">//[1,2,0,0,0]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="at"><a href="#at" class="headerlink" title="at()"></a>at()</h3><blockquote>
+<p>接收一个整数值,并返回该索引的项目,允许正数以及负数</p>
+</blockquote>
+<ul>
+<li>如果是负数,则从数组尾部开始</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> arr <span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
+arr<span class="token punctuation">.</span><span class="token function">at</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment">//1</span>
+arr<span class="token punctuation">.</span><span class="token function">at</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment">//3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="数组的迭代方法"><a href="#数组的迭代方法" class="headerlink" title="数组的迭代方法"></a>数组的迭代方法</h3><blockquote>
 <p>ECMAScript为数组定义了五个迭代方法.每个方法都接收两个参数：要在每一项上面运行的函数和运行该函数的作用域——影响this的值.传入这些方法的函数会接收三个参数（数组项的值.索引.数组本身）</p>
 </blockquote>
-<h4 id="forEach-对数组的每一项运行给定函数-该方法没有返回值-不改变原数组"><a href="#forEach-对数组的每一项运行给定函数-该方法没有返回值-不改变原数组" class="headerlink" title="forEach()  对数组的每一项运行给定函数.该方法没有返回值(不改变原数组)"></a>forEach()  对数组的每一项运行给定函数.该方法没有返回值(<span style="color:red">不改变原数组</span>)</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+<h4 id="forEach-不改变原数组"><a href="#forEach-不改变原数组" class="headerlink" title="forEach()(不改变原数组)"></a>forEach()(<span style="color:red">不改变原数组</span>)</h4><blockquote>
+<p>对数组的每一项运行给定函数.该方法没有返回值</p>
+</blockquote>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
 arr<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span>index<span class="token punctuation">,</span>arry</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>index<span class="token operator">+</span><span class="token string">"-"</span><span class="token operator">+</span>item<span class="token operator">+</span><span class="token string">"-"</span><span class="token operator">+</span>arry<span class="token punctuation">)</span>
    <span class="token comment">/* 
@@ -810,7 +840,10 @@ arr<span class="token punctuation">.</span><span class="token function">forEach<
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//(5)[1,2,3,4,5]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="some（）：-对数组中的每一项运行给定函数-如果该函数对任一项返回true-则返回true-不改变原数组"><a href="#some（）：-对数组中的每一项运行给定函数-如果该函数对任一项返回true-则返回true-不改变原数组" class="headerlink" title="some（）： 对数组中的每一项运行给定函数.如果该函数对任一项返回true.则返回true(不改变原数组)"></a>some（）： 对数组中的每一项运行给定函数.如果该函数对任一项返回true.则返回true(<span style="color:red">不改变原数组</span>)</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+<h4 id="some-不改变原数组"><a href="#some-不改变原数组" class="headerlink" title="some()(不改变原数组)"></a>some()(<span style="color:red">不改变原数组</span>)</h4><blockquote>
+<p>对数组中的每一项运行给定函数.如果该函数对任一项返回true.则返回true</p>
+</blockquote>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
 <span class="token keyword">let</span> b<span class="token operator">=</span>arr<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
    <span class="token keyword">return</span> value<span class="token operator">></span><span class="token number">3</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
@@ -822,14 +855,20 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token comment">//true</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//(5)[1,2,3,4,5]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="every-对数组中的每一项运行都给定函数-如果该函数对每一项都返回true-则返回true-不改变原数组"><a href="#every-对数组中的每一项运行都给定函数-如果该函数对每一项都返回true-则返回true-不改变原数组" class="headerlink" title="every()  对数组中的每一项运行都给定函数.如果该函数对每一项都返回true.则返回true(不改变原数组)"></a>every()  对数组中的每一项运行都给定函数.如果该函数对每一项都返回true.则返回true(<span style="color:red">不改变原数组</span>)</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+<h4 id="every-不改变原数组"><a href="#every-不改变原数组" class="headerlink" title="every()(不改变原数组)"></a>every()(<span style="color:red">不改变原数组</span>)</h4><blockquote>
+<p>对数组中的每一项运行都给定函数.如果该函数对每一项都返回true.则返回true</p>
+</blockquote>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
 <span class="token keyword">let</span> b<span class="token operator">=</span>arr<span class="token punctuation">.</span><span class="token function">every</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
    <span class="token keyword">return</span> value<span class="token operator">></span><span class="token number">3</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token comment">//false</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//(5)[1,2,3,4,5]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="filter（）-：对数组的每一项运行给定函数-返回该函数会返回true的项组成的数组-不改变原数组"><a href="#filter（）-：对数组的每一项运行给定函数-返回该函数会返回true的项组成的数组-不改变原数组" class="headerlink" title="filter（） ：对数组的每一项运行给定函数.返回该函数会返回true的项组成的数组(不改变原数组)"></a>filter（） ：对数组的每一项运行给定函数.返回该函数会返回true的项组成的数组(<span style="color:red">不改变原数组</span>)</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+<h4 id="filter-不改变原数组"><a href="#filter-不改变原数组" class="headerlink" title="filter()(不改变原数组)"></a>filter()(<span style="color:red">不改变原数组</span>)</h4><blockquote>
+<p>对数组的每一项运行给定函数.返回该函数会返回true的项组成的数组</p>
+</blockquote>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
 <span class="token keyword">let</span> a<span class="token operator">=</span>arr<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
    <span class="token keyword">return</span> value<span class="token operator">></span><span class="token number">3</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
@@ -840,7 +879,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <ul>
 <li><span style="color:red">注意:</span>对新数组变化不会影响原数组的改变</li>
 </ul>
-<h4 id="map（）-：对数组的每一项运行给定函数-返回每次函数调用结果所组成的数组-不改变原数组"><a href="#map（）-：对数组的每一项运行给定函数-返回每次函数调用结果所组成的数组-不改变原数组" class="headerlink" title="map（） ：对数组的每一项运行给定函数.返回每次函数调用结果所组成的数组(不改变原数组)"></a>map（） ：对数组的每一项运行给定函数.返回每次函数调用结果所组成的数组(<span style="color:red">不改变原数组</span>)</h4><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+<h4 id="map-不改变原数组"><a href="#map-不改变原数组" class="headerlink" title="map()(不改变原数组)"></a>map()(<span style="color:red">不改变原数组</span>)</h4><blockquote>
+<p>对数组的每一项运行给定函数.返回每次函数调用结果所组成的数组</p>
+</blockquote>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
 <span class="token keyword">let</span> a<span class="token operator">=</span>arr<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
    <span class="token keyword">return</span> value<span class="token operator">*</span><span class="token number">3</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
@@ -848,6 +890,21 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token comment">//[3,6,9,12,15]</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//(5)[1,2,3,4,5]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h4 id="find-不改变原数组"><a href="#find-不改变原数组" class="headerlink" title="find()(不改变原数组)"></a>find()(<span style="color:red">不改变原数组</span>)</h4><blockquote>
+<p>返回符合测试条件的第一个数组元素的值.如果没有符合条件的则返回undefined</p>
+</blockquote>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>
+
+<span class="token keyword">let</span> value <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+   <span class="token keyword">return</span> value <span class="token operator">></span> <span class="token number">4</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token comment">//5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>补充<ul>
+<li><code>findIndex()</code>:与find()方法相同,只是返回的是符合条件的索引</li>
+</ul>
+</li>
+</ul>
 <h3 id="迭代方法"><a href="#迭代方法" class="headerlink" title="迭代方法"></a>迭代方法</h3><blockquote>
 <p>ES5新增了两个归并数组的方法：reduce（）和 reduceRight().这两个方法都会迭代数组所有的项.然后构建一个最终的值返回.</p>
 </blockquote>
@@ -1734,7 +1791,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数
                                             :&nbsp;<span class="white-color">
-                                                140.9k
+                                                141.2k
                                             </span>
                                             
                                                 
