@@ -36,7 +36,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 6.1.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="alternate" href="/atom.xml" title="苍穹之下" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="苍穹之下" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 
@@ -566,21 +566,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-19
+                    2022-04-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    8.3k
+                    8.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    35 分
+                    37 分
                 </div>
                 
 
@@ -1376,7 +1376,7 @@ CMD [&quot;&#x2F;bin&#x2F;bash&quot;]<span aria-hidden="true" class="line-number
 </tr>
 <tr>
 <td>CMD</td>
-<td>指定容器启动时候要运行的命令,只有最后一个会生效,可被替代</td>
+<td>指定容器启动时候要运行的命令,只有最后一个会生效,可被ENTRYPOINT替代</td>
 </tr>
 <tr>
 <td>ENTRYPOINT</td>
@@ -1424,20 +1424,64 @@ CMD &#x2F;bin&#x2F;bash
 <blockquote>
 <p><code>CMD</code>和<code>ENTRYPOINT</code>的区别</p>
 </blockquote>
+<ul>
+<li>大部分linux发行版的基础镜像里面调用CMD命名,指定容器启动后直接执行<code>/bin/bash</code>或者<code>/bin/sh</code>,这样镜像就会默认进入交互的<code>shell</code></li>
+</ul>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">FROM centos
-CMD [&quot;ls&quot;,&quot;-a&quot;]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+...
+CMD &quot;&#x2F;bin&#x2F;bash&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
+<ul>
+<li><p>CMD给出的是一个容器的默认可执行体,也就是容器启动以后,默认的执行命名.</p>
+</li>
+<li><p>也就是说,如果<span style="color:red">docker run没有指定的任何的执行命名或者dockfile里面也没有entrypoint</span>,那么就会执行cmd指定的默认的执行命名执行</p>
+</li>
+<li><p>有三种用法:</p>
 <ol>
-<li>构建完之后,直接<code>docker run 镜像id</code>没有任何问题</li>
-<li>追加命令:<code>docker run 镜像id -l</code>:报错(<span style="color:red">CMD会替换[“ls”,”-a”]命令,<code>-l</code>不是命令所以报错)</span></li>
-</ol>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">FROM centos
-ENTORYPOINT [&quot;ls&quot;,&quot;-a&quot;]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<li><p>shell格式的形式:例如<code>npm install</code>.命令默认是在<code>/bin/sh -c</code>下执行的.</p>
+<pre class="line-numbers language-dockerFile" data-language="dockerFile"><code class="language-dockerFile">FROM centos
+...
+CMD echo &quot;hello&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<ol>
-<li>构建完之后,直接<code>docker run 镜像id</code>没有任何问题</li>
-<li>追加命令:<code>docker run 镜像id -l</code>:没有任何问题(<span style="color:red">追加的命令是直接拼接再<code>ENTORYPOINT</code>之后的</sapn>)</li>
+<ul>
+<li>当我们运行<code>docker run...</code>的时候,会调用<code>/bin/bsah</code>然后打印出<code>hello</code></li>
+</ul>
+</li>
+<li><p>exec格式的形式(推荐使用):例如<code>[&quot;npm&quot;,&quot;install&quot;]</code>.并且第一个参数必须是全路径,并且一个<code>dockerfile</code>只能有一个cmd,如果有多个,则指会后最后一个生效.</p>
+<ul>
+<li>上面的方式改写:<code>[&quot;/bin/bash&quot;,&quot;-c&quot;,&quot;echo&quot;,&quot;hello&quot;]</code></li>
+<li><span style="color:red">如果我们在run的时候指定了命令或者有entrypoint,那么cmd就会被覆盖</span><ul>
+<li><code>docker run ... echo &quot;world&quot;</code>,那么控制台就会打印<code>world</code>,而不是默认的hello</li>
+</ul>
+</li>
+</ul>
+</li>
 </ol>
+</li>
+<li><p><code>ENTRYPOINT</code>默认是在shell环境下执行的,与CMD有区别.</p>
+<ul>
+<li>如果run命名后有东西,那么全部会作为<code>entrypoint</code>的参数.</li>
+<li>如果run后面没有东西,但是CMD有,那么CMD的全部内容会作为entrypoint的参数,这同时是cmd的第三种用法</li>
+</ul>
+</li>
+<li><p>exec形式:将CMD当作默认的参数</p>
+<pre class="line-numbers language-doeckerFile" data-language="doeckerFile"><code class="language-doeckerFile">FROM centeos
+...
+CMD [&quot;hello&quot;]
+ENTRYPOINT [&quot;echo&quot;,&quot;hello&quot;]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>如果运行<code>doecker run ...</code>,会直接打印<code>hello hello</code></li>
+<li>如果运行<code>docker run ... world</code>,那么cmd就会被覆盖,打印<code>hello world</code></li>
+</ul>
+</li>
+<li><p>如果使用shell模式:shell的形式会使<code>ENTRYPOINT</code>忽略任何CMD或者docker运行的命令行参数</p>
+</li>
+<li><p>如果需要提供默认的命令或在docker容器运行时可以从命令行覆盖的参数时,使用<code>CMD</code></p>
+</li>
+<li><p>最好的选择是使用<code>exec</code>,而不是shell命令</p>
+</li>
+</ul>
 <h3 id="自己手动配置tomcat的Dockerfile"><a href="#自己手动配置tomcat的Dockerfile" class="headerlink" title="自己手动配置tomcat的Dockerfile"></a>自己手动配置tomcat的Dockerfile</h3><blockquote>
 <p>首先编写<code>Dockerfile</code></p>
 </blockquote>
@@ -2829,7 +2873,7 @@ configs<span class="token punctuation">:</span><span aria-hidden="true" class="l
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数
                                             :&nbsp;<span class="white-color">
-                                                141.2k
+                                                141.6k
                                             </span>
                                             
                                                 
