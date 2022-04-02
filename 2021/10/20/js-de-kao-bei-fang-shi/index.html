@@ -562,14 +562,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-19
+                    2022-04-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    658
+                    787
                 </div>
                 
 
@@ -718,6 +718,21 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> obj2 <span class="token operator">=</span> _<span class="token punctuation">.</span><span class="token function">cloneDeep</span><span class="token punctuation">(</span>obj1<span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj1<span class="token punctuation">.</span>c<span class="token punctuation">.</span>d <span class="token operator">===</span> obj2<span class="token punctuation">.</span>c<span class="token punctuation">.</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="structuredClone"><a href="#structuredClone" class="headerlink" title="structuredClone"></a>structuredClone</h3><blockquote>
+<p>浏览器原生支持的深拷贝方式:<code>structuredClone(value, &#123; transfer &#125;)</code></p>
+</blockquote>
+<ul>
+<li><code>value</code>:要克隆的对象.这可以是任何结构化可克隆类型</li>
+<li><code>transfer</code>:可选.可转移的对象,为一个数组,其中的值将被移动到新的对象,而不是克隆至新的对象<ul>
+<li>可转移对象:<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Glossary/Transferable_objects">https://developer.mozilla.org/en-US/docs/Glossary/Transferable_objects</a></li>
+</ul>
+</li>
+<li><strong>返回值</strong>:返回的值是原始的深层副本value</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> s <span class="token operator">=</span> <span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token string">'zhangsan'</span><span class="token punctuation">,</span> friends<span class="token operator">:</span> <span class="token punctuation">&#123;</span> name<span class="token operator">:</span> <span class="token string">'lisi'</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token number">18</span> <span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> clone <span class="token operator">=</span> <span class="token function">structuredClone</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>clone <span class="token operator">===</span> s<span class="token punctuation">)</span><span class="token comment">//false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1568,7 +1583,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数
                                             :&nbsp;<span class="white-color">
-                                                141.6k
+                                                141.7k
                                             </span>
                                             
                                                 
