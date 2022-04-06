@@ -36,7 +36,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 6.1.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="alternate" href="/atom.xml" title="苍穹之下" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="苍穹之下" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 
@@ -574,21 +574,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-19
+                    2022-04-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    2.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    10 分
                 </div>
                 
 
@@ -616,7 +616,12 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="共享配置"><a href="#共享配置" class="headerlink" title="共享配置"></a>共享配置</h2><h3 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h3><blockquote>
+                <h2 id="共享配置"><a href="#共享配置" class="headerlink" title="共享配置"></a>共享配置</h2><blockquote>
+<p>你可以显式地通过<code>--config</code>命令行选项指定一个配置文件（相对于cwd路径进行解析）</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">vite --config my-config.js<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h3><blockquote>
 <p><code>defineConfig</code>,通过vite的智能提示实现vite的智能提示</p>
 </blockquote>
 <ul>
@@ -801,7 +806,31 @@ last 2 versions
 iOS 7
 last 3 iOS versions<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="关于别名的配置"><a href="#关于别名的配置" class="headerlink" title="关于别名的配置"></a>关于别名的配置</h3><h4 id="使用node中的路径模块"><a href="#使用node中的路径模块" class="headerlink" title="使用node中的路径模块"></a>使用node中的路径模块</h4><blockquote>
+<h3 id="关于别名的配置"><a href="#关于别名的配置" class="headerlink" title="关于别名的配置"></a>关于别名的配置</h3><h4 id="import-meta"><a href="#import-meta" class="headerlink" title="import.meta"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import.meta">import.meta</a></h4><blockquote>
+<p><code>import.meta</code>对象向 JavaScript 模块公开特定于上下文的元数据.它包含有关模块的信息,如模块的 URL</p>
+</blockquote>
+<ul>
+<li><p><code>import.meta</code>的原型为null.该对象是可扩展的,其属性是可写的,可配置的和可枚举的</p>
+<ul>
+<li>使用:必须设置<code>type=&quot;module&quot;</code></li>
+</ul>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>my-module.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>可以通过<code>import.meta</code>对象获取这个模块的元数据信息</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#123; url: "file:///home/user/my-module.mjs" &#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>注意,url也可能包含参数或者哈希(比如后缀?或#)</p>
+</li>
+</ul>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">import</span> <span class="token string">'./index.mjs?someURLInfo=5'</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>Vite会在CommonJS和TypeScript配置文件中替换<code>__filename</code>,<code>__dirname</code>以及<code>import.meta.url</code></li>
+<li>即使项目没有在<code>package.json</code>中开启 <code>type: &quot;module&quot;</code>,Vite 也支持在配置文件中使用 ESM 语法</li>
+</ul>
+<h4 id="使用node中的路径模块"><a href="#使用node中的路径模块" class="headerlink" title="使用node中的路径模块"></a>使用node中的路径模块</h4><blockquote>
 <ul>
 <li><code>path</code>模块中的<code>resolve</code>方法,用于获取目录的路径.</li>
 <li>可以传任意多的字符,返回一个绝对路径地址</li>
@@ -891,11 +920,56 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </ul>
 </blockquote>
 <ul>
-<li><code>.env</code>                # 所有情况下都会加载</li>
-<li><code>.env.local</code>          # 所有情况下都会加载,但会被 git 忽略</li>
-<li><code>.env.[mode]</code>         # 只在指定模式下加载</li>
-<li><code>.env.[mode].local</code>   # 只在指定模式下加载,但会被 git 忽略</li>
+<li><p><code>.env</code>                # 所有情况下都会加载</p>
+</li>
+<li><p><code>.env.local</code>          # 所有情况下都会加载,但会被 git 忽略</p>
+</li>
+<li><p><code>.env.[mode]</code>         # 只在指定模式下加载</p>
+</li>
+<li><p><code>.env.[mode].local</code>   # 只在指定模式下加载,但会被 git 忽略</p>
+</li>
+<li><p><code>.env</code>类文件会在Vite启动一开始时被加载,而改动会在重启服务器后生效</p>
+</li>
+<li><p>一份用于指定模式的文件(例如<code>.env.production</code>)会比通用形式的优先级更高(例如<code>.env</code>)</p>
+</li>
 </ul>
+<blockquote>
+<p>model属性可以是<code>production</code>,<code>development</code></p>
+</blockquote>
+<ul>
+<li><code>.env.production</code>或者<code>.env.development</code>文件</li>
+</ul>
+<pre class="line-numbers language-env" data-language="env"><code class="language-env"># .env.production
+VITE_APP_TITLE&#x3D;My App<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<ul>
+<li><p><code>**模式**是一个更广泛的概念</code></p>
+<ul>
+<li>如果希望有一个<code>staging”</code>(预发布|预上线)模式.它应该具有类似于生产的行为，但环境变量与生产环境略有不同</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">vite build --mode staging<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>或者使用<code>.env.staging</code></li>
+</ul>
+<pre class="line-numbers language-env" data-language="env"><code class="language-env"># .env.staging
+NODE_ENV&#x3D;production
+VITE_APP_TITLE&#x3D;My App (staging)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<blockquote>
+<p><code>env.d.ts</code>:代码中获取这些以VITE_为前缀的用户自定义环境变量的TypeScript智能提示</p>
+</blockquote>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">&#x2F;&#x2F;&#x2F; &lt;reference types&#x3D;&quot;vite&#x2F;client&quot; &#x2F;&gt;
+
+interface ImportMetaEnv &#123;
+  readonly VITE_APP_TITLE: string
+  &#x2F;&#x2F; 更多环境变量...
+&#125;
+
+interface ImportMeta &#123;
+  readonly env: ImportMetaEnv
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="build配置"><a href="#build配置" class="headerlink" title="build配置"></a>build配置</h2><blockquote>
 <p>一些基础配置</p>
 </blockquote>
@@ -1853,7 +1927,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数
                                             :&nbsp;<span class="white-color">
-                                                145.2k
+                                                145.7k
                                             </span>
                                             
                                                 
