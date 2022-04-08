@@ -562,21 +562,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-19
+                    2022-04-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.5k
+                    3.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    14 分
+                    12 分
                 </div>
                 
 
@@ -986,73 +986,6 @@ document<span class="token punctuation">.</span>body<span class="token punctuati
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">height</span><span class="token punctuation">:</span> 2000px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="拖拽"><a href="#拖拽" class="headerlink" title="拖拽"></a>拖拽</h3><ul>
-<li>拖拽的流程<ol>
-<li>当鼠标在被拖拽的元素上按下时,开始拖拽<code>onmousedown</code></li>
-<li>当鼠标移动时被拖拽元素跟随鼠标移动<code>onmousemove</code></li>
-<li>当鼠标松开时,被拖拽元素被固定在当前位置<code>nomousemove</code></li>
-</ol>
-</li>
-</ul>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
-  <span class="token selector">#box1</span> <span class="token punctuation">&#123;</span>
-    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
-    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
-    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
-    <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span>
-  <span class="token selector">#box2</span><span class="token punctuation">&#123;</span>
-    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
-    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
-    <span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
-    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
-    <span class="token property">left</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
-    <span class="token property">top</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span>
-</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
-  window<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">//获取box1</span>
-    <span class="token keyword">let</span> box1 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"box1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment">//为box1绑定一个鼠标按下事件</span>
-    box1<span class="token punctuation">.</span><span class="token function-variable function">onmousedown</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      <span class="token comment">//div的偏移量 鼠标.clientX-offsetLeft</span>
-      <span class="token comment">//div的偏移量 鼠标.clientY-offsetTop</span>
-      <span class="token keyword">let</span> ol<span class="token operator">=</span>event<span class="token punctuation">.</span>clientX<span class="token operator">-</span>box1<span class="token punctuation">.</span>offsetLeft<span class="token punctuation">;</span>
-      <span class="token keyword">let</span> ot<span class="token operator">=</span>event<span class="token punctuation">.</span>clientY<span class="token operator">-</span>box1<span class="token punctuation">.</span>offsetTop<span class="token punctuation">;</span>
-      <span class="token comment">//当鼠标移动时被拖拽元素跟随鼠标移动onmousemove</span>
-      document<span class="token punctuation">.</span><span class="token function-variable function">onmousemove</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">//当鼠标移动时被拖拽元素跟随鼠标移动onmousemove</span>
-        <span class="token comment">//获取鼠标的坐标</span>
-        <span class="token keyword">let</span> left <span class="token operator">=</span> event<span class="token punctuation">.</span>clientX<span class="token operator">-</span>ol<span class="token punctuation">;</span>
-        <span class="token keyword">let</span> top <span class="token operator">=</span> event<span class="token punctuation">.</span>clientY<span class="token operator">-</span>ot<span class="token punctuation">;</span>
-        <span class="token comment">//设置div的偏移量</span>
-        box1<span class="token punctuation">.</span>style<span class="token punctuation">.</span>left <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token string">"px"</span><span class="token punctuation">;</span>
-        box1<span class="token punctuation">.</span>style<span class="token punctuation">.</span>top <span class="token operator">=</span> top <span class="token operator">+</span> <span class="token string">"px"</span><span class="token punctuation">;</span>
-      <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-      <span class="token comment">//为元素绑定一个鼠标松开事件</span>
-      document<span class="token punctuation">.</span><span class="token function-variable function">onmouseup</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token comment">//当鼠标松开时,被拖拽元素固定在当前位置onmouseup</span>
-        <span class="token comment">//取消document的onmousemove事件</span>
-        document<span class="token punctuation">.</span>onmousemove<span class="token operator">=</span><span class="token keyword">null</span><span class="token punctuation">;</span>
-        <span class="token comment">//取消document的onmouseup事件</span>
-        document<span class="token punctuation">.</span>onmouseup<span class="token operator">=</span><span class="token keyword">null</span><span class="token punctuation">;</span>
-      <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-       <span class="token comment">/* 当我们拖拽一个网页时,浏览器会默认去搜索引擎中搜索内容
-         此时会导致拖拽功能异常,这个是浏览器提供的默认行为
-         如果不希望这个行为发生,则可以通过return false来取消默认行为*/</span>
-      <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-  一段文字
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h3><ul>
 <li><code>keydown</code>-按键被按下<ul>
@@ -1990,7 +1923,7 @@ document.getElementById("input").onchange = function (e) &#123;
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数
                                             :&nbsp;<span class="white-color">
-                                                145.7k
+                                                145.6k
                                             </span>
                                             
                                                 

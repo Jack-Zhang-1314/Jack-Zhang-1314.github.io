@@ -562,21 +562,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-28
+                    2022-04-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    2.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    9 分
                 </div>
                 
 
@@ -638,14 +638,14 @@ document<span class="token punctuation">.</span><span class="token function">add
 </tr>
 </thead>
 <tbody><tr>
-<td>drag</td>
-<td>ondrag</td>
-<td>当拖拽元素或选中的文本时触发或者到达可放置区域触发</td>
-</tr>
-<tr>
 <td>dragstart</td>
 <td>ondragstart</td>
 <td>当用户开始拖拽一个元素或选中的文本时触发</td>
+</tr>
+<tr>
+<td>drag</td>
+<td>ondrag</td>
+<td>当拖拽元素或选中的文本时触发或者到达可放置区域触发</td>
 </tr>
 <tr>
 <td>dragend</td>
@@ -660,7 +660,12 @@ document<span class="token punctuation">.</span><span class="token function">add
 <tr>
 <td>dragenter</td>
 <td>ondragenter</td>
-<td>当拖拽元素或选中的文本到一个可释放目标时触发(指定释放目标)</td>
+<td>当拖拽元素或选中的文本<strong>刚进入</strong>到一个可释放目标时触发</td>
+</tr>
+<tr>
+<td>dragover</td>
+<td>ondragover</td>
+<td>当元素或选中的文本被<strong>拖入到一个可释放目标内时触发</strong>(每100毫秒触发一次)</td>
 </tr>
 <tr>
 <td>dragleave</td>
@@ -668,20 +673,15 @@ document<span class="token punctuation">.</span><span class="token function">add
 <td>当拖拽元素或选中的文本离开一个可释放目标时触发</td>
 </tr>
 <tr>
-<td>dragover</td>
-<td>ondragover</td>
-<td>当元素或选中的文本被<strong>拖到一个可释放目标上时触发</strong>(每100毫秒触发一次)</td>
-</tr>
-<tr>
 <td>drop</td>
 <td>ondrop</td>
-<td>当元素在可放置区域时触发(此时可以取消浏览器的默认行为)</td>
+<td>当元素放置在可放置区域时触发(此时可以取消浏览器的默认行为)</td>
 </tr>
 </tbody></table>
 <ul>
 <li><p>被拖动的元素事件有:<code>drag</code>,<code>dragstart</code>,<code>dragend</code>,<code>dragexit</code></p>
 </li>
-<li><p>目的地对象事件有:<code>dragenter</code>,<code>dragleave</code>,<code>dragover</code>,<code>drop</code></p>
+<li><p>目的地对象事件有:<code>dragenter</code>,<code>dragover</code>,<code>dragleave</code>,<code>drop</code></p>
 </li>
 <li><p><code>dragenter</code>和<code>dragover</code>事件的默认行为是拒绝接受任何被拖放的元素.</p>
 <ul>
@@ -917,6 +917,48 @@ container<span class="token punctuation">.</span><span class="token function">ad
 <li><code>DataTransfer</code>和<code>DataTransferItem</code>接口的一个主要的不同是前者使用同步的<code>getData()</code>方法去得到拖拽项的数据,而后者使用异步的<code>getAsString()</code>方法得到拖拽项的数据</li>
 <li>使用<code>e.preventDefault()</code>这个属性可以取消一些不必要的浏览器的默认事件</li>
 </ol>
+<h2 id="mouse"><a href="#mouse" class="headerlink" title="mouse"></a>mouse</h2><blockquote>
+<p>使用<code>mousedown</code>,<code>mousemove</code>,<code>mouseup</code>配合绝对定位<code>absolute</code>来进行拖拽</p>
+</blockquote>
+<p><img src="./mouse.png" alt="mouse"></p>
+<ol>
+<li><code>mousedown</code>:这个阶段首先确定的就是鼠标相对于盒子内部的距离<code>ol = pageX-offsetLeft</code><ul>
+<li>不光是<code>pageX</code>,也可以使用<code>clientX</code>.在合适的情况下选择合适的属性</li>
+</ul>
+</li>
+<li><code>mousemove</code>:在执行阶段,目标是算出偏移量的距离.使用<code>pageX-ol</code>.<ul>
+<li>ol就是鼠标距离拖拽目标的距离(是固定的)</li>
+</ul>
+</li>
+<li><code>mouseup</code>:在抬起阶段,解绑mousemove事事件.</li>
+</ol>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+  <span class="token selector">#box1</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+  box1<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"mousedown"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    bl <span class="token operator">=</span> e<span class="token punctuation">.</span>pageX <span class="token operator">-</span> box1<span class="token punctuation">.</span>offsetLeft
+    br <span class="token operator">=</span> e<span class="token punctuation">.</span>pageY <span class="token operator">-</span> box1<span class="token punctuation">.</span>offsetTop
+    <span class="token keyword">function</span> <span class="token function">move</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      box1<span class="token punctuation">.</span>style<span class="token punctuation">.</span>left <span class="token operator">=</span> e<span class="token punctuation">.</span>pageX <span class="token operator">-</span> bl <span class="token operator">+</span> <span class="token string">"px"</span>
+      box1<span class="token punctuation">.</span>style<span class="token punctuation">.</span>top <span class="token operator">=</span> e<span class="token punctuation">.</span>pageY <span class="token operator">-</span> br <span class="token operator">+</span> <span class="token string">"px"</span>
+    <span class="token punctuation">&#125;</span>
+    document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"mousemove"</span><span class="token punctuation">,</span> move<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+    document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"mouseup"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      document<span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span><span class="token string">"mousemove"</span><span class="token punctuation">,</span> move<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1755,7 +1797,7 @@ container<span class="token punctuation">.</span><span class="token function">ad
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数
                                             :&nbsp;<span class="white-color">
-                                                145.7k
+                                                145.6k
                                             </span>
                                             
                                                 
