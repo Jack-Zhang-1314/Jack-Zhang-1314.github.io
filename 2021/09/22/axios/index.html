@@ -566,7 +566,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-19
+                    2022-04-09
                 </div>
                 
 
@@ -771,11 +771,12 @@
   后端要设置Access-Control-Allow-Origin为你的源地址，
   例如http://localhost:8080，不能是*，
   而且还要设置header(‘Access-Control-Allow-Credentials: true’); */</span>
+  <span class="token comment">//如果不是同一个域,在这里就需要设置的源地址就是http://localhost:4000</span>
   withCredentials<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><span class="token comment">//默认值false</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 <span class="token comment">//对于拦截器的设定</span>
 
-<span class="token keyword">export</span> <span class="token keyword">default</span> service<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">export</span> <span class="token keyword">default</span> service<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>在axios.js中设置请求的方法</li>
