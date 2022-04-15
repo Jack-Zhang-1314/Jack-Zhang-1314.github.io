@@ -566,14 +566,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-28
+                    2022-04-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.7k
+                    3.8k
                 </div>
                 
 
@@ -657,7 +657,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>html,body,head,colgroup,tbody.</li>
 </ul>
 </li>
-<li><p>例:<code>&lt;br&gt;...&lt;/br&gt;</code>是错误的,正确的是</br>,HTML5之前的&lt;br&gt;也是可以的</p>
+<li><p>例:<code>&lt;br&gt;...&lt;/br&gt;</code>是错误的,正确的是&lt;&#x2F;br&gt;,HTML5之前的&lt;br&gt;也是可以的</p>
 </li>
 <li><p>例:可以省略全部标记的元素,如将<code>body</code>元素省略不写,但是<span style="color:red">他在文档结构中还是存在,可以使用<code>document.html</code>访问到</span></p>
 </li>
@@ -715,11 +715,11 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <h2 id="新增的元素"><a href="#新增的元素" class="headerlink" title="新增的元素"></a>新增的元素</h2><h3 id="新增的结构元素"><a href="#新增的结构元素" class="headerlink" title="新增的结构元素"></a>新增的结构元素</h3><blockquote>
 <p>章节,页眉,页脚或页面中的其它部分,可以与h1,h2,h3,h4,h5,h6</p>
 <blockquote>
-<p>取代的是&lt;div&gt;…</div></p>
+<p>取代的是&lt;div&gt;…&lt;&#x2F;div&gt;</p>
 </blockquote>
 </blockquote>
 <ol>
-<li>&lt;section&gt;…</section>:<strong>分段分块</strong><ul>
+<li>&lt;section&gt;…&lt;&#x2F;section&gt;:<strong>分段分块</strong><ul>
 <li>对网站或者应用程序中页面上的内容进行分块</li>
 <li>注意:<ul>
 <li>当一个容器需要被直接定义样式或者通过脚本定义行为是,推荐使用div而非section</li>
@@ -728,7 +728,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </li>
 </ul>
 </li>
-<li>&lt;article&gt;…</article>:<strong>强调独立性</strong><ul>
+<li>&lt;article&gt;…&lt;&#x2F;article&gt;:<strong>强调独立性</strong><ul>
 <li>代表文档,页面或者应用程序中独立的,完整的,可以独自被外部引用的内容</li>
 <li>可以为博客或报刊中的文中,独立的帖子,独立的插件或者任意独立的内容</li>
 <li>注意:<ol>
@@ -740,38 +740,38 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </li>
 </ul>
 </li>
-<li>&lt;nav&gt;…</nav>取代的是:&lt;ul&gt;</ul><ul>
+<li>&lt;nav&gt;…&lt;&#x2F;nav&gt;取代的是:&lt;ul&gt;&lt;&#x2F;ul&gt;<ul>
 <li>用作页面导航的链接组</li>
 <li>只需要将主要的,基本的链接组放进nav元素</li>
 <li>一个页面可以使用多个nav</li>
 </ul>
 </li>
-<li>&lt;aside&gt;…</aside><ul>
+<li>&lt;aside&gt;…&lt;&#x2F;aside&gt;<ul>
 <li>表示当前页面的附属信息部分</li>
 <li>可以包含当前页面或主要内容相关的引用,侧边栏,广告等有别于主要内容</li>
 </ul>
 </li>
-<li>&lt;time&gt;</time>,取代的&lt;span&gt;</span><ul>
+<li>&lt;time&gt;&lt;&#x2F;time&gt;,取代的&lt;span&gt;&lt;&#x2F;span&gt;<ul>
 <li>表示24小时某个时刻或者某个日期</li>
 </ul>
 </li>
 </ol>
 <h3 id="新增的非主体结构元素"><a href="#新增的非主体结构元素" class="headerlink" title="新增的非主体结构元素"></a>新增的非主体结构元素</h3><ul>
-<li>&lt;header&gt;…</header><ul>
+<li>&lt;header&gt;…&lt;&#x2F;header&gt;<ul>
 <li>引导和导航作用的结构元素,通常防止整个页面或页面中的一个内容区块的标题</li>
 <li>例如数据表格,搜索表单或相关的logo</li>
 </ul>
 </li>
-<li>&lt;hgroup&gt;…</hgroup><ul>
+<li>&lt;hgroup&gt;…&lt;&#x2F;hgroup&gt;<ul>
 <li>将标题极其子标题进行分组的元素</li>
 </ul>
 </li>
-<li>&lt;footer&gt;…</footer><ul>
+<li>&lt;footer&gt;…&lt;&#x2F;footer&gt;<ul>
 <li>可以作为上层父级内容区块或是一个跟区块的脚注</li>
 <li>通常包括起教官区块的脚注信息,如作者,相关阅读链接等</li>
 </ul>
 </li>
-<li>&lt;address&gt;…</address><ul>
+<li>&lt;address&gt;…&lt;&#x2F;address&gt;<ul>
 <li>用来在文档中呈现联系信息,包括文档作者或文档维护者的网站链接,电子邮箱,名字,手机号等</li>
 </ul>
 </li>
@@ -797,27 +797,27 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <h3 id="新增的其它元素"><a href="#新增的其它元素" class="headerlink" title="新增的其它元素"></a>新增的其它元素</h3><ul>
 <li>video元素定义视频,比如电影片段或其它视频流:<ul>
-<li>&lt;video src&#x3D;”moive.ogg” controls&#x3D;”controls”&gt;video元素</video></li>
+<li>&lt;video src&#x3D;”moive.ogg” controls&#x3D;”controls”&gt;video元素&lt;&#x2F;video&gt;</li>
 </ul>
 </li>
 <li>audio元素定义音频:<ul>
-<li>&lt;audio src&#x3D;”someaudio.wav”&gt;audio元素</audio></li>
+<li>&lt;audio src&#x3D;”someaudio.wav”&gt;audio元素&lt;&#x2F;audio&gt;</li>
 </ul>
 </li>
 <li>embed元素用来插入各种多媒体,格式可以是Midi,Wav,AIFF,AU,MP3:<ul>
-<li>&lt;embed src&#x3D;”horse.wav”&gt;</embed></li>
+<li>&lt;embed src&#x3D;”horse.wav”&gt;&lt;&#x2F;embed&gt;</li>
 </ul>
 </li>
 <li>mark元素主要用来在视觉上向用户呈现那些需要突出显示或高亮显示的文字<ul>
-<li>&lt;mark&gt;</mark>取代&lt;span&gt;</span></li>
+<li>&lt;mark&gt;&lt;&#x2F;mark&gt;取代&lt;span&gt;&lt;&#x2F;span&gt;</li>
 </ul>
 </li>
 <li>progress元素表示JavaScript中耗费时间的函数的进程<ul>
-<li>&lt;progress&gt;</progress>,需要使用js脚本控制</li>
+<li>&lt;progress&gt;&lt;&#x2F;progress&gt;,需要使用js脚本控制</li>
 </ul>
 </li>
 <li>meter元素规定范围内的数值  <ul>
-<li>&lt;meter&gt;</meter></li>
+<li>&lt;meter&gt;&lt;&#x2F;meter&gt;</li>
 </ul>
 </li>
 </ul>
@@ -882,11 +882,11 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <ul>
 <li>datalist元素表示可选数据列表,与input元素配合使用,可以制作输入值的下拉列表<ul>
-<li>&lt;datalist&gt;</datalist></li>
+<li>&lt;datalist&gt;&lt;&#x2F;datalist&gt;</li>
 </ul>
 </li>
 <li>datagrid表示可选数据列表,他以树形列表的形式来显示<ul>
-<li>&lt;datagrid&gt;</datagrid></li>
+<li>&lt;datagrid&gt;&lt;&#x2F;datagrid&gt;</li>
 </ul>
 </li>
 <li>keygen元素表示生成密钥<ul>
@@ -2240,7 +2240,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数
                                             :&nbsp;<span class="white-color">
-                                                145.6k
+                                                145.7k
                                             </span>
                                             
                                                 
