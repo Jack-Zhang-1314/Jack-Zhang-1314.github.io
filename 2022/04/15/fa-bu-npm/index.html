@@ -36,7 +36,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 6.1.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="alternate" href="/atom.xml" title="苍穹之下" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="苍穹之下" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 
@@ -867,7 +867,8 @@ Sets tag <span class="token string">'latest'</span> <span class="token keyword">
 </ul>
 <pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
   <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    <span class="token property">"target"</span><span class="token operator">:</span> <span class="token string">"es2016"</span><span class="token punctuation">,</span>                                  
+    <span class="token property">"target"</span><span class="token operator">:</span> <span class="token string">"es2016"</span><span class="token punctuation">,</span>  
+    <span class="token property">"module"</span><span class="token operator">:</span> <span class="token string">"CommonJS"</span><span class="token punctuation">,</span>                                
      <span class="token property">"rootDir"</span><span class="token operator">:</span> <span class="token string">"./src"</span><span class="token punctuation">,</span>                                 
      <span class="token property">"declaration"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>                              
      <span class="token property">"sourceMap"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>                                
@@ -877,7 +878,7 @@ Sets tag <span class="token string">'latest'</span> <span class="token keyword">
     <span class="token property">"strict"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
     <span class="token property">"skipLibCheck"</span><span class="token operator">:</span> <span class="token boolean">true</span>
   <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>对于<code>package.json</code>文件最好把项目放置在源文件<code>src</code>中,此时只需要配置打包生成的目录上传包就可以了</li>
