@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="nginx, 苍穹之下">
+    <meta name="keywords" content="标签: npm, 苍穹之下">
     <meta name="description" content="想要属于一个自己的网站,菜鸡前端拼命前行">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>nginx | 苍穹之下</title>
+    <title>标签: npm | 苍穹之下</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -405,1116 +405,326 @@
 
 </header>
 
-                        
-
-
-
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
-    <div class="container" style="right: 0px;left: 0px;">
-        <div class="row">
-            <div class="col s12 m12 l12">
-                <div class="brand">
-                    <h1 class="description center-align post-title">nginx</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-<main class="post-container content">
-
-    
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
-<style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
-
-    #articleContent :focus {
-        outline: none;
-    }
-
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
-
-    .toc-widget {
-        width: 345px;
-        padding-left: 20px;
-    }
-
-    .toc-widget .toc-title {
-        padding: 35px 0 15px 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
-
-    #toc-content {
-        padding-bottom: 30px;
-        overflow: auto;
-    }
-
-    #toc-content ol {
-        padding-left: 10px;
-    }
-
-    #toc-content ol li {
-        padding-left: 10px;
-    }
-
-    #toc-content .toc-link:hover {
-        color: #42b983;
-        font-weight: 700;
-        text-decoration: underline;
-    }
-
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-
-        position: absolute;
-        right: 23.5vw;
-        display: block;
-    }
-
-    #toc-content .is-active-link {
-        color: #42b983;
-    }
-
-    #floating-toc-btn {
-        position: fixed;
-        right: 15px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
-
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
-
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
-</style>
-<div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
-<div id="artDetail">
-    <div class="card">
-        <div class="card-content article-info">
-            <div class="row tag-cate">
-                <div class="col s7">
-                    
-                    <div class="article-tag">
-                        
-                            <a href="/tags/config/">
-                                <span class="chip bg-color">config</span>
-                            </a>
-                        
-                            <a href="/tags/nginx/">
-                                <span class="chip bg-color">nginx</span>
-                            </a>
-                        
-                    </div>
-                    
-                </div>
-                <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/config/" class="post-category">
-                                config
-                            </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-
-            <div class="post-info">
+                        <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-27
-                </div>
-                
-
-                
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-19
-                </div>
-                
-
-                
-                <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
-                </div>
-                
-
-                
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
-                </div>
-                
-
-                
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
-            </div>
-        </div>
-        <hr class="clearfix">
-
-        
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
-
-        
-        <!-- 代码块折行 -->
-        <style type="text/css">
-            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
-        </style>
-        
-
-        <div class="card-content article-card-content">
-            <div id="articleContent">
-                <h2 id="相关知识"><a href="#相关知识" class="headerlink" title="相关知识"></a>相关知识</h2><blockquote>
-<p>什么是正向代理</p>
-<p>是一个位于客户端和目标服务器之间的服务器(代理服务器),为了从目标服务器取得内容,客户端向代理服务器发送一个请求并指定目标,然后代理服务器向目标服务器转交请求并将获得的内容返回给客户端.</p>
-</blockquote>
-<ul>
-<li>突破访问限制</li>
-<li>提高访问速度</li>
-<li>隐藏客户端真实IP</li>
-</ul>
-<p><img src="./%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86.png" alt="正向代理"></p>
-<blockquote>
-<p>什么是反向代理</p>
-<p>是指以代理服务器来接受internet上的连接请求,然后将请求转发给内部网络上的服务器,并将从服务器上得到的结果返回给internet上请求连接的客户端,此时代理服务器对外就表现为一个反向代理服务器</p>
-</blockquote>
-<ul>
-<li>隐藏服务器真实IP</li>
-<li>负载均衡</li>
-<li>提高访问速度</li>
-<li>提供安全保障</li>
-</ul>
-<p><img src="./%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86.png" alt="反向代理"></p>
-<blockquote>
-<p>什么是负载均衡(使用多台服务器提供单一服务)</p>
-<p>它的职责是将网络请求,或者其他形式的负载<strong>均摊</strong>到不同的机器上. <code>避免集群中部分服务器压力过大,而另一些服务器比较空闲的情况</code>. 通过负载均衡,可以让每台服务器获取到适合自己处理能力的负载. 在为高负载服务器分流的同时,还可以避免资源浪费.</p>
-</blockquote>
-<ul>
-<li><strong>动静分离</strong>:为了加快网站的解析速度,可以把动态页面和静态页面由不同的服务器来解析,加快解析速度.降低原来单个服务器的压力</li>
-</ul>
-<h2 id="Nginx配置文件"><a href="#Nginx配置文件" class="headerlink" title="Nginx配置文件"></a>Nginx配置文件</h2><blockquote>
-<p>全局,events,http</p>
-</blockquote>
-<h3 id="nginx命令"><a href="#nginx命令" class="headerlink" title="nginx命令"></a>nginx命令</h3><ol>
-<li><code>nginx -v</code> 查看nginx版本号</li>
-<li><code>systemctl start nginx</code>:开启nginx</li>
-<li><code>systemctl stop nginx</code>:停止nginx</li>
-<li><code>systemctl status nginx</code>:查看状态</li>
-<li><code>systemctl enable nginx</code>:开机启动</li>
-<li><code>nginx -s reload</code>:重新启动nginx</li>
-</ol>
-<h3 id="全局快"><a href="#全局快" class="headerlink" title="全局快"></a>全局快</h3><blockquote>
-<p>全局块:从配置文件到events块之间的内容,主要会设置影响nginx服务器整体运行的配置指令</p>
-</blockquote>
-<ul>
-<li><code>user</code>:运行用户,最好指定为<code>root</code></li>
-<li><code>worker_processes</code>:nginx服务器处理并发服务的关键配置,他的值越大,可以处理的并发也越多,但是会受到硬件,软件等设备的制约</li>
-<li><code>error_log</code>:错误日志文件所在位置 </li>
-<li><code>pid</code>:pid文件所在的位置</li>
-</ul>
-<h3 id="events"><a href="#events" class="headerlink" title="events"></a>events</h3><blockquote>
-<p><code>events</code>:影响nginx与用户的网络连接</p>
-</blockquote>
-<ul>
-<li><code>worker_connections</code>:nginx支持的最大的连接数是多少</li>
-</ul>
-<blockquote>
-<p>使用<code>epoll</code>模型提高性能</p>
-</blockquote>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">events <span class="token punctuation">&#123;</span>
-   use epoll<span class="token punctuation">;</span> 
-   worker_connections <span class="token number">4096</span><span class="token punctuation">;</span> 
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>使用<code>ulimit -a</code>查看每个进程可以处理的文件数,配置文件里修改为大于1024,也会被限制,需要额外再命令行输<code>ulimit -n &lt;number&gt;</code>去修改打开我呢见数限制</p>
-</blockquote>
-<h3 id="http"><a href="#http" class="headerlink" title="http"></a>http</h3><h4 id="http全局快"><a href="#http全局快" class="headerlink" title="http全局快"></a>http全局快</h4><blockquote>
-<p>http全局快配置的指令包括文件引入,MINE-TYPE定义,日志自定义,连接超时时间,单链请求数上限</p>
-</blockquote>
-<ul>
-<li><code>log_format</code>:日志格式设定</li>
-<li><code>access_log</code>:访问日志的位置</li>
-<li><code>sendfile</code>:支持文件发送下载</li>
-<li><code>tcp_nopush</code>:允许或禁止使用socke的<code>TCP_CORK</code>的选项(发送数据包前先缓存数据),此选项仅在使用sendfile的时候使用</li>
-<li><code>tcp_nodelay</code>:是否不将小包组成成大包,提高带宽利用率</li>
-<li><code>keepalive_timeout</code>:连接保持的超时时间,单位秒(s)</li>
-<li><code>types_hash_max_size:</code>用一个散列表来保存<code>MIME type</code>与文件扩展名之间的映射,该参数就是指定该散列表桶的大小的.</li>
-<li><code>gzip</code>:是否开启gzip压缩输出</li>
-<li><code>include</code>:文件扩展名与文件类映射表</li>
-<li><code>default_type</code>:默认文件类型</li>
-</ul>
-<h4 id="server"><a href="#server" class="headerlink" title="server"></a>server</h4><blockquote>
-<p>和虚拟主机有关,完全模拟硬件主机.每个http模块苦役包括多个server块,而每个server块就相当于一个虚拟主机</p>
-</blockquote>
-<h5 id="server全局快"><a href="#server全局快" class="headerlink" title="server全局快"></a>server全局快</h5><blockquote>
-<p>最常见的配置就是本虚拟主机的监听配置和本虚拟主机的名称或IP配置</p>
-</blockquote>
-<ul>
-<li><code>listen</code>:监听地址以及端口</li>
-<li><code>server_name</code>:站点域名,可以有多个,用空格隔开</li>
-</ul>
-<h5 id="location"><a href="#location" class="headerlink" title="location"></a>location</h5><blockquote>
-<p>一个server块可以包含多个location块.主要用于nginx服务器接收到的请求字符串,对虚拟主机之外的字符串进行匹配,对特定的请求进行处理</p>
-</blockquote>
-<ul>
-<li><code>/</code>:域名或者主机IP</li>
-<li><code>root</code>:根目录位置</li>
-<li><code>index</code>:默认的主页文件位置,会从根目录下寻找</li>
-</ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">location / <span class="token punctuation">&#123;</span>
-    root /opt/web/Jack-Zhang-1314.github.io<span class="token punctuation">;</span>
-    index index.html<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>如果设定<code>/test</code>,那么root目录会改为<code>/opt/web/Jack-Zhang-1314.github.io/test</code></p>
-<p>主页文件会改为<code>/opt/web/Jack-Zhang-1314.github.io/test/index.html</code></p>
-</blockquote>
-<ul>
-<li><code>location = /uri</code>:&#x3D; 开头表示精确匹配,只有完全匹配上才能生效.</li>
-<li><code>location ^~ /uri</code>:^~ 开头对 URL 路径进行前缀匹配,并且在正则之前.</li>
-<li><code>location ~ pattern</code>:~ 开头表示区分大小写的正则匹配.</li>
-<li><code>location ~* pattern</code>:~* 开头表示不区分大小写的正则匹配.</li>
-<li><code>location /uri</code>:不带任何修饰符,也表示前缀匹配,但是在正则匹配之后,如果没有正则命中,命中最长的规则.</li>
-<li><code>location /</code>:通用匹配,任何未匹配到其它 location 的请求都会匹配到,相当于 switch 中的 default.</li>
-</ul>
-<h2 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h2><blockquote>
-<p>通常将反向代理做为公网访问地址,web服务器是内网,即通过nginx配置外网访问web服务器内网</p>
-</blockquote>
-<ul>
-<li>隐藏服务保证内网安全</li>
-</ul>
-<blockquote>
-<p>通过<code>proxy_pass</code>来配置</p>
-</blockquote>
-<pre class="line-numbers language-conf" data-language="conf"><code class="language-conf">server &#123;
-  listen       80;
-  server_name  www.zhengqing520.com;
-  location &#x2F; &#123; # 访问80端口后的所有路径都转发到 proxy_pass 配置的ip中
-    root   &#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html;
-    index  index.html index.htm;
-    proxy_pass 127.0.0.1:8080; 
-  &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ol>
-<li><code>server_name</code>服务器地址或绑定域名</li>
-<li><code>proxy_pass</code>:配置反向代理的ip地址和端口号(url地址需加上http:&#x2F;&#x2F; 或 <code>https://</code>)</li>
-</ol>
-
+                a little blog
                 
             </div>
-            <hr/>
 
-            
-
-    <div class="reprint" id="reprint-statement">
-        
-            <div class="reprint__author">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-user">
-                        文章作者:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Jack-zhang</a>
-                </span>
-            </div>
-            <div class="reprint__type">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-link">
-                        文章链接:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    <a href="http://mail.zyjcould.ltd/2022/01/27/nginx/">http://mail.zyjcould.ltd/2022/01/27/nginx/</a>
-                </span>
-            </div>
-            <div class="reprint__notice">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-copyright">
-                        版权声明:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    本博客所有文章除特別声明外，均采用
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Jack-zhang</a>
-                    !
-                </span>
-            </div>
-        
-    </div>
-
-    <script async defer>
-      document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
-      });
-
-      function navToReprintStatement() {
-        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }
-    </script>
-
-
-
-            <div class="tag_share" style="display: block;">
-                <div class="post-meta__tag-list" style="display: inline-block;">
-                    
-                        <div class="article-tag">
+            <div class="description center-align">
+                
+                <span id="subtitle"></span>
+                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: [ 
                             
-                                <a href="/tags/config/">
-                                    <span class="chip bg-color">config</span>
-                                </a>
+                                "我的学习旅途,一直在前进啊",
                             
-                                <a href="/tags/nginx/">
-                                    <span class="chip bg-color">nginx</span>
-                                </a>
+                                "我的学习旅途,一直在前进啊",
                             
-                        </div>
-                    
-                </div>
-                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-<div id="article-share">
-
-    
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
-    
-
-    
-
-</div>
-
-                </div>
-            </div>
-            
-                <style>
-    #reward {
-        margin: 40px 0;
-        text-align: center;
-    }
-
-    #reward .reward-link {
-        font-size: 1.4rem;
-        line-height: 38px;
-    }
-
-    #reward .btn-floating:hover {
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    #rewardModal {
-        width: 320px;
-        height: 350px;
-    }
-
-    #rewardModal .reward-title {
-        margin: 15px auto;
-        padding-bottom: 5px;
-    }
-
-    #rewardModal .modal-content {
-        padding: 10px;
-    }
-
-    #rewardModal .close {
-        position: absolute;
-        right: 15px;
-        top: 15px;
-        color: rgba(0, 0, 0, 0.5);
-        font-size: 1.3rem;
-        line-height: 20px;
-        cursor: pointer;
-    }
-
-    #rewardModal .close:hover {
-        color: #ef5350;
-        transform: scale(1.3);
-        -moz-transform:scale(1.3);
-        -webkit-transform:scale(1.3);
-        -o-transform:scale(1.3);
-    }
-
-    #rewardModal .reward-tabs {
-        margin: 0 auto;
-        width: 210px;
-    }
-
-    .reward-tabs .tabs {
-        height: 38px;
-        margin: 10px auto;
-        padding-left: 0;
-    }
-
-    .reward-content ul {
-        padding-left: 0 !important;
-    }
-
-    .reward-tabs .tabs .tab {
-        height: 38px;
-        line-height: 38px;
-    }
-
-    .reward-tabs .tab a {
-        color: #fff;
-        background-color: #ccc;
-    }
-
-    .reward-tabs .tab a:hover {
-        background-color: #ccc;
-        color: #fff;
-    }
-
-    .reward-tabs .wechat-tab .active {
-        color: #fff !important;
-        background-color: #22AB38 !important;
-    }
-
-    .reward-tabs .alipay-tab .active {
-        color: #fff !important;
-        background-color: #019FE8 !important;
-    }
-
-    .reward-tabs .reward-img {
-        width: 210px;
-        height: 210px;
-    }
-</style>
-
-<div id="reward">
-    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
-
-    <!-- Modal Structure -->
-    <div id="rewardModal" class="modal">
-        <div class="modal-content">
-            <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
-            <div class="reward-content">
-                <div class="reward-tabs">
-                    <ul class="tabs row">
-                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
-                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
-                    </ul>
-                    <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
-                    </div>
-                    <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    $(function () {
-        $('.tabs').tabs();
-    });
-</script>
-
-            
-        </div>
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-        <style>
-    .valine-card {
-        margin: 1.5rem auto;
-    }
-
-    .valine-card .card-content {
-        padding: 20px 20px 5px 20px;
-    }
-
-    #vcomments textarea {
-        box-sizing: border-box;
-        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
-    }
-
-    #vcomments p {
-        margin: 2px 2px 10px;
-        font-size: 1.05rem;
-        line-height: 1.78rem;
-    }
-
-    #vcomments blockquote p {
-        text-indent: 0.2rem;
-    }
-
-    #vcomments a {
-        padding: 0 2px;
-        color: #4cbf30;
-        font-weight: 500;
-        text-decoration: none;
-    }
-
-    #vcomments img {
-        max-width: 100%;
-        height: auto;
-        cursor: pointer;
-    }
-
-    #vcomments ol li {
-        list-style-type: decimal;
-    }
-
-    #vcomments ol,
-    ul {
-        display: block;
-        padding-left: 2em;
-        word-spacing: 0.05rem;
-    }
-
-    #vcomments ul li,
-    ol li {
-        display: list-item;
-        line-height: 1.8rem;
-        font-size: 1rem;
-    }
-
-    #vcomments ul li {
-        list-style-type: disc;
-    }
-
-    #vcomments ul ul li {
-        list-style-type: circle;
-    }
-
-    #vcomments table, th, td {
-        padding: 12px 13px;
-        border: 1px solid #dfe2e5;
-    }
-
-    #vcomments table, th, td {
-        border: 0;
-    }
-
-    table tr:nth-child(2n), thead {
-        background-color: #fafafa;
-    }
-
-    #vcomments table th {
-        background-color: #f2f2f2;
-        min-width: 80px;
-    }
-
-    #vcomments table td {
-        min-width: 80px;
-    }
-
-    #vcomments h1 {
-        font-size: 1.85rem;
-        font-weight: bold;
-        line-height: 2.2rem;
-    }
-
-    #vcomments h2 {
-        font-size: 1.65rem;
-        font-weight: bold;
-        line-height: 1.9rem;
-    }
-
-    #vcomments h3 {
-        font-size: 1.45rem;
-        font-weight: bold;
-        line-height: 1.7rem;
-    }
-
-    #vcomments h4 {
-        font-size: 1.25rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    #vcomments h5 {
-        font-size: 1.1rem;
-        font-weight: bold;
-        line-height: 1.4rem;
-    }
-
-    #vcomments h6 {
-        font-size: 1rem;
-        line-height: 1.3rem;
-    }
-
-    #vcomments p {
-        font-size: 1rem;
-        line-height: 1.5rem;
-    }
-
-    #vcomments hr {
-        margin: 12px 0;
-        border: 0;
-        border-top: 1px solid #ccc;
-    }
-
-    #vcomments blockquote {
-        margin: 15px 0;
-        border-left: 5px solid #42b983;
-        padding: 1rem 0.8rem 0.3rem 0.8rem;
-        color: #666;
-        background-color: rgba(66, 185, 131, .1);
-    }
-
-    #vcomments pre {
-        font-family: monospace, monospace;
-        padding: 1.2em;
-        margin: .5em 0;
-        background: #272822;
-        overflow: auto;
-        border-radius: 0.3em;
-        tab-size: 4;
-    }
-
-    #vcomments code {
-        font-family: monospace, monospace;
-        padding: 1px 3px;
-        font-size: 0.92rem;
-        color: #e96900;
-        background-color: #f8f8f8;
-        border-radius: 2px;
-    }
-
-    #vcomments pre code {
-        font-family: monospace, monospace;
-        padding: 0;
-        color: #e8eaf6;
-        background-color: #272822;
-    }
-
-    #vcomments pre[class*="language-"] {
-        padding: 1.2em;
-        margin: .5em 0;
-    }
-
-    #vcomments code[class*="language-"],
-    pre[class*="language-"] {
-        color: #e8eaf6;
-    }
-
-    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
-        position: inherit;
-        margin-left: -1.3rem;
-        margin-right: 0.4rem;
-        margin-top: -1px;
-        vertical-align: middle;
-        left: unset;
-        visibility: visible;
-    }
-
-    #vcomments b,
-    strong {
-        font-weight: bold;
-    }
-
-    #vcomments dfn {
-        font-style: italic;
-    }
-
-    #vcomments small {
-        font-size: 85%;
-    }
-
-    #vcomments cite {
-        font-style: normal;
-    }
-
-    #vcomments mark {
-        background-color: #fcf8e3;
-        padding: .2em;
-    }
-
-    #vcomments table, th, td {
-        padding: 12px 13px;
-        border: 1px solid #dfe2e5;
-    }
-
-    table tr:nth-child(2n), thead {
-        background-color: #fafafa;
-    }
-
-    #vcomments table th {
-        background-color: #f2f2f2;
-        min-width: 80px;
-    }
-
-    #vcomments table td {
-        min-width: 80px;
-    }
-
-    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
-        position: inherit;
-        margin-left: -1.3rem;
-        margin-right: 0.4rem;
-        margin-top: -1px;
-        vertical-align: middle;
-        left: unset;
-        visibility: visible;
-    }
-</style>
-
-<div class="card valine-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
-        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
-        <span>评论</span>
-    </div>
-    <div id="vcomments" class="card-content" style="display: grid">
-    </div>
-</div>
-
-<script src="/libs/valine/av-min.js"></script>
-<script src="/libs/valine/Valine.min.js"></script>
-<script>
-    new Valine({
-        el: '#vcomments',
-        appId: 'ha91At85XM1oBPn1UB63Rkxc-9Nh9j0Va',
-        appKey: 'd4sclrxt1coswQE8xKNb0CEP',
-        notify: 'false' === 'true',
-        verify: 'false' === 'true',
-        visitor: 'true' === 'true',
-        avatar: 'mm',
-        pageSize: '10',
-        lang: 'zh-cn',
-        placeholder: 'just go go'
-    });
-</script>
-
-<!--酷Q推送-->
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-<article id="prenext-posts" class="prev-next articles">
-    <div class="row article-row">
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
-            <div class="card">
-                <a href="/2022/01/27/linux/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="linux">
-                        
-                        <span class="card-title">linux</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            linux的简单应用
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-27
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/config/" class="post-category">
-                                    config
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/config/">
-                        <span class="chip bg-color">config</span>
-                    </a>
-                    
-                    <a href="/tags/linux/">
-                        <span class="chip bg-color">linux</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/01/21/docker/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Docker">
-                        
-                        <span class="card-title">Docker</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            docker的简单应用
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-21
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/config/" class="post-category">
-                                    config
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Docker/">
-                        <span class="chip bg-color">Docker</span>
-                    </a>
-                    
-                    <a href="/tags/config/">
-                        <span class="chip bg-color">config</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-    </div>
-</article>
-
-</div>
-
-
-<script>
-    $('#articleContent').on('copy', function (e) {
-        // IE8 or earlier browser is 'undefined'
-        if (typeof window.getSelection === 'undefined') return;
-
-        var selection = window.getSelection();
-        // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
-            return;
-        }
-
-        // create a div outside of the visible area and fill it with the selected text.
-        var bodyElement = document.getElementsByTagName('body')[0];
-        var newdiv = document.createElement('div');
-        newdiv.style.position = 'absolute';
-        newdiv.style.left = '-99999px';
-        bodyElement.appendChild(newdiv);
-        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
-
-        // we need a <pre> tag workaround.
-        // otherwise the text inside "pre" loses all the line breaks!
-        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
-            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
-        }
-
-        var url = document.location.href;
-        newdiv.innerHTML += '<br />'
-            + '来源: 苍穹之下<br />'
-            + '文章作者: Jack-zhang<br />'
-            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
-            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
-
-        selection.selectAllChildren(newdiv);
-        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
-    });
-</script>
-
-
-<!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
-
-<!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
-
-<!-- 代码块复制 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
-
-
-<!-- 代码块收缩 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
-
-
-    </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget card">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录
-            </div>
-            <div id="toc-content"></div>
-        </div>
-    </div>
-</div>
-
-<!-- TOC 悬浮按钮. -->
-
-    <div id="floating-toc-btn" class="hide-on-med-and-down">
-        <a class="btn-floating btn-large bg-color">
-            <i class="fas fa-list-ul"></i>
-        </a>
-    </div>
-    
-
-        <script src="/libs/tocbot/tocbot.min.js"></script>
-        <script>
-            $(function () {
-                tocbot.init({
-                    tocSelector: '#toc-content',
-                    contentSelector: '#articleContent',
-                    headingsOffset: -($(window).height() * 0.4 - 45),
-                    collapseDepth: Number('0'),
-                    headingSelector: 'h2, h3, h4'
-                });
-
-                // modify the toc link href to support Chinese.
-                let i = 0;
-                let tocHeading = 'toc-heading-';
-                $('#toc-content a').each(function () {
-                    $(this).attr('href', '#' + tocHeading + (++i));
-                });
-
-                // modify the heading title id to support Chinese.
-                i = 0;
-                $('#articleContent').children('h2, h3, h4').each(function () {
-                    $(this).attr('id', tocHeading + (++i));
-                });
-
-                // Set scroll toc fixed.
-                let tocHeight = parseInt($(window).height() * 0.4 - 64);
-                let $tocWidget = $('.toc-widget');
-                $(window).scroll(function () {
-                    let scroll = $(window).scrollTop();
-                    /* add post toc fixed. */
-                    if (scroll > tocHeight) {
-                        $tocWidget.addClass('toc-fixed');
-                    } else {
-                        $tocWidget.removeClass('toc-fixed');
-                    }
-                });
-
-        
-                    /* 修复文章卡片 div 的宽度. */
-                    let fixPostCardWidth = function (srcId, targetId) {
-                        let srcDiv = $('#' + srcId);
-                        if (srcDiv.length === 0) {
-                            return;
-                        }
-
-                        let w = srcDiv.width();
-                        if (w >= 450) {
-                            w = w + 21;
-                        } else if (w >= 350 && w < 450) {
-                            w = w + 18;
-                        } else if (w >= 300 && w < 350) {
-                            w = w + 16;
-                        } else {
-                            w = w + 14;
-                        }
-                        $('#' + targetId).width(w);
-                    };
-
-                    // 切换TOC目录展开收缩的相关操作.
-                    const expandedClass = 'expanded';
-                    let $tocAside = $('#toc-aside');
-                    let $mainContent = $('#main-content');
-                    $('#floating-toc-btn .btn-floating').click(function () {
-                        if ($tocAside.hasClass(expandedClass)) {
-                            $tocAside.removeClass(expandedClass).hide();
-                            $mainContent.removeClass('l9');
-                        } else {
-                            $tocAside.addClass(expandedClass).show();
-                            $mainContent.addClass('l9');
-                        }
-                        fixPostCardWidth('artDetail', 'prenext-posts');
+                        ],
+                        startDelay: 300,
+                        typeSpeed: 100,
+                        loop: true,
+                        backSpeed: 50,
+                        showCursor: true
                     });
-        
-    });
-        </script>
+                </script>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // 每天切换 banner 图.  Switch banner image every day.
+    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+</script>
+
+
+    </div>
+</div>
+
+<main class="content">
+
     
 
+<div id="tags" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
+            </div>
+            <div class="tag-chips">
+                
+                
+                <a href="/tags/Docker/" title="Docker: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Docker" style="background-color: #F9EBEA;">Docker
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/config/" title="config: 22">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="config" style="background-color: #F5EEF8;">config
+                        <span class="tag-length">22</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/JS/" title="JS: 56">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="JS" style="background-color: #D5F5E3;">JS
+                        <span class="tag-length">56</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/node/" title="node: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="node" style="background-color: #E8F8F5;">node
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/ESlint/" title="ESlint: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="ESlint" style="background-color: #FEF9E7;">ESlint
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/TS/" title="TS: 19">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="TS" style="background-color: #F8F9F9;">TS
+                        <span class="tag-length">19</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/git/" title="git: 7">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="git" style="background-color: #82E0AA;">git
+                        <span class="tag-length">7</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/xhr/" title="xhr: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="xhr" style="background-color: #D7BDE2;">xhr
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%88%AC%E8%99%AB/" title="爬虫: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="爬虫" style="background-color: #A3E4D7;">爬虫
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Axios/" title="Axios: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Axios" style="background-color: #85C1E9;">Axios
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/HTTP/" title="HTTP: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="HTTP" style="background-color: #F8C471;">HTTP
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/sourceCode/" title="sourceCode: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="sourceCode" style="background-color: #F9E79F;">sourceCode
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/vue/" title="vue: 5">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="vue" style="background-color: #85C1E9;">vue
+                        <span class="tag-length">5</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/html/" title="html: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="html" style="background-color: #FEF9E7;">html
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/linux/" title="linux: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="linux" style="background-color: #85C1E9;">linux
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/mongodb/" title="mongodb: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="mongodb" style="background-color: #85C1E9;">mongodb
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/nginx/" title="nginx: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="nginx" style="background-color: #FEF9E7;">nginx
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/GO/" title="GO: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="GO" style="background-color: #F8F9F9;">GO
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/vue3/" title="vue3: 7">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="vue3" style="background-color: #F8F9F9;">vue3
+                        <span class="tag-length">7</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/vueRouter/" title="vueRouter: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="vueRouter" style="background-color: #D5F5E3;">vueRouter
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/vue2/" title="vue2: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="vue2" style="background-color: #FEF9E7;">vue2
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/vuex/" title="vuex: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="vuex" style="background-color: #85C1E9;">vuex
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/TCP/" title="TCP: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="TCP" style="background-color: #82E0AA;">TCP
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/npm/" title="npm: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="npm" style="background-color: #F9EBEA;">npm
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="config, JS, npm" data-aos="fade-up">
+                <div class="card">
+                    <a href="/2022/04/15/fa-bu-npm/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="发布npm">
+                            
+                            <span class="card-title">发布npm</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/config/" class="post-category">
+                                config
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </article>
 </main>
 
 

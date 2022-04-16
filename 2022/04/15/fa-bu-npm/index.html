@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="nginx, 苍穹之下">
+    <meta name="keywords" content="发布npm, 苍穹之下">
     <meta name="description" content="想要属于一个自己的网站,菜鸡前端拼命前行">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>nginx | 苍穹之下</title>
+    <title>发布npm | 苍穹之下</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -409,12 +409,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">nginx</h1>
+                    <h1 class="description center-align post-title">发布npm</h1>
                 </div>
             </div>
         </div>
@@ -534,8 +534,12 @@
                                 <span class="chip bg-color">config</span>
                             </a>
                         
-                            <a href="/tags/nginx/">
-                                <span class="chip bg-color">nginx</span>
+                            <a href="/tags/JS/">
+                                <span class="chip bg-color">JS</span>
+                            </a>
+                        
+                            <a href="/tags/npm/">
+                                <span class="chip bg-color">npm</span>
                             </a>
                         
                     </div>
@@ -559,28 +563,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-27
+                    2022-04-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-19
+                    2022-04-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    7 分
                 </div>
                 
 
@@ -608,144 +612,278 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="相关知识"><a href="#相关知识" class="headerlink" title="相关知识"></a>相关知识</h2><blockquote>
-<p>什么是正向代理</p>
-<p>是一个位于客户端和目标服务器之间的服务器(代理服务器),为了从目标服务器取得内容,客户端向代理服务器发送一个请求并指定目标,然后代理服务器向目标服务器转交请求并将获得的内容返回给客户端.</p>
-</blockquote>
+                <h2 id="字段"><a href="#字段" class="headerlink" title="字段"></a>字段</h2><ol>
+<li><p>首先需要登录自己的npm账号<code>npm login</code></p>
+</li>
+<li><p>初始化一个项目<code>npm init</code></p>
 <ul>
-<li>突破访问限制</li>
-<li>提高访问速度</li>
-<li>隐藏客户端真实IP</li>
-</ul>
-<p><img src="./%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86.png" alt="正向代理"></p>
-<blockquote>
-<p>什么是反向代理</p>
-<p>是指以代理服务器来接受internet上的连接请求,然后将请求转发给内部网络上的服务器,并将从服务器上得到的结果返回给internet上请求连接的客户端,此时代理服务器对外就表现为一个反向代理服务器</p>
-</blockquote>
-<ul>
-<li>隐藏服务器真实IP</li>
-<li>负载均衡</li>
-<li>提高访问速度</li>
-<li>提供安全保障</li>
-</ul>
-<p><img src="./%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86.png" alt="反向代理"></p>
-<blockquote>
-<p>什么是负载均衡(使用多台服务器提供单一服务)</p>
-<p>它的职责是将网络请求,或者其他形式的负载<strong>均摊</strong>到不同的机器上. <code>避免集群中部分服务器压力过大,而另一些服务器比较空闲的情况</code>. 通过负载均衡,可以让每台服务器获取到适合自己处理能力的负载. 在为高负载服务器分流的同时,还可以避免资源浪费.</p>
-</blockquote>
-<ul>
-<li><strong>动静分离</strong>:为了加快网站的解析速度,可以把动态页面和静态页面由不同的服务器来解析,加快解析速度.降低原来单个服务器的压力</li>
-</ul>
-<h2 id="Nginx配置文件"><a href="#Nginx配置文件" class="headerlink" title="Nginx配置文件"></a>Nginx配置文件</h2><blockquote>
-<p>全局,events,http</p>
-</blockquote>
-<h3 id="nginx命令"><a href="#nginx命令" class="headerlink" title="nginx命令"></a>nginx命令</h3><ol>
-<li><code>nginx -v</code> 查看nginx版本号</li>
-<li><code>systemctl start nginx</code>:开启nginx</li>
-<li><code>systemctl stop nginx</code>:停止nginx</li>
-<li><code>systemctl status nginx</code>:查看状态</li>
-<li><code>systemctl enable nginx</code>:开机启动</li>
-<li><code>nginx -s reload</code>:重新启动nginx</li>
-</ol>
-<h3 id="全局快"><a href="#全局快" class="headerlink" title="全局快"></a>全局快</h3><blockquote>
-<p>全局块:从配置文件到events块之间的内容,主要会设置影响nginx服务器整体运行的配置指令</p>
-</blockquote>
-<ul>
-<li><code>user</code>:运行用户,最好指定为<code>root</code></li>
-<li><code>worker_processes</code>:nginx服务器处理并发服务的关键配置,他的值越大,可以处理的并发也越多,但是会受到硬件,软件等设备的制约</li>
-<li><code>error_log</code>:错误日志文件所在位置 </li>
-<li><code>pid</code>:pid文件所在的位置</li>
-</ul>
-<h3 id="events"><a href="#events" class="headerlink" title="events"></a>events</h3><blockquote>
-<p><code>events</code>:影响nginx与用户的网络连接</p>
-</blockquote>
-<ul>
-<li><code>worker_connections</code>:nginx支持的最大的连接数是多少</li>
+<li>最重要的两个字段<code>name</code>和<code>version</code></li>
 </ul>
 <blockquote>
-<p>使用<code>epoll</code>模型提高性能</p>
+<p><code>name</code></p>
 </blockquote>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">events <span class="token punctuation">&#123;</span>
-   use epoll<span class="token punctuation">;</span> 
-   worker_connections <span class="token number">4096</span><span class="token punctuation">;</span> 
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>不要在name中包含js,node字样</li>
+<li>这个名字最终会是URL的一部分,命令行的参数,目录名,所以不能以点号或下划线开头</li>
+<li>这个名字可能在require()方法中被调用,所以应该尽可能短</li>
+<li>并且包的名字不能与npm中的其他包的名字一致</li>
+</ul>
+<blockquote>
+<p><code>version</code>:版本号.版本号基本是由三位数字组成</p>
+</blockquote>
+<ul>
+<li><code>MAJOR</code>:进行不兼容的API更改时的版本</li>
+<li><code>MINOR</code>:以向后兼容的方式添加功能时的版本</li>
+<li><code>PATCH</code>:向后兼容的错误修复程序的版本</li>
+</ul>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token number">1</span>   .   <span class="token number">0</span>   .   <span class="token number">0</span>
+<span class="token punctuation">[</span>MAJOR<span class="token punctuation">]</span>.<span class="token punctuation">[</span>MINOR<span class="token punctuation">]</span>.<span class="token punctuation">[</span>PATCH<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<blockquote>
-<p>使用<code>ulimit -a</code>查看每个进程可以处理的文件数,配置文件里修改为大于1024,也会被限制,需要额外再命令行输<code>ulimit -n &lt;number&gt;</code>去修改打开我呢见数限制</p>
-</blockquote>
-<h3 id="http"><a href="#http" class="headerlink" title="http"></a>http</h3><h4 id="http全局快"><a href="#http全局快" class="headerlink" title="http全局快"></a>http全局快</h4><blockquote>
-<p>http全局快配置的指令包括文件引入,MINE-TYPE定义,日志自定义,连接超时时间,单链请求数上限</p>
-</blockquote>
-<ul>
-<li><code>log_format</code>:日志格式设定</li>
-<li><code>access_log</code>:访问日志的位置</li>
-<li><code>sendfile</code>:支持文件发送下载</li>
-<li><code>tcp_nopush</code>:允许或禁止使用socke的<code>TCP_CORK</code>的选项(发送数据包前先缓存数据),此选项仅在使用sendfile的时候使用</li>
-<li><code>tcp_nodelay</code>:是否不将小包组成成大包,提高带宽利用率</li>
-<li><code>keepalive_timeout</code>:连接保持的超时时间,单位秒(s)</li>
-<li><code>types_hash_max_size:</code>用一个散列表来保存<code>MIME type</code>与文件扩展名之间的映射,该参数就是指定该散列表桶的大小的.</li>
-<li><code>gzip</code>:是否开启gzip压缩输出</li>
-<li><code>include</code>:文件扩展名与文件类映射表</li>
-<li><code>default_type</code>:默认文件类型</li>
-</ul>
-<h4 id="server"><a href="#server" class="headerlink" title="server"></a>server</h4><blockquote>
-<p>和虚拟主机有关,完全模拟硬件主机.每个http模块苦役包括多个server块,而每个server块就相当于一个虚拟主机</p>
-</blockquote>
-<h5 id="server全局快"><a href="#server全局快" class="headerlink" title="server全局快"></a>server全局快</h5><blockquote>
-<p>最常见的配置就是本虚拟主机的监听配置和本虚拟主机的名称或IP配置</p>
-</blockquote>
-<ul>
-<li><code>listen</code>:监听地址以及端口</li>
-<li><code>server_name</code>:站点域名,可以有多个,用空格隔开</li>
-</ul>
-<h5 id="location"><a href="#location" class="headerlink" title="location"></a>location</h5><blockquote>
-<p>一个server块可以包含多个location块.主要用于nginx服务器接收到的请求字符串,对虚拟主机之外的字符串进行匹配,对特定的请求进行处理</p>
-</blockquote>
-<ul>
-<li><code>/</code>:域名或者主机IP</li>
-<li><code>root</code>:根目录位置</li>
-<li><code>index</code>:默认的主页文件位置,会从根目录下寻找</li>
-</ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">location / <span class="token punctuation">&#123;</span>
-    root /opt/web/Jack-Zhang-1314.github.io<span class="token punctuation">;</span>
-    index index.html<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> version <span class="token punctuation">[</span><span class="token operator">&lt;</span>newversion<span class="token operator">></span> <span class="token operator">|</span> major <span class="token operator">|</span> minor <span class="token operator">|</span> patch <span class="token operator">|</span> premajor <span class="token operator">|</span> preminor <span class="token operator">|</span> prepatch <span class="token operator">|</span> prerelease <span class="token punctuation">[</span>--preid-<span class="token operator">&lt;</span>prerelease-id<span class="token operator">></span><span class="token punctuation">]</span> <span class="token operator">|</span> from-git<span class="token punctuation">]</span>
 
-<blockquote>
-<p>如果设定<code>/test</code>,那么root目录会改为<code>/opt/web/Jack-Zhang-1314.github.io/test</code></p>
-<p>主页文件会改为<code>/opt/web/Jack-Zhang-1314.github.io/test/index.html</code></p>
-</blockquote>
-<ul>
-<li><code>location = /uri</code>:&#x3D; 开头表示精确匹配,只有完全匹配上才能生效.</li>
-<li><code>location ^~ /uri</code>:^~ 开头对 URL 路径进行前缀匹配,并且在正则之前.</li>
-<li><code>location ~ pattern</code>:~ 开头表示区分大小写的正则匹配.</li>
-<li><code>location ~* pattern</code>:~* 开头表示不区分大小写的正则匹配.</li>
-<li><code>location /uri</code>:不带任何修饰符,也表示前缀匹配,但是在正则匹配之后,如果没有正则命中,命中最长的规则.</li>
-<li><code>location /</code>:通用匹配,任何未匹配到其它 location 的请求都会匹配到,相当于 switch 中的 default.</li>
-</ul>
-<h2 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h2><blockquote>
-<p>通常将反向代理做为公网访问地址,web服务器是内网,即通过nginx配置外网访问web服务器内网</p>
-</blockquote>
-<ul>
-<li>隐藏服务保证内网安全</li>
-</ul>
-<blockquote>
-<p>通过<code>proxy_pass</code>来配置</p>
-</blockquote>
-<pre class="line-numbers language-conf" data-language="conf"><code class="language-conf">server &#123;
-  listen       80;
-  server_name  www.zhengqing520.com;
-  location &#x2F; &#123; # 访问80端口后的所有路径都转发到 proxy_pass 配置的ip中
-    root   &#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html;
-    index  index.html index.htm;
-    proxy_pass 127.0.0.1:8080; 
-  &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token string">'npm [-v | --version]'</span> to print <span class="token function">npm</span> version
+<span class="token string">'npm view &lt;pkg> version'</span> to view a package<span class="token string">'s published version
+'</span><span class="token function">npm</span> ls' to inspect current package/dependency versions<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>描述</th>
+<th>例子</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>major</td>
+<td>重大更新版本</td>
+<td>npm version major</td>
+<td>0.2.0 -&gt;1.0.0</td>
+</tr>
+<tr>
+<td>minor</td>
+<td>主要更新版本</td>
+<td>npm version minor</td>
+<td>0.2.0 -&gt;0.3.0</td>
+</tr>
+<tr>
+<td>patch</td>
+<td>补丁更新版本</td>
+<td>npm version patch</td>
+<td>0.2.0 -&gt;0.2.1</td>
+</tr>
+<tr>
+<td>premajor</td>
+<td>重大更新预发布版本</td>
+<td>npm version premajor</td>
+<td>0.2.0 -&gt;1.0.0-0</td>
+</tr>
+<tr>
+<td>preminor</td>
+<td>主要更新预发布版本</td>
+<td>npm version preminor</td>
+<td>0.2.0 -&gt;0.3.0-0</td>
+</tr>
+<tr>
+<td>prepatch</td>
+<td>补丁更新预发布版本</td>
+<td>npm version prepatch</td>
+<td>0.2.0 -&gt;0.2.1-0</td>
+</tr>
+<tr>
+<td>prerelease</td>
+<td>预发布版本</td>
+<td>npm version prerelease</td>
+<td>当前版本不是预发布版本的会出错</td>
+</tr>
+<tr>
+<td>from-git</td>
+<td>取git的tag作为版本号设置至<code>package.json</code></td>
+<td>npm version from-git</td>
+<td>git的tag标签没有设置的情况下,会抛出错误</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><code>description</code>:对包进行描述,便于<code>npm search</code></p>
+<p><code>repository</code>:本项目中代码的源地址位置</p>
+</blockquote>
 <ol>
-<li><code>server_name</code>服务器地址或绑定域名</li>
-<li><code>proxy_pass</code>:配置反向代理的ip地址和端口号(url地址需加上http:&#x2F;&#x2F; 或 <code>https://</code>)</li>
+<li><p>可以分层写出项目地址</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"repository"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"git"</span><span class="token punctuation">,</span>
+    <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://github.com/npm/cli.git"</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>同时可以指定仓库名的形式</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"repository"</span><span class="token operator">:</span> <span class="token string">"npm/npm"</span><span class="token punctuation">,</span>
+  <span class="token property">"repository"</span><span class="token operator">:</span> <span class="token string">"github:user/repo"</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
+<blockquote>
+<p><code>keywords</code>:将关键字放入其中.它是一个字符串数组.便于使用<code>npm search</code></p>
+</blockquote>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+   <span class="token property">"keywords"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+   <span class="token string">"test"</span><span class="token punctuation">,</span>
+   <span class="token string">"npm"</span><span class="token punctuation">,</span>
+   <span class="token string">"app"</span>
+   <span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p><code>homepage</code>:项目的主页.用于展示项目</p>
+</blockquote>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"homepage"</span><span class="token operator">:</span> <span class="token string">"https://github.com/owner/project#readme"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p><code>main</code>:程序的主要入口点</p>
+</blockquote>
+<ul>
+<li>也就是说,如果您的包被命名为foo,并且用户安装了它,然后会执行<code>require(&quot;foo&quot;)</code>,则将返回主模块的exports 对象</li>
+</ul>
+<blockquote>
+<p><code>author</code>:作者信息</p>
+</blockquote>
+<ol>
+<li><p>每个字段的形式分开展现</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"name"</span> <span class="token operator">:</span> <span class="token string">"Barney Rubble"</span><span class="token punctuation">,</span>
+  <span class="token property">"email"</span> <span class="token operator">:</span> <span class="token string">"b@rubble.com"</span><span class="token punctuation">,</span>
+  <span class="token property">"url"</span> <span class="token operator">:</span> <span class="token string">"http://barnyrubble.tumblr.com/"</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>以<code>author</code>合并展示</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"author"</span><span class="token operator">:</span> <span class="token string">"Barney Rubble &lt;b@rubble.com> (http://barnyrubble.tumblr.com/)"</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<blockquote>
+<p><code>license</code>:许可证.让人知道使用的权利和限制的</p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository">参考github</a></li>
+</ul>
+</li>
+</ol>
+<h3 id="发布javascript版本的包"><a href="#发布javascript版本的包" class="headerlink" title="发布javascript版本的包"></a>发布javascript版本的包</h3><ol>
+<li><p><code>name</code>:字段必须是仓库拥有者的名称,即<code>npm login</code>的名称</p>
+<ul>
+<li>由于作用域内包安装到作用域文件夹中,因此在代码中需要作用域时,必须包含作用域的名称</li>
+<li>每个 npm 用户&#x2F;组织都有自己的作用域,只有你可以在作用域中添加包</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@myorg/mypackage'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><code>npm publish</code>:npm中发布<strong>公共的作用域包</strong>需要使用<code>npm publish --access=public</code>(私有是收费的)</p>
+</li>
+<li><p><code>npm unpublish 包名</code>:即可将 npm 上的包删除</p>
+</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> publish <span class="token punctuation">[</span><span class="token operator">&lt;</span>tarball<span class="token operator">>|</span><span class="token operator">&lt;</span>folder<span class="token operator">></span><span class="token punctuation">]</span> <span class="token punctuation">[</span>--tag <span class="token operator">&lt;</span>tag<span class="token operator">></span><span class="token punctuation">]</span> <span class="token punctuation">[</span>--access <span class="token operator">&lt;</span>public<span class="token operator">|</span>restricted<span class="token operator">></span><span class="token punctuation">]</span> <span class="token punctuation">[</span>--otp otpcode<span class="token punctuation">]</span> <span class="token punctuation">[</span>--dry-run<span class="token punctuation">]</span>
+
+Publishes <span class="token string">'.'</span> <span class="token keyword">if</span> no argument supplied
+Sets tag <span class="token string">'latest'</span> <span class="token keyword">if</span> no --tag specified<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><code>&lt;folder&gt;</code>:包含<code>package.json</code>文件的文件夹</li>
+<li><code>&lt;tarball&gt;</code>:指向gzip压缩tar存档的url或文件路径,其中包含一个包含package.json文件的文件夹.</li>
+<li><code>[--tag &lt;tag&gt;]</code>:使用给定标记注册已发布的包,以便安装此版本.默认情况下,更新并安装标记(参考<code>npm-dist-tag</code>)</li>
+<li><code>[--access &lt;public|restricted&gt;]</code>:告知注册表此包是应发布为公共包还是受限制程序包.仅适用于作用域内包,缺省为<code>restricted --access</code>.如果没有付费帐户,则必须发布<code>public</code>方式才能发布作用域内的程序包.</li>
+<li><code>[--otp &lt;otpcode&gt;]</code>:启用了双因素身份验证,则可以使用此代码提供来自身份验证器的代码.否则系统将提示<code>auth-and-writes</code></li>
+<li><code>[--dry-run]</code>:截至npm@6,除了实际发布到注册表之外,是否所有发布都会执行.报告将要发布的内容的详细信息.</li>
+<li><code>[--workspaces]</code>:在发布时启用工作区上下文.将发布所有工作区包.</li>
+<li><code>[--workspace]</code>:启用工作区上下文,并将结果限制为此配置项指定的结果.将仅发布给定工作区中的包.</li>
+</ul>
+<blockquote>
+<p>发布一个公共的包,不包含私有作用域</p>
+</blockquote>
+<ol>
+<li>设置npm的proxy代理<code>npm config set proxy=&quot;代理地址(如127.0.0.1:7890)&quot;</code></li>
+<li>检查自己的包名,不能与其他人的包名一样</li>
+<li>使用<code>npm publish</code>发布自己的包</li>
+</ol>
+<h3 id="打包typescript版本的包"><a href="#打包typescript版本的包" class="headerlink" title="打包typescript版本的包"></a>打包typescript版本的包</h3><ol>
+<li>下载<code>npm install typescript -D</code></li>
+<li>初始化一个<code>tsconfig.json</code>文件<code>tsc --init</code></li>
+<li>在scripts中添加脚本:<code>npx tsc -p .</code>.打包当前目录下的所有文件</li>
+</ol>
+<blockquote>
+<p>一些typescript中特有的配置</p>
+</blockquote>
+<ol>
+<li><p><code>package.json</code>中的<code>types</code>字段</p>
+<ul>
+<li>这是一个只在TypeScript中生效的字段,如果您的包有一个main.js文件,您还需要在<code>package.json</code>文件中指明主声明文件.将types属性设置为指向捆绑(bundled指main.js)的声明文件</li>
+</ul>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"types"</span><span class="token operator">:</span> <span class="token string">"./lib/main.d.ts"</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><code>package.json</code>中的<code>typesVersions</code>字段</p>
+<ul>
+<li>控制typescript的版本号</li>
+</ul>
+ <pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"typesVersions"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">">=3.1"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token property">"*"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"ts3.1/*"</span><span class="token punctuation">]</span> <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>在<code>.d.ts</code>文件中的<code>/// &lt;reference types=&quot;...&quot; /&gt;</code></p>
+<ul>
+<li>当前库依赖于全局库,会导入全局库的<code>.d.ts</code>的名称</li>
+<li>在声明文件里包含<code>/// &lt;reference types=&quot;node&quot; /&gt;</code>，表明这个文件使用了<code>@types/node/index.d.ts</code>里面声明的名字.并且,这个包要在编译阶段与声明文件一起被包含进来</li>
+<li>解析@types包的名字的过程与解析import语句里模块名的过程类似.所以可以简单的把三斜线类型引用指令想像成针对包的import声明</li>
+<li>对于那些<strong>在编译阶段生成的声明文件</strong>,编译器会自动地添加<code>/// &lt;reference types=&quot;...&quot; /&gt;</code>;当且仅当结果文件中使用了引用的<code>@types</code>包里的声明时才会在生成的声明文件里添加<code>/// &lt;reference types=&quot;...&quot; /&gt;</code>语句</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>配置<code>tsconfig.json</code>.</p>
+</blockquote>
+<ol>
+<li>初始化一个tsconfig.json文件:<code>npx tsc --init</code></li>
+<li>介绍几个重要的配置项<ul>
+<li><code>target</code>: 将项目打包成目标兼容的版本</li>
+<li><code>module</code>: 指定要用的模块化标准</li>
+<li><code>lib</code>: lib用于指定要包含在编译中的库文件<ul>
+<li>例如dom中的一些类型所需要的声明文件.或者使用<code>Array&lt;T&gt;</code>指定数组类型</li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/43874096/difference-in-the-lib-property-in-tsconfig-json-between-es6-and-es2017">可以看下这篇文章</a></li>
+</ul>
+</li>
+<li><code>declaration</code>: 为ts或者js项目生成定义文件(<code>.d.ts</code>)</li>
+<li><code>sourceMap</code>: 为源码生成映射文件,方便调试</li>
+<li><code>rootDir</code>: 指定根目录的源文件位置</li>
+<li><code>outDir</code>: 指定根目录的打包位置</li>
+<li><code>esModuleInterop</code>: 是commonjs模块兼容esm模块(意味着两者的方式都可以导出)<ul>
+<li>参考:<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/148081795">https://zhuanlan.zhihu.com/p/148081795</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>最终形成的tsconfig.json文件</li>
+</ul>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"target"</span><span class="token operator">:</span> <span class="token string">"es2016"</span><span class="token punctuation">,</span>                                  
+     <span class="token property">"rootDir"</span><span class="token operator">:</span> <span class="token string">"./src"</span><span class="token punctuation">,</span>                                 
+     <span class="token property">"declaration"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>                              
+     <span class="token property">"sourceMap"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>                                
+     <span class="token property">"outDir"</span><span class="token operator">:</span> <span class="token string">"./dist"</span><span class="token punctuation">,</span> 
+    <span class="token property">"esModuleInterop"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>                             
+    <span class="token property">"forceConsistentCasingInFileNames"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>           
+    <span class="token property">"strict"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"skipLibCheck"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>对于<code>package.json</code>文件最好把项目放置在源文件<code>src</code>中,此时只需要配置打包生成的目录上传包就可以了</li>
+</ul>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"main"</span><span class="token operator">:</span> <span class="token string">"dist/index.js"</span><span class="token punctuation">,</span>
+<span class="token property">"types"</span><span class="token operator">:</span> <span class="token string">"dist/index.d.ts"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -772,7 +910,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://mail.zyjcould.ltd/2022/01/27/nginx/">http://mail.zyjcould.ltd/2022/01/27/nginx/</a>
+                    <a href="http://mail.zyjcould.ltd/2022/04/15/fa-bu-npm/">http://mail.zyjcould.ltd/2022/04/15/fa-bu-npm/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -814,8 +952,12 @@
                                     <span class="chip bg-color">config</span>
                                 </a>
                             
-                                <a href="/tags/nginx/">
-                                    <span class="chip bg-color">nginx</span>
+                                <a href="/tags/JS/">
+                                    <span class="chip bg-color">JS</span>
+                                </a>
+                            
+                                <a href="/tags/npm/">
+                                    <span class="chip bg-color">npm</span>
                                 </a>
                             
                         </div>
@@ -1253,81 +1395,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/01/27/linux/">
+                <a href="/2022/04/15/fa-bu-npm/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="linux">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="发布npm">
                         
-                        <span class="card-title">linux</span>
+                        <span class="card-title">发布npm</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            linux的简单应用
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-27
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/config/" class="post-category">
-                                    config
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/config/">
-                        <span class="chip bg-color">config</span>
-                    </a>
-                    
-                    <a href="/tags/linux/">
-                        <span class="chip bg-color">linux</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/01/21/docker/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Docker">
-                        
-                        <span class="card-title">Docker</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            docker的简单应用
+                            发布一个属于自己的npm
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-15
                             </span>
                         <span class="publish-author">
                             
@@ -1341,15 +1431,69 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Docker/">
-                        <span class="chip bg-color">Docker</span>
-                    </a>
-                    
                     <a href="/tags/config/">
                         <span class="chip bg-color">config</span>
+                    </a>
+                    
+                    <a href="/tags/JS/">
+                        <span class="chip bg-color">JS</span>
+                    </a>
+                    
+                    <a href="/tags/npm/">
+                        <span class="chip bg-color">npm</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/04/06/video/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="video">
+                        
+                        <span class="card-title">video</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            html中的video对象
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-06
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JS/" class="post-category">
+                                    JS
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JS/">
+                        <span class="chip bg-color">JS</span>
                     </a>
                     
                 </div>
