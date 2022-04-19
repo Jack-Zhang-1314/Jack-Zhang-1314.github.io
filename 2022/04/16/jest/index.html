@@ -573,14 +573,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    7 分
                 </div>
                 
 
@@ -816,6 +816,43 @@ displayName<span class="token operator">:</span> <span class="token punctuation"
 <blockquote>
 <p>如果是ts项目,建议直接使用vitest直接进行TDD开发</p>
 </blockquote>
+<ul>
+<li>vitest基于vite开发,完全适用于<code>vite.config.ts</code>配置</li>
+<li>下载<code>npm i vitest -D</code></li>
+</ul>
+<ol>
+<li><p>基于<code>vite.config.ts</code>配置vitest</p>
+<ul>
+<li>如果你使用<code>vite</code>的<code>defineConfig</code>你还需要将三斜线指令写在配置文件的顶部</li>
+</ul>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">&#x2F;&#x2F;&#x2F; &lt;reference types&#x3D;&quot;vitest&quot; &#x2F;&gt;
+import &#123; defineConfig &#125; from &#39;vite&#39;
+
+export default defineConfig(&#123;
+  test: &#123;
+    &#x2F;&#x2F; ...
+  &#125;,
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>基于<code>vitest.config.ts</code>配置vitest.</p>
+<ul>
+<li>此优先级高于<code>vite.config.ts</code>,可以直接使用vitest中的<code>defineConfig</code>配置</li>
+</ul>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">import &#123; defineConfig &#125; from &#39;vitest&#x2F;config&#39;
+export default defineConfig(&#123;
+  test: &#123;
+    &#x2F;&#x2F; ...
+  &#125;,
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>排除默认选项,自己配置测试的选项</p>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">import &#123; configDefaults, defineConfig &#125; from &#39;vitest&#x2F;config&#39;
+export default defineConfig(&#123;
+  test: &#123;
+    exclude: [...configDefaults.exclude, &#39;packages&#x2F;template&#x2F;*&#39;],
+  &#125;,
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
 
                 
             </div>
@@ -1323,52 +1360,50 @@ displayName<span class="token operator">:</span> <span class="token punctuation"
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/04/16/jest/">
+                <a href="/2022/04/19/flip/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Jest">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="FLIP">
                         
-                        <span class="card-title">Jest</span>
+                        <span class="card-title">FLIP</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            对js,ts进行test
+                            使用FLIP进行布局
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-16
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-19
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/config/" class="post-category">
-                                    config
+                            <a href="/categories/JS/" class="post-category">
+                                    JS
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/config/">
-                        <span class="chip bg-color">config</span>
-                    </a>
-                    
                     <a href="/tags/JS/">
                         <span class="chip bg-color">JS</span>
+                    </a>
+                    
+                    <a href="/tags/HTML/">
+                        <span class="chip bg-color">HTML</span>
                     </a>
                     
                 </div>
@@ -1672,7 +1707,7 @@ displayName<span class="token operator">:</span> <span class="token punctuation"
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数
                                             :&nbsp;<span class="white-color">
-                                                149.9k
+                                                150.5k
                                             </span>
                                             
                                                 

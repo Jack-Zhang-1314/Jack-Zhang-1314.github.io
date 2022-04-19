@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="video, 苍穹之下">
+    <meta name="keywords" content="FLIP, 苍穹之下">
     <meta name="description" content="想要属于一个自己的网站,菜鸡前端拼命前行">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>video | 苍穹之下</title>
+    <title>FLIP | 苍穹之下</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -409,12 +409,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">video</h1>
+                    <h1 class="description center-align post-title">FLIP</h1>
                 </div>
             </div>
         </div>
@@ -534,6 +534,10 @@
                                 <span class="chip bg-color">JS</span>
                             </a>
                         
+                            <a href="/tags/HTML/">
+                                <span class="chip bg-color">HTML</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -555,28 +559,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-06
+                    2022-04-19
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-04-06
+                    2022-04-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.5k
+                    480
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    13 分
+                    1 分
                 </div>
                 
 
@@ -604,476 +608,49 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="video标签"><a href="#video标签" class="headerlink" title="video标签"></a>video标签</h2><blockquote>
-<p>&lt;video&gt;实现了HTMLVideoElement这个接口.该接口继承了<code>HTMLMediaElement</code>和<code>HTMLElement</code>的属性和方法</p>
+                <h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><blockquote>
+<p><code>Element.getBoundingClientRect()</code>:返回元素的大小及其<strong>相对于视口</strong>的位置</p>
 </blockquote>
 <ul>
-<li>浏览器并不都是支持相同的视频格式,你可以在&lt;source&gt;中提供多个源,浏览器会使用他所支持的那个<ul>
-<li>&lt;video&gt;标签的中间内容,是针对浏览器不支持此内容的降级处理</li>
+<li><p>如果是标准盒子模型,元素的尺寸等于<code>width/height + padding + border-width</code>的总和.如果<code>box-sizing: border-box</code>,元素的的尺寸等于<code>width/height</code>.</p>
+</li>
+<li><p><code>DOMRect</code>:返回一个DOMRect对象.(DOMRect)代表一个矩形,表示盒子的类型右返回它的属性和方法决定</p>
+</li>
+<li><p><img src="././rect.png" alt=" "></p>
+</li>
+<li><p><strong>原点</strong>:当前视口的左上角(0,0)</p>
+<ul>
+<li><code>x</code>:矩形盒子的左边框(border)距离视口的左边的距离(可能为负数:当视口在盒子右边的时候)</li>
+<li><code>y</code>:矩形盒子的上边框距离视口上边的距离(可能为负数:当漱口在盒子下边的时候)</li>
+<li><code>height</code>:矩形盒子的高度</li>
+<li><code>width</code>:矩形盒子的宽度</li>
+<li><code>left</code>:视口到矩形盒子左边框的距离</li>
+<li><code>right</code>:视口到矩形盒子有边框的距离</li>
+<li><code>top</code>:视口到矩形盒子上边框的距离</li>
+<li><code>bottom</code>:视口到矩形盒子下边框的距离</li>
 </ul>
 </li>
 </ul>
 <blockquote>
-<p>&lt;video&gt;标签的属性</p>
-</blockquote>
-<ol>
-<li><code>src</code>:该属性指向你想要嵌入的网页当中的视频,与&lt;img&gt;标签的src相同</li>
-<li><code>width</code>和<code>height</code>:设置视频的宽度和高度</li>
-<li><code>controls</code>:<code>bool</code>.浏览器提供的控件界面,用户可以通过控件视频的回放功能</li>
-<li><code>autoplay</code>:<code>bool</code>.设置此元素视频会自动播放.但是也必须设置<code>muted</code></li>
-<li><code>muted</code>:<code>bool</code>.默认值是false,意味着视频播放的时候音频也会播放.设置为true,音频会初始化为静音<ul>
-<li>浏览器为了用户的体验考虑,限制了音视频的自动播放,最大限度地减少广告或者噪音等骚扰</li>
-</ul>
-</li>
-<li><code>loop</code>:<code>bool</code>.指定后,会在视频结尾的地方自动返回视频开始的地方</li>
-<li><code>poster</code>:视频播放前显示的图像.封面图像</li>
-<li><code>preload</code>:浏览器是否需要缓存该视频<ul>
-<li><code>none</code>:浏览器不会缓存该视频</li>
-<li><code>auto</code>:当页面加载后缓存该视频</li>
-<li><code>metadata</code>:仅缓存原视频的数据</li>
-</ul>
-</li>
-<li><code>controlslist</code>(实验):用户在显示其自己的控件集时选择要在媒体元素上显示的控件<ul>
-<li><code>nodownload</code>:禁止下载.隐藏下载的小控件</li>
-<li><code>nofullscreen</code>:隐藏全屏小控件</li>
-<li><code>noremoteplayback</code>:隐藏小窗口控件</li>
-</ul>
-</li>
-</ol>
-<h3 id="HTMLVideoElement"><a href="#HTMLVideoElement" class="headerlink" title="HTMLVideoElement"></a>HTMLVideoElement</h3><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pay<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>开始播放<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>pau<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>暂停播放<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://zyjcould.ltd/mv/player.mp4<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>300px<span class="token punctuation">"</span></span> <span class="token attr-name">controls</span> <span class="token attr-name">autoplay</span> <span class="token attr-name">muted</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>该接口提供了用于操作视频对象的特殊属性和方法</p>
+<p><code>Element.getClientRects()</code>:方法返回一个指向客户端中每一个盒子的边界矩形的矩形集合</p>
 </blockquote>
 <ul>
-<li>由于不同的浏览器会支持不同的媒体格式.因此在提供媒体文件的时候,提供一种所有浏览器都支持的格式,或者提供格式不同的多个视频源来支持不同浏览器.</li>
+<li>返回<code>ClientRectList</code>:这是一个DOMRect的集合对象,属性和<code>getBoundingClientRect()</code>返回的方法一样<ul>
+<li>如果是块级元素,只会返回一个数组,数组的内容和<code>getBoundingClientRect</code>一样</li>
+<li>实际上,该方法主要用于内联元素,内联元素有多少行,该方法返回的对象有多少个成员.这个方法主要用于判断<strong>行内元素</strong>是否换行,以及<strong>行内元素</strong>的每一行的位置偏移</li>
+</ul>
+</li>
 </ul>
 <blockquote>
-<p>除了继承父对象<code>HTMLMediaElement</code>的属性之外,同时自己也实现了自身的属性</p>
-</blockquote>
-<ol>
-<li><code>height,width,preload</code>:看上文</li>
-<li><code>videoWidth,videoHeight</code>:只读.以<code>css pixels</code>单位给出的视频资源本身的大小.这个值考虑了大小,对比度,明度等等.而height,width只给出视频显示区域的大小</li>
-</ol>
-<h4 id="HTMLMediaElement对象的属性"><a href="#HTMLMediaElement对象的属性" class="headerlink" title="HTMLMediaElement对象的属性"></a><code>HTMLMediaElement</code>对象的属性</h4><ul>
-<li>除了支持<strong>src,controls,autoplay,muted,loop,poster等</strong>之外还支持以下属性(并不完全)</li>
-<li>详细请看:<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLMediaElement">https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLMediaElement</a></li>
-</ul>
-<ol>
-<li><p><code>duration</code>:只读.媒体以秒为单位的总长度时间.视频的总时长</p>
-<ul>
-<li>如果媒体不可用,则为0</li>
-<li>如果媒体可用,但时间长度未知,值为NAN(可能未完全加载媒体)</li>
-<li>如果媒体是以stream形式传输并且没有预定长度,则值为Inf</li>
-</ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">video<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"loadeddata"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>duration<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p><code>currentTime</code>:获取当前位置的播放时间,或者设置从某个位置开始播放</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">video<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"loadeddata"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
- console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>currentTime <span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//0</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p><code>volume</code>:音量.表示音频的音量.值从0.0(静音)到1.0(最大音量)</p>
-<ul>
-<li><code>muted</code>属性和<code>volume</code>属性没有关联关系,改变其中一个值另一个也不会改变</li>
-</ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">video<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"loadeddata"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
- console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>volume<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//1</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p><code>ended</code>:只读.表示媒体是否已经播放完毕</p>
-</li>
-<li><p><code>error</code>:只读,返回一个<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/MediaError"><code>MediaError</code></a>.表示对象最近的错误,没有错误返回error</p>
-</li>
-<li><p><code>paused</code>:指示媒体元素是否被暂停</p>
-</li>
-<li><p><code>defaultPlaybackRate</code>:控制媒体的播放速度.</p>
-<ul>
-<li>1.0表示正常的播放速度,如果值小于1.0,则播放速度会比”正常速度”慢,如果值大于1.0,则播放速度会比”正常速度”快</li>
-<li>如果是<code>0.0</code>是一个无效的值,并且会抛出错误</li>
-</ul>
-</li>
-</ol>
-<blockquote>
-<p><code>TimeRangs</code>:该接口用来表示一组时间范围,主要目的是跟踪供&lt;audio&gt;和&lt;video&gt;元素加载使用的媒体哪些部分已经被缓冲</p>
+<p><code>DocumentOrShadowRoot.elementFromPoint(x: number, y: number): Element</code>:方法返回给定坐标点下最上层的<code>element</code>元素</p>
 </blockquote>
 <ul>
-<li><p>一个TimeRangs对象包括一个或多个时间范围,其中每个都由一个开始偏移量和结束偏移量指定</p>
-<ul>
-<li>可以将你想要检索的时间范围的索引值传递给end()和start()方法来引用每个时间范围</li>
-</ul>
+<li><p><strong>DocumentOrShadowRoot</strong>为<code>document</code>或者<code>shadowRoot</code>的接口</p>
 </li>
-<li><p>视频一般情况下只有一个时间段,即<code>TimeRanges.length</code>值为1;如果进行了跳跃观看(例如3-&gt;4分钟这个时间段),并且跳跃内容并没有缓冲完毕,则会出现两个时间段,这时TimeRanges的length为2</p>
-<ul>
-<li>TimeRanges个数会随着跳跃观看未缓冲完成的内容而增加,随着缓冲的完成而减少,最少为1个,即从开头到结尾</li>
-<li>参考:<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/Audio_and_video_delivery/buffering_seeking_time_ranges">https://developer.mozilla.org/zh-CN/docs/Web/Guide/Audio_and_video_delivery/buffering_seeking_time_ranges</a></li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">------------------------------------------------------
-<span class="token operator">|</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span><span class="token operator">|</span>                    <span class="token operator">|</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span><span class="token operator">|</span>     <span class="token operator">|</span>
-------------------------------------------------------
-<span class="token number">0</span>             <span class="token number">5</span>                    <span class="token number">15</span>          <span class="token number">19</span>    <span class="token number">21</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<li><p>如果指定的坐标点在文档的可视范围外,或者两个坐标都是负数,那么结果返回null</p>
 </li>
-<li><p>属性值:<code>length</code>:返回对象中时间范围的个数</p>
+<li><p>如果该位置有多个元素层叠,则返回最上层的元素</p>
 </li>
-<li><p>方法:</p>
-<ul>
-<li><code>end(index)</code>:指定索引的范围的开始时间</li>
-<li><code>start(index)</code>:指定索引的范围的结束时间</li>
-</ul>
-</li>
-<li><p>以下三个属性皆实现了<code>TimeRangs</code>这个接口</p>
-<ol>
-<li><code>buffered</code>:只读.buffered属性会告诉浏览器哪一部分的媒体已经被下载(返回一个TimeRangs对象)</li>
-<li><code>played</code>:只读.媒体可被播放的范围</li>
-<li><code>seekable</code>:(如果有)用户可以试图找到的寻求范围</li>
-</ol>
-</li>
-<li><p>何通过TimeRanges来判断video是否已经完全加载</p>
-</li>
-</ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> buf <span class="token operator">=</span> video<span class="token punctuation">.</span>buffered
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>buf<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>buf<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token comment">// only one range</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>buf<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> buf<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">==</span> v<span class="token punctuation">.</span>duration<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span>
-    <span class="token comment">// The one range starts at the beginning and ends at</span>
-    <span class="token comment">// the end of the video, so the whole thing is loaded</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p><code>readyState</code>:媒体的就绪状态</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>常量</th>
-<th>值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>HAVE_NOTHING</td>
-<td>0</td>
-<td>没有关于媒体资源的可用信息</td>
-</tr>
-<tr>
-<td>HAVE_METADATA</td>
-<td>1</td>
-<td>已检索到足够的媒体资源,因此已初始化元数据属性寻求将不再引发异常</td>
-</tr>
-<tr>
-<td>HAVE_CURRENT_DATA</td>
-<td>2</td>
-<td>数据可用于当前播放位置,但不足以实际播放多个帧</td>
-</tr>
-<tr>
-<td>HAVE_FUTURE_DATA</td>
-<td>3</td>
-<td>当前播放位置以及至少一点点未来的数据是可用的(换句话说,至少两帧视频)</td>
-</tr>
-<tr>
-<td>HAVE_ENOUGH_DATA</td>
-<td>4</td>
-<td>有足够的数据可用,下载速率足够高,媒体可以不间断地播放到底</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p><code>networkState</code>:获取媒体时的网络状态</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>常量</th>
-<th>值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>NETWORK_EMPTY</td>
-<td>0</td>
-<td>还没数据.readyState是HAVE_NOTHING</td>
-</tr>
-<tr>
-<td>NETWORK_IDLE</td>
-<td>1</td>
-<td>是有效的并且已经选择了一个资源,但是还没有使用网络</td>
-</tr>
-<tr>
-<td>NETWORK_LOADING</td>
-<td>2</td>
-<td>正在下载HTMLMediaElement 数据.</td>
-</tr>
-<tr>
-<td>NETWORK_NO_SOURCE</td>
-<td>3</td>
-<td>没有找到 HTMLMediaElement src</td>
-</tr>
-</tbody></table>
-<h4 id="HTMLMediaElement方法"><a href="#HTMLMediaElement方法" class="headerlink" title="HTMLMediaElement方法"></a>HTMLMediaElement方法</h4><blockquote>
-<p>由于HTMLVideoElement本身的方法还在实验性中,这里使用HTMLMediaElement父元素的方法</p>
-</blockquote>
-<ul>
-<li><code>play()</code>:开始播放</li>
-<li><code>pause()</code>:暂停播放</li>
-</ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">pay<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  video<span class="token punctuation">.</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-pau<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  video<span class="token punctuation">.</span><span class="token function">pause</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li><code>canPlayType(in DOMString type)</code>:返回以下属性<ul>
-<li><code>probably</code>:如果指定的类型似乎可以播放</li>
-<li><code>maybe</code>:如果不播放就无法判断该类型是否可播放</li>
-<li><code>空字符串</code>:如果指定的类型肯定不能播放</li>
-</ul>
-</li>
-</ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>video<span class="token punctuation">.</span><span class="token function">canPlayType</span><span class="token punctuation">(</span><span class="token string">'video/webm'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">//maybe</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<ul>
-<li><code>load()</code>:重置媒体元素并重新选择媒体资源.任何未决事件都将被丢弃.获取多少媒体数据仍受<code>preload</code>属性的影响<ul>
-<li>此方法可用于在删除任何<code>src</code>属性和&lt;source&gt;来放资源</li>
-<li>通常不需要使用此方法,除非需要在动态更改后重新扫描&lt;source&gt;元素</li>
-</ul>
-</li>
-</ul>
-<h2 id="video事件"><a href="#video事件" class="headerlink" title="video事件"></a>video事件</h2><ol>
-<li><p><code>loadstart</code>:浏览器开始寻找指定的音频&#x2F;视频时触发</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">video<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"loadstart"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token comment">//由于没有视频资源,所以duration是null</span>
- console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"loadstart"</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>duration<span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p><code>durationchange</code>:时长变化的时候.音频&#x2F;视频的时长数据发生变化时触发,时长由NaN变为音频&#x2F;视频的实际时长</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">video<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"durationchange"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"durationchange"</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>duration<span class="token punctuation">)</span><span class="token comment">//视频总时长</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p><code>loadedmetadata</code>:元数据加载的时候.音频&#x2F;视频的元数据已加载时触发,元数据包括:时长,尺寸(仅视频)以及文本轨道</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">video<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"loadedmetadata"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"loadedmetadata"</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>duration<span class="token punctuation">)</span><span class="token comment">//视频总时长</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p><code>progress</code>:浏览器下载监听.当浏览器正在下载指定的音频&#x2F;视频时触发</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">video<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"progress"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"progress"</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p><code>loadeddata</code>:视频的首帧已经加载时,但没有足够的数据来播放指定音频&#x2F;视频的下一帧时触发</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">video<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"loadeddata"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"loadeddata"</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p><code>canplay</code>:可播放监听.当浏览器能够开始播放指定的音频&#x2F;视频时触发</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">video<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"canplay"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"canplay"</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p><code>canplaythrough</code>:可流畅播放.在不停下来进行缓冲的情况下持续播放指定的音频&#x2F;视频时触发</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">video<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"canplaythrough"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"canplaythrough"</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p><code>play</code>:播放监听.</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">video<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"play"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"play"</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p><code>pause</code>:暂停监听</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">video<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"pause"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"pause"</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p><code>seeking</code>:当用户开始移动&#x2F;跳跃到音频&#x2F;视频中新的位置时触发</p>
-</li>
-</ol>
-   <pre class="line-numbers language-js" data-language="js"><code class="language-js">video<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"seeking"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"seeking"</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<ol start="11">
-<li><code>seeked</code>:当用户已经移动&#x2F;跳跃到视频中新的位置时触发</li>
-</ol>
-   <pre class="line-numbers language-js" data-language="js"><code class="language-js">video<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"seeked"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"seeked"</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<ol start="12">
-<li><code>waiting</code>:视频加载等待.当视频由于需要缓冲下一帧而停止,等待时触发<ul>
-<li>当触发play事件的时候,如果视频还没有加载好,就会触发waiting</li>
-</ul>
-</li>
-</ol>
-   <pre class="line-numbers language-js" data-language="js"><code class="language-js">video<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"waiting"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"waiting"</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<ol start="13">
-<li><code>playing</code>:当视频在已因缓冲而暂停或停止后已就绪时触发</li>
-</ol>
-   <pre class="line-numbers language-js" data-language="js"><code class="language-js">video<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"playing"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"playing"</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<ol start="14">
-<li><code>timeupdate</code>:当播放位置已更改,播放时间更新</li>
-</ol>
-   <pre class="line-numbers language-js" data-language="js"><code class="language-js">video<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"timeupdate"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"timeupdate"</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<ol start="15">
-<li><code>ended</code>:播放结束的时候</li>
-</ol>
-   <pre class="line-numbers language-js" data-language="js"><code class="language-js">video<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"ended"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"ended"</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<ol start="16">
-<li><code>error</code>:播放错误</li>
-</ol>
-   <pre class="line-numbers language-js" data-language="js"><code class="language-js">video<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<ol start="17">
-<li><code>volumechange</code>:当音量更改时</li>
-</ol>
-   <pre class="line-numbers language-js" data-language="js"><code class="language-js">video<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'volumechange'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'volumechange'</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<ol start="18">
-<li><code>stalled</code>:当浏览器尝试获取媒体数据,但数据不可用时</li>
-</ol>
-   <pre class="line-numbers language-js" data-language="js"><code class="language-js">video<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'stalled'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'stalled'</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<ol start="19">
-<li><code>ratechange</code>:当视频的播放速度已更改时</li>
-</ol>
-   <pre class="line-numbers language-js" data-language="js"><code class="language-js">video<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'ratechange'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'ratechange'</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<ol start="20">
-<li><code>emptied</code>:媒体内容为空时触发.例如,当这个<code>media</code>已经加载完成(或者部分加载完成).<code>load()</code>被用来进行重新加载</li>
-</ol>
-<blockquote>
-<p>注意点:</p>
-</blockquote>
-<ul>
-<li>你可以用CSS属性<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/object-position"><code>object-position</code></a> 来调整视频在元素内部的位置,它可以控制视频尺寸适应于元素外框的方式.</li>
-<li>如果想在视频里展示字幕或者标题,你可以在 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/track"><code>&lt;track&gt;</code></a> 元素和 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API">WebVTT</a> 格式的基础上使用 JavaScript 来实现.详情请见 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/Apps/Fundamentals/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video">Adding captions and subtitles to HTML5 video</a></li>
-</ul>
-<h2 id="画中画"><a href="#画中画" class="headerlink" title="画中画"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/PictureInPictureWindow">画中画</a></h2><ul>
-<li><p>HTML中的属性:</p>
-<ul>
-<li><code>autoPictureInPicture</code>:该属性指示视频是否应自动进入或离开画中画模式<ul>
-<li>如果是<code>true</code>:视频在更改选项卡和&#x2F;或应用程序时应自动进入或离开画中画模式</li>
-</ul>
-</li>
-<li><code>disablePictureInPicture</code>:阻止用户代理(<code>User-Agent</code>)是否应该向用户建议画中画功能,或者请求它自动<ul>
-<li>如果是<code>true</code>,表示用户代理(请求头中的<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Glossary/User_agent"><code>User-Agent</code></a>)不应向用户建议该功能(就是画中画不能播放)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>方法:</p>
-<ol>
-<li><code>HTMLVideoElement.requestPictureInPicture()</code>:异步请求,以画中画模式显示视频<ul>
-<li>如果成功进入画中画了.会触发<code>enterpictureinpicture</code>事件,让它知道它现在处于画中画状态</li>
-<li>返回一个<code>PictureInPictureWindow</code>对象</li>
-</ul>
-</li>
-<li><code>Document.exitPictureInPicture()</code>将此文档中包含的视频(当前处于浮动状态)从画中画模式中取出,从而恢复屏幕的先前状态<ul>
-<li>返回值一个Promise,一旦用户代理完成退出画中画模式,就会解析.如果发生错误,那么会调用promise处理</li>
-<li>语法:<code>exitPromise = document.exitPictureInPicture();</code></li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p>属性:<code>Document.pictureInPictureEnabled</code>.指示画中画模式是否可用.默认情况下,画中画模式可用</p>
-</li>
-<li><p>事件:</p>
-<ul>
-<li><code>enterpictureinpicture</code>:当视频成功进入画中画模式时,将触发该事件.<code>enterpictureinpicture</code>此事件不可取消,也不会冒泡</li>
-<li><code>leavepictureinpicture</code>:当视频元素成功离开画中画模式时,将触发该事件.<code>leavepictureinpicture</code>此事件不可取消,也不会冒泡</li>
-</ul>
-</li>
-<li><p><code>PictureInPictureWindow</code>接口是一个对象,它可以通过编程的方式获得浮动视频窗口的宽度和高度,并调整浮动视频窗口的大小.</p>
-<ul>
-<li>使用<code>HTMLVideoElement.requestPictureInPicture()</code>返回一个具有此接口的promise</li>
-<li><code>width,height</code>:只读.返回小窗口的高度和宽度</li>
-<li><code>resize</code>:监听小窗口调整大小的事件</li>
-</ul>
-</li>
-</ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">video<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'enterpictureinpicture'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">const</span> smallWindow <span class="token operator">=</span> event<span class="token punctuation">.</span>pictureInPictureWindow<span class="token punctuation">;</span>
-  <span class="token comment">// smallWindow就是一个PictureInPictureWindow对象</span>
-  smallWindow<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'resize'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">//event.targe就是smallWidth</span>
-    <span class="token comment">// event.target.width是小视频窗口的宽度</span>
-    <span class="token comment">// event.target.width是小视频窗口的高度</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="实现画中画"><a href="#实现画中画" class="headerlink" title="实现画中画"></a>实现画中画</h3><blockquote>
-<p>实现画中画不可缺少的就是观察者模式(IntersectionObserver)的使用<br>.<br>如果对观察者不熟,可以看<a target="_blank" rel="noopener" href="https://juejin.cn/post/7075666393508773895">https://juejin.cn/post/7075666393508773895</a></p>
-</blockquote>
-<ul>
-<li><p>第一种方式使用vue的<code>teleport</code>组件<a href="http://mail.zyjcould.ltd/player/#/player">http://mail.zyjcould.ltd/player/#/player</a>.</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/Jack-Zhang-1314/player">仓库地址</a></p>
-</li>
-<li><p>第二种就是使用<code>autoPictureInPicture</code>实现小窗口传送</p>
-</li>
-<li><p>由于谷歌浏览器原生的政策,画中画暂时还是不能使用原生很好的支持</p>
-</li>
-</ul>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">height</span><span class="token punctuation">:</span> 2000px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://zyjcould.ltd/mv/player.mp4<span class="token punctuation">"</span></span> <span class="token attr-name">autoPictureInPicture</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>300px<span class="token punctuation">"</span></span>
-    <span class="token attr-name">controls</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
-  <span class="token keyword">const</span> v <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">"#video"</span><span class="token punctuation">)</span>
-  <span class="token keyword">const</span> observe <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">IntersectionObserver</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">entries<span class="token punctuation">,</span> observe</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    entries<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">entry</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"jinru"</span><span class="token punctuation">)</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>entry<span class="token punctuation">.</span>intersectionRatio<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        v<span class="token punctuation">.</span><span class="token function">requestPictureInPicture</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-      <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>v<span class="token punctuation">.</span>readyState <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> entry<span class="token punctuation">.</span>intersectionRatio<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        document<span class="token punctuation">.</span><span class="token function">exitPictureInPicture</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>
-          <span class="token parameter">value</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">,</span>
-          <span class="token parameter">error</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
-        <span class="token punctuation">)</span>
-      <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-  observe<span class="token punctuation">.</span><span class="token function">observe</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span>
-</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ol>
-<li><p>第一个错误是由于为使用用户手势,也就是必须要点击视频(可以是任何位置)才可以触发小窗口</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Uncaught <span class="token punctuation">(</span>in promise<span class="token punctuation">)</span> DOMException: Failed to execute <span class="token string">'requestPictureInPicture'</span> on <span class="token string">'HTMLVideoElement'</span><span class="token builtin class-name">:</span> Must be    handling a user gesture <span class="token keyword">if</span> there isn't already an element <span class="token keyword">in</span> Picture-in-Picture.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p>第二个错误,是因为,用户代理事件是有生命周期的,触发小窗口切换来回之后(或者在可能是5s)内会死亡</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">DOMException: Failed to execute <span class="token string">'exitPictureInPicture'</span> on <span class="token string">'Document'</span><span class="token builtin class-name">:</span> There is no Picture-in-Picture element <span class="token keyword">in</span>    this document.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-</ol>
-<ul>
-<li>这里有详解的错误原因</li>
-<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/56252108/why-video-requestpictureinpicture-works-only-once">https://stackoverflow.com/questions/56252108/why-video-requestpictureinpicture-works-only-once</a></li>
 </ul>
 
                 
@@ -1101,7 +678,7 @@ pau<span class="token punctuation">.</span><span class="token function">addEvent
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://mail.zyjcould.ltd/2022/04/06/video/">http://mail.zyjcould.ltd/2022/04/06/video/</a>
+                    <a href="http://mail.zyjcould.ltd/2022/04/19/flip/">http://mail.zyjcould.ltd/2022/04/19/flip/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1141,6 +718,10 @@ pau<span class="token punctuation">.</span><span class="token function">addEvent
                             
                                 <a href="/tags/JS/">
                                     <span class="chip bg-color">JS</span>
+                                </a>
+                            
+                                <a href="/tags/HTML/">
+                                    <span class="chip bg-color">HTML</span>
                                 </a>
                             
                         </div>
@@ -1578,29 +1159,84 @@ pau<span class="token punctuation">.</span><span class="token function">addEvent
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/04/15/fa-bu-npm/">
+                <a href="/2022/04/19/flip/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="发布npm">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="FLIP">
                         
-                        <span class="card-title">发布npm</span>
+                        <span class="card-title">FLIP</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            发布一个属于自己的npm
+                            使用FLIP进行布局
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-15
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JS/" class="post-category">
+                                    JS
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JS/">
+                        <span class="chip bg-color">JS</span>
+                    </a>
+                    
+                    <a href="/tags/HTML/">
+                        <span class="chip bg-color">HTML</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/04/16/jest/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Jest">
+                        
+                        <span class="card-title">Jest</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            对js,ts进行test
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1619,59 +1255,6 @@ pau<span class="token punctuation">.</span><span class="token function">addEvent
                     <a href="/tags/config/">
                         <span class="chip bg-color">config</span>
                     </a>
-                    
-                    <a href="/tags/JS/">
-                        <span class="chip bg-color">JS</span>
-                    </a>
-                    
-                    <a href="/tags/npm/">
-                        <span class="chip bg-color">npm</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/03/28/url/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="URL">
-                        
-                        <span class="card-title">URL</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            浏览器原生的URL方法
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-28
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/JS/" class="post-category">
-                                    JS
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
                     
                     <a href="/tags/JS/">
                         <span class="chip bg-color">JS</span>
