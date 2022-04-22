@@ -570,14 +570,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-04-16
+                    2022-04-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    1.9k
                 </div>
                 
 
@@ -739,10 +739,16 @@
 <pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"homepage"</span><span class="token operator">:</span> <span class="token string">"https://github.com/owner/project#readme"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <blockquote>
-<p><code>main</code>:程序的主要入口点</p>
+<p><code>main</code>:程序的主要入口点.一般用于require的引入</p>
 </blockquote>
 <ul>
 <li>也就是说,如果您的包被命名为foo,并且用户安装了它,然后会执行<code>require(&quot;foo&quot;)</code>,则将返回主模块的exports 对象</li>
+</ul>
+<blockquote>
+<p><code>module</code>:一般是esm模块的入口点,用于import的引入</p>
+</blockquote>
+<ul>
+<li>如果包module被命名为foo,用户安装之后,然后执行<code>import...from &quot;foo&quot;</code>,会返回主模块</li>
 </ul>
 <blockquote>
 <p><code>author</code>:作者信息</p>
@@ -1739,7 +1745,7 @@ Sets tag <span class="token string">'latest'</span> <span class="token keyword">
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数
                                             :&nbsp;<span class="white-color">
-                                                150.5k
+                                                151.9k
                                             </span>
                                             
                                                 
