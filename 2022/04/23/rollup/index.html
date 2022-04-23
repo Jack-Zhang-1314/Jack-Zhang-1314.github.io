@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="cheerio, 苍穹之下">
+    <meta name="keywords" content="rollup, 苍穹之下">
     <meta name="description" content="想要属于一个自己的网站,菜鸡前端拼命前行">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>cheerio | 苍穹之下</title>
+    <title>rollup | 苍穹之下</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -409,12 +409,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">cheerio</h1>
+                    <h1 class="description center-align post-title">rollup</h1>
                 </div>
             </div>
         </div>
@@ -538,8 +538,12 @@
                                 <span class="chip bg-color">JS</span>
                             </a>
                         
-                            <a href="/tags/%E7%88%AC%E8%99%AB/">
-                                <span class="chip bg-color">爬虫</span>
+                            <a href="/tags/TS/">
+                                <span class="chip bg-color">TS</span>
+                            </a>
+                        
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
                             </a>
                         
                     </div>
@@ -550,8 +554,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%88%AC%E8%99%AB/" class="post-category">
-                                爬虫
+                            <a href="/categories/JS/" class="post-category">
+                                JS
                             </a>
                         
                     </div>
@@ -563,28 +567,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-30
+                    2022-04-23
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-19
+                    2022-04-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    390
+                    577
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -612,76 +616,105 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>Cheerio包括了JQuery核心的子集.Cheerio从jQuery库中去除了所有DOM不一致性和浏览器尴尬的部分,揭示了它真正优雅的API.</p>
-<p>Cheerio几乎能够解析任何的HTML和XMLdocument</p>
-</blockquote>
-<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">&#123;</span> load <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"cheerio"</span><span class="token punctuation">)</span>
-<span class="token keyword">const</span> html <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;ul id="fruits">
-              &lt;li class="pear">pear111&lt;/li>
-              &lt;li id="apple">apple111
-                &lt;div class="redapple">redapple111&lt;div>
-              &lt;/li>
-            &lt;/ul></span><span class="token template-punctuation string">`</span></span>
-<span class="token keyword">const</span> $ <span class="token operator">=</span> <span class="token function">load</span><span class="token punctuation">(</span>html<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><blockquote>
-<p><code>$(selector,[context],[root])</code></p>
-</blockquote>
-<ol>
-<li><code>selector</code>会在<code>Context</code>范围内搜索,<code>Context</code>会在<code>Root</code>的范围内搜索</li>
-<li><code>context</code>,<code>root</code>:<strong>字符串表达式</strong>,<strong>DOM元素</strong>,<strong>DOM元素的数组</strong>或者<strong>cheerio对象</strong></li>
-<li>返回一个<code>cheerio</code>节点对象</li>
-</ol>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'ul .pear'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<blockquote>
-<p><code>text(textString)</code>:获得元素的text内容，包括子元素.</p>
-<p>如果指定了<code>textString</code>会替换所有内容(包括dom节点)</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.redapple'</span><span class="token punctuation">,</span> <span class="token string">'#fruits'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token string">"app"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment">//app</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+                <h2 id="cli"><a href="#cli" class="headerlink" title="cli"></a>cli</h2><ul>
+<li><code>-c == --config &lt;filname&gt;</code>,指定<code>rollup.config.js</code>配置文件</li>
+<li><code>-i == --input &lt;dirname&gt;</code>:入口文件</li>
+<li><code>-o == --file &lt;output&gt;</code>:单个输出文件</li>
+<li><code>-f == --format &lt;format&gt;</code>:打包风格<ul>
+<li>amd, cjs, es, iife, umd, system</li>
+</ul>
+</li>
+<li><code>-d == --dir &lt;dirname&gt;</code>:将输出文件块打包到目录</li>
+<li><code>-w == --watch</code>:执行监听</li>
+<li><code>--environment &lt;values&gt;</code>:设置环境变量<ul>
+<li><code>--envirment TEST:123</code>可以通过<code>process.env.TEST</code>来获取变量的值</li>
+</ul>
+</li>
+<li><code>-p == --plugin &lt;plugin&gt;</code>:使用插件<ul>
+<li>如果在项目中使用rollup,不使用全局的rollup命令.需要使用npx:<code>npx rollup -c rollup.config.js</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="配置项"><a href="#配置项" class="headerlink" title="配置项"></a><a target="_blank" rel="noopener" href="https://rollupjs.org/guide/en/#configuration-files">配置项</a></h2><ul>
+<li>如果想要不同的配置文件,可以使用一个数组,在数组中配置各个对象</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span><span class="token punctuation">[</span>
+  <span class="token punctuation">&#123;</span>input<span class="token operator">:</span><span class="token operator">...</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#123;</span>input<span class="token operator">:</span> <span class="token operator">...</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
-<p><code>html(htmlString)</code>:获得元素的HTML字符串</p>
-<p>如果<code>htmlString</code>有内容的话,将会<span style="color:red">替代原来的HTML</span></p>
+<ul>
+<li>input:指定打包文件的入口</li>
+<li>output:指定输出文件的出口</li>
+</ul>
 </blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'ul'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">html</span><span class="token punctuation">(</span><span class="token string">'&lt;li class="mango">Mango&lt;/li>'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">html</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment">//'&lt;li class="mango">Mango&lt;/li>'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
+  input<span class="token operator">:</span> <span class="token string">"./index.js"</span><span class="token punctuation">,</span>
+  output<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//直接指定输出的文件夹</span>
+    file<span class="token operator">:</span> <span class="token string">"./dist/bundle.js"</span><span class="token punctuation">,</span>
+    format<span class="token operator">:</span> <span class="token string">"es"</span><span class="token punctuation">,</span>
+    name<span class="token operator">:</span><span class="token string">"bundle"</span><span class="token punctuation">,</span>
+    banner<span class="token operator">:</span><span class="token string">"/* hello */"</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><p>name:示bundles(捆绑包)的全局变量名称.例如<code>iife</code>,<code>umd</code>是必要的.同一页面上的其他脚本可以使用此变量名称来访问捆绑包的导出</p>
+</li>
+<li><p>banner:打包文件在最上行的介绍</p>
+</li>
+<li><p><code>output:[&#123;&#125;,&#123;&#125;...]</code>,<code>input</code>也可以写成数组的形式</p>
+</li>
+</ul>
+<blockquote>
+<p>多入口打包:input写成数组的形式</p>
+</blockquote>
+<ul>
+<li>input可以写成数组的形式也可以写成对象的形式</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
+  input<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./index.js"</span><span class="token punctuation">,</span> <span class="token string">"./test.js"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  output<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    dir<span class="token operator">:</span> <span class="token string">"dist"</span><span class="token punctuation">,</span>
+    format<span class="token operator">:</span> <span class="token string">"cjs"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
-<p><code>$.root()</code>:拿到最上层的根节点(root)</p>
+<p>plugins:使用插件.例如<code>@rollup/plugin-json</code></p>
 </blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>$<span class="token punctuation">.</span><span class="token function">root</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">html</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token operator">&lt;</span>html<span class="token operator">></span>
-  <span class="token operator">&lt;</span>head<span class="token operator">></span>
-  <span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span>
-  <span class="token operator">&lt;</span>body<span class="token operator">></span>
-    <span class="token operator">&lt;</span>ul id<span class="token operator">=</span><span class="token string">"fruits"</span><span class="token operator">></span>shuiguo
-      <span class="token operator">&lt;</span>li <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"pear"</span><span class="token operator">></span>pear111<span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
-      <span class="token operator">&lt;</span>li id<span class="token operator">=</span><span class="token string">"apple"</span><span class="token operator">></span>apple111
-        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"redapple"</span><span class="token operator">></span>app<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
-      <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">></span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">></span>
-  <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
+  <span class="token operator">...</span>
+  plugins<span class="token operator">:</span><span class="token punctuation">[</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+  <span class="token operator">...</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<blockquote>
-<p><code>attr(name,value)</code>:获得或者修改属性</p>
-</blockquote>
-<ol>
-<li>在匹配的元素中只能获得第一元素的属性.</li>
-<li>如果设置一个属性的值为null,则移除这个属性</li>
-<li>可以传递<code>键值</code>或者<code>函数</code></li>
-<li>不指定值则返回一个对象</li>
-</ol>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//查找属性</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'ul .pear'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">'class'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment">//pear</span>
+<ul>
+<li>rollup的插件是按照数组的加载顺序加载的</li>
+<li>对于希望将依赖打包进自己的项目时,需要使用<code>@rollup/plugin-node-resolve</code>插件.并且最好放在第一个位置<ul>
+<li>如果打包的依赖是只支持es项目,那么会和<code>@rollup/plugin-node-resolve</code>产生冲突.这时候最好需要下载<code>@rollup/plugin-commonjs</code></li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">plugins<span class="token operator">:</span><span class="token punctuation">[</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">commonjs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<span class="token comment">//增加一个属性</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'ul'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">'attr'</span><span class="token punctuation">,</span> <span class="token string">"laji"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment">//&#123; id: 'fruits', attr: 'laji' &#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p><code>externals</code>:如果不想要将某个依赖打包进某个项目中,可以使用<code>externals</code></p>
+<ul>
+<li>可以是一个对象或者是数组.如果是数组,<code>[&quot;react&quot;]</code>默认的名字是<code>[&quot;React&quot;]</code>.如果不是这样命名的内库,可以使用对象的形式<code>&#123;&quot;react&quot;:&quot;React&quot;&#125;</code></li>
+</ul>
+</li>
+<li><p><code>output</code>中的plugins.在编译之后启动,而不是编译之前.一般用于压缩代码.</p>
+<ul>
+<li>例如:<code>rollup-plugin-terser</code></li>
+</ul>
+</li>
+</ul>
+
                 
             </div>
             <hr/>
@@ -707,7 +740,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://mail.zyjcould.ltd/2021/11/30/cheerio/">http://mail.zyjcould.ltd/2021/11/30/cheerio/</a>
+                    <a href="http://mail.zyjcould.ltd/2022/04/23/rollup/">http://mail.zyjcould.ltd/2022/04/23/rollup/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -753,8 +786,12 @@ console<span class="token punctuation">.</span><span class="token function">log<
                                     <span class="chip bg-color">JS</span>
                                 </a>
                             
-                                <a href="/tags/%E7%88%AC%E8%99%AB/">
-                                    <span class="chip bg-color">爬虫</span>
+                                <a href="/tags/TS/">
+                                    <span class="chip bg-color">TS</span>
+                                </a>
+                            
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
                                 </a>
                             
                         </div>
@@ -1192,29 +1229,92 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/12/03/proxy/">
+                <a href="/2022/04/23/rollup/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="proxy">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="rollup">
                         
-                        <span class="card-title">proxy</span>
+                        <span class="card-title">rollup</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            proxy代理
+                            vite的一些技巧
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-03
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JS/" class="post-category">
+                                    JS
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/config/">
+                        <span class="chip bg-color">config</span>
+                    </a>
+                    
+                    <a href="/tags/JS/">
+                        <span class="chip bg-color">JS</span>
+                    </a>
+                    
+                    <a href="/tags/TS/">
+                        <span class="chip bg-color">TS</span>
+                    </a>
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/04/19/flip/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="FLIP">
+                        
+                        <span class="card-title">FLIP</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            使用FLIP进行布局
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1234,61 +1334,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
                         <span class="chip bg-color">JS</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/11/30/puppeteer/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="puppeteer">
-                        
-                        <span class="card-title">puppeteer</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            使用puppeteer做一个爬虫
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-30
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%88%AC%E8%99%AB/" class="post-category">
-                                    爬虫
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/config/">
-                        <span class="chip bg-color">config</span>
-                    </a>
-                    
-                    <a href="/tags/JS/">
-                        <span class="chip bg-color">JS</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%88%AC%E8%99%AB/">
-                        <span class="chip bg-color">爬虫</span>
+                    <a href="/tags/HTML/">
+                        <span class="chip bg-color">HTML</span>
                     </a>
                     
                 </div>
