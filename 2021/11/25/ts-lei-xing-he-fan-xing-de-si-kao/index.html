@@ -566,21 +566,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-28
+                    2022-04-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    2.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    9 分
                 </div>
                 
 
@@ -682,6 +682,60 @@ const obj3: Union &#x3D; &#123;
   z: 3,
 &#125;
 &#x2F;&#x2F;同上<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="类型系统"><a href="#类型系统" class="headerlink" title="类型系统"></a>类型系统</h3><blockquote>
+<p>在ts中,相同类型结构的可以称为父子类型</p>
+</blockquote>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">&#x2F;&#x2F;父类型
+interface Father &#123;
+  name: string
+&#125;
+
+&#x2F;&#x2F;子类型
+interface Son &#123;
+  name: string
+  age: number
+&#125;
+
+type isEqual &#x3D; Son extends Father ? true : false &#x2F;&#x2F;true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>在ts类型系统中,只要类型结构相似,就可以称为父子类型<ul>
+<li>对于子类型相对于父类型考虑:子类型会更加具体,父类型是更加松散的</li>
+<li>例如联合类型产生的新类型,他的类型可能会变多,它产生的类型就是父类型</li>
+<li>例如交叉类型产生的新类型,他的类型会更加具体,它产生的类型就是子类型</li>
+</ul>
+</li>
+<li>在使用<code>&amp;</code>产生的新类型(交叉类型),会让新类型更具体</li>
+</ul>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">type Fn &#x3D; ((name: string) &#x3D;&gt; string) &amp; ((name: number) &#x3D;&gt; number)
+type s&lt;T&gt; &#x3D; Fn extends T ? T : never
+type x &#x3D; s&lt;(name: string) &#x3D;&gt; string&gt;
+&#x2F;&#x2F;(name: string) &#x3D;&gt; string<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>在使用<code>|</code>产生的新类型(联合类型),会让新类型更松散</li>
+</ul>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">interface Father &#123;
+  name: string
+  x: number
+&#125;
+
+interface Son &#123;
+  name: string
+  age: number
+&#125;
+
+type FatherOrSon &#x3D; Father extends Father | Son ? true : false
+&#x2F;&#x2F;true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="分布式条件类型"><a href="#分布式条件类型" class="headerlink" title="分布式条件类型"></a>分布式条件类型</h3><blockquote>
+<p>当类型参数为联合类型,并且在条件类型左边直接引用该类型参数的时候,TypeScript 会把每一个元素单独传入来做类型运算,最后再合并成联合类型</p>
+</blockquote>
+<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">type Union &#x3D; &#39;a&#39; | &#39;b&#39; | &#39;c&#39;;
+type UppercaseA&lt;Item extends string&gt; &#x3D; 
+    Item extends &#39;a&#39; ?  Uppercase&lt;Item&gt; : Item;
+type res &#x3D; UppercaseA&lt;Union&gt;&#x2F;&#x2F; &#39;b&#39; | &#39;c&#39; | &#39;A&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="extends关键字"><a href="#extends关键字" class="headerlink" title="extends关键字"></a>extends关键字</h2><blockquote>
 <p><code>A extends B</code>可以理解为A是B的子集(一直都对)</p>
@@ -904,20 +958,6 @@ type Foos &#x3D; FillArray&lt;number, 3&gt;&#x2F;&#x2F;[number,number,number]<sp
 </li>
 <li>递归边界:<code>Arr[&quot;length&quot;] extends N</code>,只有数组的长度达到N,才可以结束</li>
 </ol>
-<h2 id="类型展平"><a href="#类型展平" class="headerlink" title="类型展平"></a>类型展平</h2><blockquote>
-<p>依然使用递归的方式</p>
-</blockquote>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">type Flattern&lt;T&gt; &#x3D; T extends Array&lt;any&gt; ? T[number] : T<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<ul>
-<li>使用<code>T[number]</code>的方式去掉数组的一层嵌套</li>
-</ul>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">let str:Flattern&lt;string[]&gt; &#x3D; &quot;str&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<ul>
-<li>如果想去掉多层嵌套可以使用递归这个条件类型的方式</li>
-</ul>
-<pre class="line-numbers language-ts" data-language="ts"><code class="language-ts">type Flattern&lt;T&gt; &#x3D; T extends Array&lt;any&gt; ? Flattern&lt;T[number]&gt; : T<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
                 
             </div>
@@ -1772,7 +1812,7 @@ type Foos &#x3D; FillArray&lt;number, 3&gt;&#x2F;&#x2F;[number,number,number]<sp
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数
                                             :&nbsp;<span class="white-color">
-                                                152.5k
+                                                154k
                                             </span>
                                             
                                                 
