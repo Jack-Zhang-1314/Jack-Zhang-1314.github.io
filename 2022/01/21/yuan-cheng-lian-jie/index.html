@@ -36,7 +36,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="苍穹之下" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<meta name="generator" content="Hexo 6.1.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="alternate" href="/atom.xml" title="苍穹之下" type="application/atom+xml">
 </head>
 
 
@@ -569,7 +569,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    968
+                    940
                 </div>
                 
 
@@ -610,9 +610,9 @@
 <li><p>在计算机管理的服务中去开启带有<code>openssh</code>管理的页面,<code>Get-Service -Name *ssh*</code>,查看运行状态(需要在<code>powershell</code>中查看)</p>
 </li>
 <li><p>查看ssh是否连接默认的22端口<code>netstat -an | findstr :22</code></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">PS C:\Users\15531&gt; netstat -an | findstr :22
-  TCP    0.0.0.0:22             0.0.0.0:0              LISTENING
-  TCP    [::]:22                [::]:0                 LISTENING<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">PS C:<span class="token punctuation">\</span>Users<span class="token punctuation">\</span><span class="token number">1553</span><span class="token operator"><span class="token file-descriptor important">1</span>></span> <span class="token function">netstat</span> -an <span class="token operator">|</span> findstr :22
+  TCP    <span class="token number">0.0</span>.0.0:22             <span class="token number">0.0</span>.0.0:0              LISTENING
+  TCP    <span class="token punctuation">[</span>::<span class="token punctuation">]</span>:22                <span class="token punctuation">[</span>::<span class="token punctuation">]</span>:0                 LISTENING<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>打开终端,输入<code>ipconfig</code>,可以看到<code>无线局域网适配的WLAN</code>的地址.然后就可以使用ssh连接了</p>
 </li>
@@ -641,10 +641,10 @@
 </blockquote>
 <h4 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h4><ul>
 <li><p>在服务器中使用wget下载<a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/releases">frp</a></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">wget https:&#x2F;&#x2F;github.com&#x2F;fatedier&#x2F;frp&#x2F;releases&#x2F;download&#x2F;v0.38.0&#x2F;frp_0.38.0_linux_amd64.tar.gz
-# 解压
-tar -zxvf frp_0.22.0_linux_amd64.tar.gz
-# 就不一一详说了<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">wget</span> https://github.com/fatedier/frp/releases/download/v0.38.0/frp_0.38.0_linux_amd64.tar.gz
+<span class="token comment"># 解压</span>
+<span class="token function">tar</span> -zxvf frp_0.22.0_linux_amd64.tar.gz
+<span class="token comment"># 就不一一详说了</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>进入到frp目录后,输入以下内容</p>
 <ul>
@@ -653,22 +653,22 @@ tar -zxvf frp_0.22.0_linux_amd64.tar.gz
 </ul>
 </li>
 </ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[common] 
- server_addr &#x3D; xxx.xxx.xxx.xxx  
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>common<span class="token punctuation">]</span> 
+ server_addr <span class="token operator">=</span> xxx.xxx.xxx.xxx  
 
- bind_port &#x3D; 7000
-
-
- dashboard_port &#x3D; 7500
+ bind_port <span class="token operator">=</span> <span class="token number">7000</span>
 
 
- token &#x3D; 12345678 
+ dashboard_port <span class="token operator">=</span> <span class="token number">7500</span>
 
 
- dashboard_user &#x3D; admin
+ token <span class="token operator">=</span> <span class="token number">12345678</span> 
 
 
- dashboard_pwd &#x3D; admin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ dashboard_user <span class="token operator">=</span> admin
+
+
+ dashboard_pwd <span class="token operator">=</span> admin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>运行<code>./frps -c frps.ini</code>,发现成功没问题</li>
@@ -676,11 +676,11 @@ tar -zxvf frp_0.22.0_linux_amd64.tar.gz
 <blockquote>
 <p>为了保证服务器连接关闭之后,还能继续运行,需要下载screen(虚拟终端)</p>
 </blockquote>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">dnf install screen
-# 建立起一次会话
-screen -S frp
-# 到frp目录下
-.&#x2F;frps -c frps.ini<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">dnf <span class="token function">install</span> <span class="token function">screen</span>
+<span class="token comment"># 建立起一次会话</span>
+<span class="token function">screen</span> -S frp
+<span class="token comment"># 到frp目录下</span>
+./frps -c frps.ini<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h4><blockquote>
 <p>windows端需要和服务端配置相同版本的<a href="ttps://github.com/fatedier/frp/releases/download/v0.38.0/frp_0.38.0_windows_amd64.zip">frp</a></p>
@@ -688,22 +688,22 @@ screen -S frp
 <ul>
 <li>token:同服务端配置token保持一致</li>
 </ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[common]
-server_addr &#x3D; xxx.xxx.xxx.xxx 
-server_port &#x3D; 7000
-token &#x3D; 12345678 
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>common<span class="token punctuation">]</span>
+server_addr <span class="token operator">=</span> xxx.xxx.xxx.xxx 
+server_port <span class="token operator">=</span> <span class="token number">7000</span>
+token <span class="token operator">=</span> <span class="token number">12345678</span> 
 
-[rdp]
-type &#x3D; tcp
-local_ip &#x3D; 127.0.0.1
-local_port &#x3D; 3389
-remote_port &#x3D; 7001
+<span class="token punctuation">[</span>rdp<span class="token punctuation">]</span>
+<span class="token builtin class-name">type</span> <span class="token operator">=</span> tcp
+local_ip <span class="token operator">=</span> <span class="token number">127.0</span>.0.1
+local_port <span class="token operator">=</span> <span class="token number">3389</span>
+remote_port <span class="token operator">=</span> <span class="token number">7001</span>
 
-[smb]
-type &#x3D; tcp
-local_ip &#x3D; 127.0.0.1
-local_port &#x3D; 445
-remote_port &#x3D; 7002 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">[</span>smb<span class="token punctuation">]</span>
+<span class="token builtin class-name">type</span> <span class="token operator">=</span> tcp
+local_ip <span class="token operator">=</span> <span class="token number">127.0</span>.0.1
+local_port <span class="token operator">=</span> <span class="token number">445</span>
+remote_port <span class="token operator">=</span> <span class="token number">7002</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
 <p>运行<code>.\frpc.exe -c .\frpc.ini</code>成功后即可在<code>RD Client</code>使用远程连接</p>
@@ -727,10 +727,10 @@ remote_port &#x3D; 7002 <span aria-hidden="true" class="line-numbers-rows"><span
 <ul>
 <li>测试adb是否装好,如下是成功装好</li>
 </ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">C:\Users\15531&gt;adb version
-Android Debug Bridge version 1.0.41
-Version 31.0.3-7562133
-Installed as G:\Screen\platform-tools\adb.exe<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">C:<span class="token punctuation">\</span>Users<span class="token punctuation">\</span><span class="token number">1553</span><span class="token operator"><span class="token file-descriptor important">1</span>></span>adb version
+Android Debug Bridge version <span class="token number">1.0</span>.41
+Version <span class="token number">31.0</span>.3-7562133
+Installed as G:<span class="token punctuation">\</span>Screen<span class="token punctuation">\</span>platform-tools<span class="token punctuation">\</span>adb.exe<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
 <p>配置手机开发人员选项(各个手机可能不同,以mi10举例)</p>
