@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="process, 苍穹之下">
+    <meta name="keywords" content="stream, 苍穹之下">
     <meta name="description" content="想要属于一个自己的网站,菜鸡前端拼命前行">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>process | 苍穹之下</title>
+    <title>stream | 苍穹之下</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -409,12 +409,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">process</h1>
+                    <h1 class="description center-align post-title">stream</h1>
                 </div>
             </div>
         </div>
@@ -546,8 +546,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/process/" class="post-category">
-                                process
+                            <a href="/categories/stram/" class="post-category">
+                                stram
                             </a>
                         
                     </div>
@@ -559,28 +559,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-05-09
+                    2022-05-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-05-10
+                    2022-05-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    865
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    3 分
                 </div>
                 
 
@@ -608,306 +608,142 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ul>
-<li>参考:<a target="_blank" rel="noopener" href="http://nodejs.cn/api/process.html#processexecargv">http://nodejs.cn/api/process.html#processexecargv</a></li>
-</ul>
-<h2 id="process"><a href="#process" class="headerlink" title="process"></a>process</h2><blockquote>
-<p>process位于全局模块,不需要使用加载模块</p>
+                <h2 id="Stream"><a href="#Stream" class="headerlink" title="Stream"></a>Stream</h2><blockquote>
+<p>流(stream)是抽象的数据接口,流实现了<code>EventEmitter</code>这个接口,并且node中的很多对象实现了流</p>
 </blockquote>
 <ul>
-<li>process的主要事情<ol>
-<li>获取进程信息(资源使用,运行环境,运行状态)</li>
-<li>执行进程操作(监听事件,调度任务,发出警告)</li>
+<li><p>在读取大文件的时候,完全读完文件再响应大量用户并发请求的时候,程序可能会消耗大量的内存,可能会造成用户连接缓慢的问题</p>
+ <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//mjs</span>
+<span class="token keyword">import</span> http <span class="token keyword">from</span> <span class="token string">"http"</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> fs <span class="token keyword">from</span> <span class="token string">"fs"</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> filename <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">"data.txt"</span><span class="token punctuation">,</span> <span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>url<span class="token punctuation">)</span>
+  <span class="token keyword">let</span> stream <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">createReadStream</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span>
+  stream<span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"server is running"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>stream可以不需要把文件全部读取再返回,而是一边读取一边返回,数据通过管道流动给客户端,减轻服务器压力</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2019/7/10/16bdbb113be0341a~tplv-t2oaga2asx-zoom-in-crop-mark:1304:0:0:0.awebp" alt=" "></p>
+<ul>
+<li>stream整个流转过程包括<code>source</code>,<code>dest</code>,还有连接二者的管道<code>pipe</code>(stream核心)</li>
+</ul>
+<h3 id="source"><a href="#source" class="headerlink" title="source"></a>source</h3><blockquote>
+<p>stream常见的三种来源</p>
+</blockquote>
+<ol>
+<li>从控制台输入</li>
+<li>http请求中的request</li>
+<li>读取文件</li>
 </ol>
-</li>
-</ul>
-<h3 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h3><blockquote>
-<p>menoryUsage():描述 Node.js 进程的内存使用情况</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span><span class="token function">memoryUsage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment">// &#123;</span>
-<span class="token comment">//   rss: 28729344,</span>
-<span class="token comment">//   heapTotal: 8060928,</span>
-<span class="token comment">//   heapUsed: 6062024,</span>
-<span class="token comment">//   external: 976895,</span>
-<span class="token comment">//   arrayBuffers: 17342</span>
-<span class="token comment">// &#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li><code>rss</code>,常驻集大小,是进程在主内存设备(即总分配内存的子集)中占用的空间量,包括所有<strong>C++<strong>和</strong>JavaScript</strong>对象和代码<ul>
-<li><img src="https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/5/30/163b10282fbb4e46~tplv-t2oaga2asx-zoom-in-crop-mark:1304:0:0:0.awebp" alt=" "></li>
-</ul>
-</li>
-<li><code>heapTotal</code>和 heapUsed 指的是 V8 的内存使用量</li>
-<li><code>external</code>指的是绑定到 V8 管理的 JavaScript 对象的 C++ 对象的内存使用量</li>
-<li><code>arrayBuffers</code>:是指为<code>ArrayBuffer</code>和<code>SharedArrayBuffer</code>分配的内存,包括所有Node.js<code>Buffer</code>这也包含在<code>external</code>值中当Node.js被用作嵌入式库时,此值可能为0,因为在这种情况下可能不会跟踪<code>ArrayBuffer</code>的分配</li>
-</ul>
 <blockquote>
-<p>cpuUsage():返回当前进程的用户和系统 CPU 时间使用情况</p>
+<p>process.stdin</p>
 </blockquote>
 <ul>
-<li>可以传入参数,参数时之前的<code>process.cpuUsage()</code></li>
+<li>当在控制台输入<code>hello world</code>时</li>
 </ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span><span class="token function">cpuUsage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment">//&#123; user: 62000, system: 78000 &#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h3><blockquote>
-<p>cwd():返回 Node.js 进程的当前工作目录</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>cwd<span class="token punctuation">)</span>
-<span class="token comment">//E:\Project\hexoPage</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>version:node版本信息</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>version<span class="token punctuation">)</span><span class="token comment">//v16.14.2</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<blockquote>
-<p>versions: 返回Node.js 的版本字符串及其依赖项</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>versions<span class="token punctuation">)</span>
-<span class="token comment">// &#123;</span>
-<span class="token comment">//   node: '16.14.2',</span>
-<span class="token comment">//   v8: '9.4.146.24-node.20',</span>
-<span class="token comment">//   uv: '1.43.0',</span>
-<span class="token comment">//   zlib: '1.2.11',</span>
-<span class="token comment">//   brotli: '1.0.9',</span>
-<span class="token comment">//   ares: '1.18.1',</span>
-<span class="token comment">//   modules: '93',</span>
-<span class="token comment">//   nghttp2: '1.45.1',</span>
-<span class="token comment">//   napi: '8',</span>
-<span class="token comment">//   llhttp: '6.0.4',</span>
-<span class="token comment">//   openssl: '1.1.1n+quic',</span>
-<span class="token comment">//   cldr: '40.0',</span>
-<span class="token comment">//   icu: '70.1',</span>
-<span class="token comment">//   tz: '2021a3',</span>
-<span class="token comment">//   unicode: '14.0',</span>
-<span class="token comment">//   ngtcp2: '0.1.0-DEV',</span>
-<span class="token comment">//   nghttp3: '0.1.0-DEV'</span>
-<span class="token comment">// &#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>arch:返回当前操作系统的架构</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>arch<span class="token punctuation">)</span>
-<span class="token comment">//x64</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>env:返回包含用户环境的对象</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">)</span>
-<span class="token comment">//设置用户变量</span>
-process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">=</span> <span class="token string">'production'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>platform:用户操作系统的平台</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>platform<span class="token punctuation">)</span>
-<span class="token comment">//win32</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="运行状态"><a href="#运行状态" class="headerlink" title="运行状态"></a>运行状态</h3><ul>
-<li>运行状态指当前进程的运行相关的信息包括启动参数,执行目录,主文件,PID信息,运行时间</li>
-</ul>
-<blockquote>
-<p>启动参数</p>
-</blockquote>
-<ul>
-<li><code>argv</code>获取非命令行选项的所有信息</li>
-<li><code>argv0</code>则获取argv[0]的值</li>
-<li><code>execArgv</code>进程启动时传入的一组特定于 <code>Node.js</code> 的命令行选项.这些选项可用于衍生与父进程具有相同执行环境的子进程<ul>
-<li>选项不会出现在<code>process.argv</code>属性返回的数组中,也不包括<code>Node.js</code><span style="color:red">可执行文件,脚本名称或脚本名称后面的任何选项</span></li>
-</ul>
-</li>
-</ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// node --harmony a.js --version</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>argv<span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>argv0<span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>execArgv<span class="token punctuation">)</span>
-<span class="token comment">// [</span>
-<span class="token comment">//   'E:\\envPath\\node\\node\\node.exe',</span>
-<span class="token comment">//   'E:\\Project\\hexoPage\\a.js',</span>
-<span class="token comment">//   '--version'</span>
-<span class="token comment">// ]</span>
-<span class="token comment">// E:\envPath\node\node\node.exe</span>
-<span class="token comment">// [ '--harmony' ]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>execPath:执行目录</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>execPath<span class="token punctuation">)</span>
-<span class="token comment">// E:\envPath\node\node\node.exe</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>uptime():运行时间</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span><span class="token function">uptime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment">// 0.5094782</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="标准I-x2F-O流"><a href="#标准I-x2F-O流" class="headerlink" title="标准I&#x2F;O流"></a>标准I&#x2F;O流</h3><h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><blockquote>
-<p>pid:返回进程的ID名称</p>
-<p>ppid:属性返回当前进程的父进程的ID名称</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>pid<span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>ppid<span class="token punctuation">)</span>
-<span class="token comment">// 30316</span>
-<span class="token comment">// 32772</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>exitCode:进程退出码的数字</p>
-<p>exit([code]):以 code 的退出状态同步终止进程</p>
-</blockquote>
-<ul>
-<li><code>exitCode</code>:当进程正常退出或通过<code>process.exit()</code>退出而不指定代码时,将作为进程退出码的数字<ul>
-<li>将代码指定为<code>process.exit(code)</code>将覆盖<code>process.exitCode</code>的任何先前设置</li>
-</ul>
-</li>
-<li><code>exit()</code>:以<code>code</code>的退出状态同步终止进程<ul>
-<li>如果省略code,则退出将使用<strong>成功</strong>代码<code>0</code>或<code>process.exitCode</code>的值(如果已设置)</li>
-<li>执行Node.js的<code>shell</code>应该看到退出码为 1</li>
-<li>调用<code>process.exit()</code>将强制进程尽快退出,即使仍有未完全完成的异步操作挂起,包括对<code>process.stdout</code>和<code>process.stderr</code>的I&#x2F;O操作</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>kill(pid[, signal])</p>
-</blockquote>
-<ul>
-<li><p><code>pid</code>:进程标识</p>
-</li>
-<li><p><code>signal</code>:要发送的信号,可以是字符串或者数字.默认值<code>SIGTER</code></p>
-</li>
-<li><p>如果使用<code>pid</code>来杀死进程组,则<code>Windows</code>平台将抛出错误.它实际上只是信号发送者,发送信号可能是做其他事情,而不一定是杀死进程</p>
-</li>
-</ul>
-<pre class="line-numbers language-JS" data-language="JS"><code class="language-JS">import process, &#123; kill &#125; from &#39;node:process&#39;
-
-process.on(&#39;SIGHUP&#39;, () &#x3D;&gt; &#123;
-  console.log(&#39;Got SIGHUP signal.&#39;)
-&#125;)
-
-setTimeout(() &#x3D;&gt; &#123;
-  console.log(&#39;Exiting.&#39;)
-  process.exit(0)
-&#125;, 100)
-
-kill(process.pid, &#39;SIGHUP&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>title:返回当前进程的标题(即ps列出的值).</p>
-</blockquote>
-<ul>
-<li>为<code>process.title</code>分配一个新值会修改ps的当前值</li>
-</ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">process<span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token string">"hhh"</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>title<span class="token punctuation">)</span>
-<span class="token comment">//hhh</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>process.abort():立即退出,并生成核心文件</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">process<span class="token punctuation">.</span><span class="token function">abort</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<blockquote>
-<p>nextTick(callback[, …args])</p>
-</blockquote>
-<ul>
-<li><code>callback</code>:需要传入的回调函数</li>
-<li><code>...args</code>:回调函数需要传入的额外参数</li>
-<li>在mjs的<code>eventloop</code>中<code>Promise</code>的执行顺序大于<code>nextTick</code></li>
-<li>在cjs的<code>eventloop</code>中<code>Promise</code>的执行顺序小于<code>nextTick</code></li>
-</ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">process<span class="token punctuation">.</span><span class="token function">nextTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'nextTick'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">process<span class="token punctuation">.</span>stdin<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"data"</span><span class="token punctuation">,</span> <span class="token parameter">data</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"stream=>"</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">stream=></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>data<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'promise'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-<span class="token function">queueMicrotask</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'queueMicrotask'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-<span class="token comment">//mjs:promise>queueMicrotask>nextTick</span>
-<span class="token comment">//cjs:nextTick>promise>queueMicrotask</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">// stream=> &lt;Buffer 68 65 6c 6c 6f 20 77 6f 72 6c 64 0d 0a></span>
+<span class="token comment">// stream=>hello world</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
-<li><code>queueMicrotask()</code>:使用<strong>微任务队列</strong>来执行回调函数.微任务队列会在Eventloop之前执行完,如果在Eventloop中加入微任务队列,会在下一次eventloop开头的时候执行完微任务队列<ul>
-<li>setTimeout在第一次EventLoop阶段会等定时器结束将自己的回调放入timer中,等到下一次再执行</li>
-<li>首先从上往下执行先将<code>p1</code>这个微任务放入微任务队列中,之后将<code>queueMicrotask</code>放入微任务</li>
-<li>取出<code>p1</code>这个微任务执行<code>console</code>,里面的<code>q1</code>和<code>p2</code>,继续放入微任务队列,然后执行下一个微任务<code>queueMicrotask</code></li>
-<li>…</li>
+<li>控制台输入的任何内容都会被<code>data</code>事件监听到,<code>process.stdin</code>是一个<code>stream</code>对象,data是用来监听数据传入的一个自定义函数</li>
+</ul>
+<h3 id="pipe"><a href="#pipe" class="headerlink" title="pipe"></a>pipe</h3><blockquote>
+<p>在<code>source</code>和<code>dest</code>之间有一个来凝结的管道<code>pipe</code>,他的基本语法是<code>source.pipe(dest)</code>,<code>source</code>和<code>dest</code>就是通过pipe管道,让数据从<code>source</code>流向<code>dest</code></p>
+</blockquote>
+<h3 id="dest"><a href="#dest" class="headerlink" title="dest"></a>dest</h3><blockquote>
+<p>stream常见的三种输出方式</p>
+</blockquote>
+<ol>
+<li>输出控制台</li>
+<li>http请求中的response</li>
+<li>输出文件</li>
+</ol>
+<ul>
+<li>stream的应用场景主要是处理<code>IO</code>流.并且<code>http请求</code>和<code>文件操作</code>都属于IO操作</li>
+<li>stream的本质就是避免IO操作过大,硬件开销太多,因此将IO分批分段进行操作,让数据像水管一样流动</li>
+</ul>
+<blockquote>
+<p>get请求中应用stream</p>
+</blockquote>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> http <span class="token keyword">from</span> <span class="token string">"http"</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> fs <span class="token keyword">from</span> <span class="token string">"fs"</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>method <span class="token operator">===</span> <span class="token string">"GET"</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span><span class="token comment">//默认是get请求</span>
+    <span class="token keyword">const</span> filename <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">"data.txt"</span><span class="token punctuation">,</span> <span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>url<span class="token punctuation">)</span>
+    <span class="token keyword">let</span> stream <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">createReadStream</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span>
+    stream<span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"server is running"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><code>response</code>也是一个stream对象,就是接受收数据的<code>dest</code></li>
+<li><code>request</code>是source,数据的源头</li>
+</ul>
+<blockquote>
+<p>在文件中拷贝数据</p>
+</blockquote>
+   <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> fs <span class="token keyword">from</span> <span class="token string">"fs"</span>
+
+<span class="token keyword">const</span> filenameOne <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">"data.txt"</span><span class="token punctuation">,</span> <span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>url<span class="token punctuation">)</span>
+<span class="token keyword">const</span> filenameTwo <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token string">"data-copy.txt"</span><span class="token punctuation">,</span> <span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>url<span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> readStream <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">createReadStream</span><span class="token punctuation">(</span>filenameOne<span class="token punctuation">)</span>
+<span class="token keyword">const</span> writeStream <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">createWriteStream</span><span class="token punctuation">(</span>filenameTwo<span class="token punctuation">)</span>
+
+readStream<span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>writeStream<span class="token punctuation">)</span>
+
+readStream<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"end"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"readStream end"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>首先创建一个可读数据流<code>readStream</code>,一个可写数据流<code>writeStream</code>,然后直接通过<code>pipe</code>管道把数据直接传过去</li>
+</ul>
+<h3 id="Stream种类"><a href="#Stream种类" class="headerlink" title="Stream种类"></a>Stream种类</h3><ul>
+<li><code>Readable Stream</code> 可读数据流</li>
+<li><code>Writeable Stream</code> 可写数据流</li>
+<li><code>Duplex Stream</code> 双向数据流,可以同时读和写<ul>
+<li><code>Duplex Stream</code>是双向的,既可以读又可以写.<code>Duplex Stream</code>同时实现了<code>Readable</code>和<code>Writeable</code>接口</li>
+<li>包括<code>tcp sockets</code>,<code>zlib streams</code>,<code>crypto streams</code></li>
 </ul>
 </li>
+<li><code>Transform Stream</code>转换数据流,可读可写,同时可以转换&#x2F;处理数据(不常用)</li>
 </ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//mjs</span>
-process<span class="token punctuation">.</span><span class="token function">nextTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'nextTick'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-
-Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"p1"</span><span class="token punctuation">)</span>
-  <span class="token function">queueMicrotask</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'q1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">queueMicrotask</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'q2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<blockquote>
+<p>stream 的弊端</p>
+</blockquote>
+<ol>
+<li>使用<code>rs.pipe(ws)</code>方式来写文件,不是将rs的文件追加到ws文件之后,而是将rs的内容覆盖ws</li>
+<li>已结束&#x2F;关闭 的流不能重复使用,必须重新创建数据流</li>
+<li><code>pipe</code>方法返回的是目标数据流,例如<code>a.pipe(b)</code>返回的是b,因此监听事件需要主义监听对象是否正确</li>
+<li>如果需要监听多个数据流,同时又使用<code>pipe</code>方法</li>
+</ol>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">data
+  <span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'end'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'data end'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-  Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"p2"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'end'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'a end'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-<span class="token function">queueMicrotask</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'queueMicrotask'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'setTimeout'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
-<span class="token comment">// p1</span>
-<span class="token comment">// queueMicrotask</span>
-<span class="token comment">// q1</span>
-<span class="token comment">// p2</span>
-<span class="token comment">// q2</span>
-<span class="token comment">// nextTick</span>
-<span class="token comment">// setTimeout</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li>尽量使用<code>queueMicrotask()</code>而不是<code>process.nextTick()</code></li>
-</ul>
-<h3 id="report"><a href="#report" class="headerlink" title="report"></a>report</h3><blockquote>
-<p>一个对象,其方法用于为当前进程生成诊断报告</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token punctuation">&#123;</span>
-  writeReport<span class="token operator">:</span> <span class="token punctuation">[</span>Function<span class="token operator">:</span> writeReport<span class="token punctuation">]</span><span class="token punctuation">,</span>
-  getReport<span class="token operator">:</span> <span class="token punctuation">[</span>Function<span class="token operator">:</span> getReport<span class="token punctuation">]</span><span class="token punctuation">,</span>
-  directory<span class="token operator">:</span> <span class="token punctuation">[</span>Getter<span class="token operator">/</span>Setter<span class="token punctuation">]</span><span class="token punctuation">,</span>
-  filename<span class="token operator">:</span> <span class="token punctuation">[</span>Getter<span class="token operator">/</span>Setter<span class="token punctuation">]</span><span class="token punctuation">,</span>
-  compact<span class="token operator">:</span> <span class="token punctuation">[</span>Getter<span class="token operator">/</span>Setter<span class="token punctuation">]</span><span class="token punctuation">,</span>
-  signal<span class="token operator">:</span> <span class="token punctuation">[</span>Getter<span class="token operator">/</span>Setter<span class="token punctuation">]</span><span class="token punctuation">,</span>
-  reportOnFatalError<span class="token operator">:</span> <span class="token punctuation">[</span>Getter<span class="token operator">/</span>Setter<span class="token punctuation">]</span><span class="token punctuation">,</span>
-  reportOnSignal<span class="token operator">:</span> <span class="token punctuation">[</span>Getter<span class="token operator">/</span>Setter<span class="token punctuation">]</span><span class="token punctuation">,</span>
-  reportOnUncaughtException<span class="token operator">:</span> <span class="token punctuation">[</span>Getter<span class="token operator">/</span>Setter<span class="token punctuation">]</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li><code>compact</code>:默认值<code>false</code>:以紧凑的单行<code>JSON</code>格式编写报告</li>
-<li><code>direction</code>:默认是<code>&#39;&#39;</code>,将report写入Node.js进程的当前工作目录</li>
-<li><code>filename</code>:写入的文件名称</li>
-<li><code>signal</code>:默认值<code>SIGUSR2</code>,用于触发诊断报告创建的信号</li>
-<li><code>reportOnFatalError</code>:默认值<code>false</code>.根据致命错误（如内存不足错误或C++断言失败）生成诊断报告</li>
-<li><code>reportOnSignal</code>:默认值<code>false</code>.在进程收到指定的信号时生成诊断报告</li>
-<li><code>reportOnUncaughtException</code>:默认值<code>false</code>.在未捕获的异常时生成诊断报告</li>
-<li><code>writeReport([filename][, err])</code>:该函数用于将report写入指定文件<ul>
-<li><code>filename</code>写入report的文件名称</li>
-<li><code>err</code>:报告JavaScript堆栈的自定义错误</li>
-</ul>
-</li>
-<li><code>getReport([err])</code>:<ul>
-<li><code>error</code>:如果存在,报告 JavaScript 堆栈的自定义错误出错的地方</li>
-</ul>
-</li>
-</ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">process<span class="token punctuation">.</span>report<span class="token punctuation">.</span>compact <span class="token operator">=</span> <span class="token boolean">true</span>
-process<span class="token punctuation">.</span>report<span class="token punctuation">.</span>directory <span class="token operator">=</span> <span class="token string">"./"</span>
-process<span class="token punctuation">.</span>report<span class="token punctuation">.</span><span class="token function">writeReport</span><span class="token punctuation">(</span><span class="token string">"report.json"</span><span class="token punctuation">)</span>
-<span class="token comment">//写了filename就不需要传入文件名参数</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+  <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'end'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'b end'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -934,7 +770,7 @@ process<span class="token punctuation">.</span>report<span class="token punctuat
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://mail.zyjcould.ltd/2022/05/09/process/">http://mail.zyjcould.ltd/2022/05/09/process/</a>
+                    <a href="http://mail.zyjcould.ltd/2022/05/14/stream/">http://mail.zyjcould.ltd/2022/05/14/stream/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1415,41 +1251,43 @@ process<span class="token punctuation">.</span>report<span class="token punctuat
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/05/10/child-process/">
+                <a href="/2022/05/14/stream/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="child_process">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="stream">
                         
-                        <span class="card-title">child_process</span>
+                        <span class="card-title">stream</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            node中的child_process模块
+                            node中的stream机制
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/process/" class="post-category">
-                                    process
+                            <a href="/categories/stram/" class="post-category">
+                                    stram
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1472,31 +1310,31 @@ process<span class="token punctuation">.</span>report<span class="token punctuat
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/04/30/git-hui-gun-yu-che-xiao/">
+                <a href="/2022/05/10/child-process/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="git回滚与撤销">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="child_process">
                         
-                        <span class="card-title">git回滚与撤销</span>
+                        <span class="card-title">child_process</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用git进行代码的版本控制
+                            node中的child_process模块
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-10
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/git/" class="post-category">
-                                    git
+                            <a href="/categories/process/" class="post-category">
+                                    process
                                 </a>
                             
                             
@@ -1506,8 +1344,12 @@ process<span class="token punctuation">.</span>report<span class="token punctuat
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/git/">
-                        <span class="chip bg-color">git</span>
+                    <a href="/tags/JS/">
+                        <span class="chip bg-color">JS</span>
+                    </a>
+                    
+                    <a href="/tags/node/">
+                        <span class="chip bg-color">node</span>
                     </a>
                     
                 </div>
