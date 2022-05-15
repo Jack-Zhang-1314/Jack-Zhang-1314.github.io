@@ -36,7 +36,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="苍穹之下" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<meta name="generator" content="Hexo 6.1.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="alternate" href="/atom.xml" title="苍穹之下" type="application/atom+xml">
 </head>
 
 
@@ -566,21 +566,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-05-14
+                    2022-05-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    865
+                    997
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -722,6 +722,22 @@ readStream<span class="token punctuation">.</span><span class="token function">o
 </ul>
 </li>
 <li><code>Transform Stream</code>转换数据流,可读可写,同时可以转换&#x2F;处理数据(不常用)</li>
+</ul>
+<blockquote>
+<p>流驱动的node api</p>
+</blockquote>
+<ul>
+<li><code>process.stdin</code>:返回连接到 <code>stdin</code> 的流</li>
+<li><code>process.stdout</code>:返回连接到 <code>stdout</code> 的流</li>
+<li><code>process.stderr</code>:返回连接到 <code>stderr</code> 的流</li>
+<li><code>fs.createReadStream()</code>: 创建文件的可读流</li>
+<li><code>fs.createWriteStream()</code>: 创建到文件的可写流</li>
+<li><code>net.connect()</code>: 启动基于流的连接</li>
+<li><code>http.request()</code>: 返回 <code>http.ClientRequest</code> 类的实例,该实例是可写流</li>
+<li><code>zlib.createGzip()</code>: 使用 <code>gzip</code>(压缩算法)将数据压缩到流中</li>
+<li><code>zlib.createGunzip()</code>: 解压缩 <code>gzip</code> 流</li>
+<li><code>zlib.createDeflate()</code>: 使用 <code>deflate</code>（压缩算法）将数据压缩到流中</li>
+<li><code>zlib.createInflate()</code>: 解压缩 <code>deflate</code> 流</li>
 </ul>
 <blockquote>
 <p>stream 的弊端</p>
@@ -1251,18 +1267,17 @@ readStream<span class="token punctuation">.</span><span class="token function">o
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/05/14/stream/">
+                <a href="/2022/05/14/stream-api/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="stream">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="stream-api">
                         
-                        <span class="card-title">stream</span>
+                        <span class="card-title">stream-api</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1272,9 +1287,9 @@ readStream<span class="token punctuation">.</span><span class="token function">o
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-14
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-14
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1287,7 +1302,6 @@ readStream<span class="token punctuation">.</span><span class="token function">o
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1596,7 +1610,7 @@ readStream<span class="token punctuation">.</span><span class="token function">o
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数
                                             :&nbsp;<span class="white-color">
-                                                159.5k
+                                                164.7k
                                             </span>
                                             
                                                 
