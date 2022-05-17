@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="vueRouter@4.0.0, 苍穹之下">
+    <meta name="keywords" content="node_event, 苍穹之下">
     <meta name="description" content="想要属于一个自己的网站,菜鸡前端拼命前行">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>vueRouter@4.0.0 | 苍穹之下</title>
+    <title>node_event | 苍穹之下</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -409,12 +409,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">vueRouter@4.0.0</h1>
+                    <h1 class="description center-align post-title">node_event</h1>
                 </div>
             </div>
         </div>
@@ -534,12 +534,8 @@
                                 <span class="chip bg-color">JS</span>
                             </a>
                         
-                            <a href="/tags/vue3/">
-                                <span class="chip bg-color">vue3</span>
-                            </a>
-                        
-                            <a href="/tags/vueRouter/">
-                                <span class="chip bg-color">vueRouter</span>
+                            <a href="/tags/node/">
+                                <span class="chip bg-color">node</span>
                             </a>
                         
                     </div>
@@ -550,8 +546,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/vue/" class="post-category">
-                                vue
+                            <a href="/categories/stram/" class="post-category">
+                                stram
                             </a>
                         
                     </div>
@@ -563,28 +559,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-28
+                    2022-05-17
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-19
+                    2022-05-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    6 分
                 </div>
                 
 
@@ -612,330 +608,215 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h2><ul>
-<li>将给定匹配模式的路由映射到同一个组件</li>
-</ul>
-<blockquote>
-<p>在Vue Router中，我们可以在路径中使用一个动态字段来实现，我们称之为 路径参数</p>
+                <h2 id="events"><a href="#events" class="headerlink" title="events"></a>events</h2><blockquote>
+<p>nodejs的大部分核心api都是围绕惯用的异步事件驱动架构构建的</p>
 </blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token punctuation">&#123;</span>
-  path<span class="token operator">:</span><span class="token string">"/user/:id"</span><span class="token punctuation">,</span>
-  <span class="token function-variable function">component</span><span class="token operator">:</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">"../pages/User.vue"</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <ul>
-<li>在<code>router-link</code>中进行跳转</li>
-</ul>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-link</span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/user/123<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>用户123<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>router-link</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="动态路由取值"><a href="#动态路由取值" class="headerlink" title="动态路由取值"></a>动态路由取值</h3><h4 id="在template中"><a href="#在template中" class="headerlink" title="在template中"></a>在template中</h4><ul>
-<li>通过$route.params获取值</li>
-</ul>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>用户界面:&#123;&#123;$route.params.id&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="在setup中"><a href="#在setup中" class="headerlink" title="在setup中"></a>在setup中</h4><ul>
-<li>使用用 <code>vue-router</code>库给我们提供的一个hook <code>useRoute</code></li>
-</ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> useRoute <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"vue-router"</span>
-<span class="token keyword">export</span> <span class="token keyword">default</span><span class="token punctuation">&#123;</span>
-  <span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">const</span> route <span class="token operator">=</span><span class="token function">useRoute</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>route<span class="token punctuation">.</span>params<span class="token punctuation">.</span>id<span class="token punctuation">)</span> 
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="匹配多个值"><a href="#匹配多个值" class="headerlink" title="匹配多个值"></a>匹配多个值</h3><table>
-<thead>
-<tr>
-<th>匹配模式</th>
-<th>匹配路径</th>
-<th><code>$route.params</code></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>&#x2F;users&#x2F;:user</td>
-<td>&#x2F;users&#x2F;lisi</td>
-<td><code>&#123; user: &#39;lisi&#39; &#125;</code></td>
-</tr>
-<tr>
-<td>&#x2F;users&#x2F;:user&#x2F;id&#x2F;:id</td>
-<td>&#x2F;users&#x2F;:lisi&#x2F;id&#x2F;123</td>
-<td><code>&#123; user: &#39;lisi&#39;, id: &#39;123&#39; &#125;</code></td>
-</tr>
-</tbody></table>
-<h2 id="NotFound页面"><a href="#NotFound页面" class="headerlink" title="NotFound页面"></a>NotFound页面</h2><blockquote>
-<p>对于哪些没有匹配到的路由,可以编写一个动态路由将他们匹配到固定的某个页面</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token punctuation">&#123;</span>
-  path<span class="token operator">:</span><span class="token string">"/:pathMatch(.*)"</span><span class="token punctuation">,</span>
-  <span class="token function-variable function">component</span><span class="token operator">:</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">"../pages/NotFound.vue"</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li>可以在<code>template</code>中使用<code>$route.params.pathMatch</code>获取路径参数<ul>
-<li>例如:<code>user/hhh/111</code></li>
-</ul>
+<li><p>例如: <code>net.Server</code>对象在每次有连接时触发;<code>fs.ReadSteam</code>在打开文件时触发事件;<code>stream</code>在每当有数据提供时触发事件</p>
 </li>
-<li><span style="color:red">注意在<code>/:pathMatch(.*)</code>后面又加了一个 *</span>,即<code>/:pathMatch(.*)*</code>时<ul>
-<li><code>$route.params.pathMatch</code>获取路径参数是一个数组[“user”,”hhh”,”111”]</li>
-</ul>
+<li><p>所有触发事件的对象都是<code>EventEmitter</code>类的实例.这些对象暴露了<code>eventEmitter.on()</code>函数,允许将一个或者多个函数绑定到对象触发的命名事件.通常,事件名称是驼峰式字符串</p>
 </li>
-</ul>
-<h2 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h2><blockquote>
-<p>使用嵌套路由配置来表达某些应用程序的 UI 由嵌套多级的组件组成</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> routes <span class="token operator">=</span> <span class="token punctuation">[</span>
-  <span class="token punctuation">&#123;</span>
-    path<span class="token operator">:</span> <span class="token string">'/home'</span><span class="token punctuation">,</span>
-    <span class="token function-variable function">component</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">"../pages/Home.vue"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    children<span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token punctuation">&#123;</span>
-        path<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
-        redirect<span class="token operator">:</span><span class="token string">"/home/product"</span><span class="token comment">//重定向</span>
-      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-      <span class="token punctuation">&#123;</span>
-        path<span class="token operator">:</span> <span class="token string">'product'</span><span class="token punctuation">,</span>
-        component<span class="token operator">:</span><span class="token function-variable function">component</span><span class="token operator">:</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">"../pages/HomeProduct.vue"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<li><p>当<code>EventEmitter</code>对象触发事件时,所有绑定到该特定事件的函数都会被同步调用.被调用的监听器返回的任何值都将被忽略和丢弃</p>
+ <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> EventEmitter <span class="token keyword">from</span> <span class="token string">"events"</span>
 
-<ul>
-<li>以<code>/</code>开头的嵌套路径将被视为根路径,这将更好的利用组件嵌套</li>
-</ul>
-<h2 id="lt-router-link-gt"><a href="#lt-router-link-gt" class="headerlink" title="&lt;router-link&gt;"></a>&lt;router-link&gt;</h2><h3 id="代码的页面跳转"><a href="#代码的页面跳转" class="headerlink" title="代码的页面跳转"></a>代码的页面跳转</h3><table>
-<thead>
-<tr>
-<th>声明式</th>
-<th>程序化</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>&lt;router-link :to&#x3D;”…”&gt;</td>
-<td><code>router.push(...)</code></td>
-</tr>
-</tbody></table>
-<h4 id="使用router-push-…"><a href="#使用router-push-…" class="headerlink" title="使用router.push(…)"></a>使用router.push(…)</h4><ul>
-<li>使用字符串地址<code>router.push(&#39;/users/123&#39;)</code></li>
-<li>使用对象地址<code>router.push(&#123;&#39;/users/123&#39;&#125;)</code></li>
-<li>使用命名路由并携带params参数:</li>
-</ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> useRouter <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"vue-router"</span>
-<span class="token keyword">export</span> <span class="token keyword">default</span><span class="token punctuation">&#123;</span>
-  <span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">const</span> router<span class="token operator">=</span><span class="token function">useRouter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> name<span class="token operator">:</span><span class="token string">'user'</span><span class="token punctuation">,</span>params<span class="token operator">:</span><span class="token punctuation">&#123;</span>username<span class="token operator">:</span><span class="token string">'eduardo'</span><span class="token punctuation">&#125;</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li><p>携带query参数:</p>
-<ul>
-<li><code>router.push(&#123;path:&#39;/register&#39;,query:&#123;plan:&#39;private&#39;&#125;)</code></li>
-</ul>
-</li>
-<li><p><span style="color:red">使用可重复使用的params时,使用name属性,或者path这样编写<code>/user/$&#123;username&#125;</code></span></p>
-</li>
-</ul>
-<h3 id="替换当前位置"><a href="#替换当前位置" class="headerlink" title="替换当前位置"></a>替换当前位置</h3><blockquote>
-<p>使用push的特点是压入一个新的页面，那么在用户点击返回时，上一个页面还可以回退，但是如果希望当前页面是一个替换操作，那么可以使用<code>replace</code></p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>声明式</th>
-<th>程序化</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>&lt;router-link :to&#x3D;”…” replace&gt;</td>
-<td><code>router.replace(...)</code></td>
-</tr>
-</tbody></table>
-<h3 id="custom"><a href="#custom" class="headerlink" title="custom"></a>custom</h3><blockquote>
-<p>custom选项防止&lt;router-link&gt;将其内容包装在&lt;a&gt;元素内</p>
-<blockquote>
-<p>默认情况下，&lt;router-link&gt;将呈现其内容包裹在一个&lt;a&gt;元素，即使使用<code>v-slot</code>.使用<code>custom</code>，删除该行为</p>
-</blockquote>
-</blockquote>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-link</span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/home<span class="token punctuation">"</span></span> <span class="token attr-name">custom</span> <span class="token attr-name">v-slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;navigate,href,route&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">:href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>href<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>navigate<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>&#123;&#123; route.fullPath &#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>router-link</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="router-link中的v-slot"><a href="#router-link中的v-slot" class="headerlink" title="router-link中的v-slot"></a>router-link中的v-slot</h3><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-link</span>
-  <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/about<span class="token punctuation">"</span></span>
-  <span class="token attr-name">custom</span>
-  <span class="token attr-name">v-slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;href,route,navigate,isActive,isExactActive&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>navigate<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>跳转about<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>href:&#123;&#123;href&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>route:&#123;&#123;route&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>isActive:&#123;&#123;isActive&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>isExactActive:&#123;&#123;isExactActive&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>    
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>router-link</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li><code>href</code>解析后的url</li>
-<li><code>route</code>解析后的规范化的route对象</li>
-<li><code>navigate</code>触发导航的函数</li>
-<li><code>isActive</code>是否匹配的状态</li>
-<li><code>isExactActive</code>是否是精准匹配的状态</li>
-</ul>
-<h3 id="其它api"><a href="#其它api" class="headerlink" title="其它api"></a>其它api</h3><blockquote>
-<p>参考<a target="_blank" rel="noopener" href="https://next.router.vuejs.org/api/#aria-current-value">https://next.router.vuejs.org/api/#aria-current-value</a></p>
-</blockquote>
-<h2 id="router-view"><a href="#router-view" class="headerlink" title="router-view"></a>router-view</h2><ul>
-<li>&lt;router-view&gt;公开一个<code>v-slot</code>API，主要是用&lt;transition&gt;和&lt;keep-alive&gt;组件包装你的路由组件</li>
-</ul>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>router-view</span> <span class="token attr-name">v-slot</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;Component&#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>transition</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>why<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>component</span> <span class="token attr-name">:is</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Component<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>component</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>transition</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>router-view</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="动态的添加删除路由"><a href="#动态的添加删除路由" class="headerlink" title="动态的添加删除路由"></a>动态的添加删除路由</h2><h3 id="添加路由"><a href="#添加路由" class="headerlink" title="添加路由"></a>添加路由</h3><ul>
-<li><p>某些情况下我们可能需要动态的来添加路由</p>
-<ul>
-<li>如根据用户不同的权限，注册不同的路由</li>
-<li>可以使用一个方法 <code>addRoute</code></li>
-</ul>
-</li>
-<li><p>直接添加顶级路由,参数只要传一个动态路由的名称</p>
-</li>
-<li><p>或者是为路由添加子路由,那么还应该传入对应的name属性</p>
-</li>
-</ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> about<span class="token operator">=</span><span class="token punctuation">&#123;</span>
-  path<span class="token operator">:</span><span class="token string">"id"</span><span class="token punctuation">,</span>
-  <span class="token function-variable function">component</span><span class="token operator">:</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">"../pages/About"</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span>
-
-router<span class="token punctuation">.</span><span class="token function">addRoute</span><span class="token punctuation">(</span><span class="token string">"home"</span><span class="token punctuation">,</span>about<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li><span style="color:red">如果新增加的路由的位置与原有的路由相匹配，那就需要你手动导航与<code>router.push()</code>或<code>router.replace()</code>以显示新的路线</span></li>
-</ul>
-<h3 id="删除路由"><a href="#删除路由" class="headerlink" title="删除路由"></a>删除路由</h3><ul>
-<li>添加一个name相同的路由</li>
-<li>通过<code>removeRoute</code>方法，传入路由的名称</li>
-<li>通过<code>addRoute</code>方法的返回值回调</li>
-</ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//添加一个name相同的路由</span>
-router<span class="token punctuation">.</span><span class="token function">addRoute</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>path<span class="token operator">:</span><span class="token string">"/about"</span><span class="token punctuation">,</span>name<span class="token operator">:</span><span class="token string">"about"</span><span class="token punctuation">,</span>component<span class="token operator">:</span>About<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-router<span class="token punctuation">.</span><span class="token function">addRoute</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>path<span class="token operator">:</span><span class="token string">"/home"</span><span class="token punctuation">,</span>name<span class="token operator">:</span><span class="token string">"about"</span><span class="token punctuation">,</span>component<span class="token operator">:</span>Home<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-<span class="token comment">//通过removeRoute方法，传入路由的名称</span>
-router<span class="token punctuation">.</span><span class="token function">addRoute</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>path<span class="token operator">:</span><span class="token string">"/about"</span><span class="token punctuation">,</span>name<span class="token operator">:</span><span class="token string">"about"</span><span class="token punctuation">,</span>component<span class="token operator">:</span>About<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-router<span class="token punctuation">.</span><span class="token function">removeRoute</span><span class="token punctuation">(</span><span class="token string">"about"</span><span class="token punctuation">)</span>
-<span class="token comment">//通过`addRoute`方法的返回值回调</span>
-<span class="token keyword">const</span> removeRoute<span class="token operator">=</span>router<span class="token punctuation">.</span><span class="token function">addRoute</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-  path<span class="token operator">:</span><span class="token string">"/about"</span><span class="token punctuation">,</span>
-  name<span class="token operator">:</span><span class="token string">"about"</span><span class="token punctuation">,</span>
-  component<span class="token operator">:</span>About
+<span class="token keyword">const</span> myEmitter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EventEmitter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+myEmitter<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"events"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"events"</span><span class="token punctuation">)</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-<span class="token function">removeRoute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="其他API"><a href="#其他API" class="headerlink" title="其他API"></a>其他API</h3><ul>
-<li><code>router.hasRoute()</code>检查路由是否存在。</li>
-<li><code>router.getRoutes()</code>获取一个包含所有路由记录的数组</li>
-</ul>
-<h2 id="useLink和RouterLink"><a href="#useLink和RouterLink" class="headerlink" title="useLink和RouterLink"></a>useLink和RouterLink</h2><blockquote>
-<p>Vue Router 将 <code>RouterLink</code> 的内部行为公开为 Composition API 函数。它提供访问与<code>v-slot</code>API相同的属性</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> RouterLink<span class="token punctuation">,</span> useLink <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vue-router'</span>
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
-  name<span class="token operator">:</span> <span class="token string">'App'</span><span class="token punctuation">,</span>
-  props<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-    <span class="token operator">...</span>RouterLink<span class="token punctuation">.</span>props<span class="token punctuation">,</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token function">setup</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">const</span> <span class="token punctuation">&#123;</span>route<span class="token punctuation">,</span>href<span class="token punctuation">,</span>isActive<span class="token punctuation">,</span>isExactActive<span class="token punctuation">,</span>navigate<span class="token punctuation">&#125;</span> <span class="token operator">=</span><span class="token function">useLink</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>href<span class="token punctuation">,</span>navigate<span class="token punctuation">,</span>isActive<span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="路由守卫"><a href="#路由守卫" class="headerlink" title="路由守卫"></a>路由守卫</h2><blockquote>
-<p>路由守卫的触发时机</p>
-</blockquote>
+myEmitter<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">"events"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>事件监听器返回并且使用以下事件:</p>
 <ul>
-<li>导航被触发。</li>
-<li>在失活的组件里调用 beforeRouteLeave 守卫。</li>
-<li>调用全局的 beforeEach 守卫。</li>
-<li>在重用的组件里调用 beforeRouteUpdate 守卫 (2.2+)。</li>
-<li>在路由配置里调用 beforeEnter。</li>
-<li>解析异步路由组件。</li>
-<li>在被激活的组件里调用 beforeRouteEnter。</li>
-<li>调用全局的 beforeResolve 守卫 (2.5+)。</li>
-<li>导航被确认。</li>
-<li>调用全局的 afterEach 钩子。</li>
-<li>触发 DOM 更新。</li>
-<li>调用 beforeRouteEnter 守卫中传给 next 的回调函数，创建好的组件实例会作为回调函数的参数传入。</li>
+<li>当监听器被添加时返回<code>newListener</code></li>
+<li>当监听器被移除时返回<code>removerListener</code></li>
+</ul>
+</li>
 </ul>
 <blockquote>
-<p>Vue router 提供的路由守卫主要用于通过重定向或取消路由来保护路由.有多种方法可以连接到路由导航过程:全局,每个路由或组件内</p>
+<p>将参数和this传给监听器</p>
 </blockquote>
 <ul>
-<li><p>接收两个参数</p>
-<ul>
-<li>to即将进入的路由Route对象</li>
-<li>from即将离开的路由Route对象</li>
-</ul>
+<li><p><code>eventEmitter.emit()</code>方法允许将任意一组参数传给监听函数.</p>
+ <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> EventEmitter <span class="token keyword">from</span> <span class="token string">"events"</span>
+<span class="token keyword">const</span> myEmitter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EventEmitter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+myEmitter<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"events"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+myEmitter<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">"events"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token comment">//1 2 EventEmitter &#123;</span>
+<span class="token comment">//  _events: [Object: null prototype] &#123; events: [Function (anonymous)] &#125;,</span>
+<span class="token comment">//  _eventsCount: 1,</span>
+<span class="token comment">//  _maxListeners: undefined,</span>
+<span class="token comment">//  [Symbol(kCapture)]: false</span>
+<span class="token comment">//&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>return 返回值</p>
-<ul>
-<li>false取消当前导航</li>
-<li>不返回或者undefined进行默认导航</li>
-<li>返回一个路由地址<ul>
-<li>可以是一个string类型的路径</li>
-<li>可以是一个对象，对象中包含<code>path,query,params</code>等信息</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>第三个参数<code>next</code>在vue3中已经不推荐使用</p>
+<li><p>使用箭头函数作为监听器,this关键字不再引用<code>EventEmitter</code>实例</p>
 </li>
 </ul>
-<h3 id="全局路由守卫-beforeEach"><a href="#全局路由守卫-beforeEach" class="headerlink" title="全局路由守卫(beforeEach)"></a>全局路由守卫(beforeEach)</h3><blockquote>
-<p>用来做一些进入页面的限制.比如没有登录，就不能进入某些页面，只有登录了之后才有权限查看某些页面(初始化的时候被调用,每次路由切换之前被调用)</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token function">createRouter</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> <span class="token operator">...</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-
-router<span class="token punctuation">.</span><span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> <span class="token keyword">from</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-  <span class="token comment">// ...</span>
-  <span class="token keyword">return</span> <span class="token boolean">false</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="路由独享守卫-beforeEnter"><a href="#路由独享守卫-beforeEnter" class="headerlink" title="路由独享守卫(beforeEnter)"></a>路由独享守卫(beforeEnter)</h3><blockquote>
-<p>beforeEnter守卫只在进入路由时触发不会在params,query或hash改变时触发</p>
-</blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> routes <span class="token operator">=</span> <span class="token punctuation">[</span>
-  <span class="token punctuation">&#123;</span>
-    path<span class="token operator">:</span> <span class="token string">'/users/:id'</span><span class="token punctuation">,</span>
-    component<span class="token operator">:</span> UserDetails<span class="token punctuation">,</span>
-    <span class="token function-variable function">beforeEnter</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> <span class="token keyword">from</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-      <span class="token keyword">return</span> <span class="token boolean">false</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="全局后置后卫"><a href="#全局后置后卫" class="headerlink" title="全局后置后卫"></a>全局后置后卫</h3><blockquote>
-<p>不会接受<span style="color:red">返回值</span>也不会改变导航本身</p>
 <blockquote>
-<p>用于分析、更改页面标题、声明页面等辅助功能</p>
+<p>异步 VS 同步</p>
 </blockquote>
+<ul>
+<li><p><code>EventEmitter</code>按照注册的顺序同步地调用所有监听器.这确保了事件的正确排序,并有助于避免竞争条件和逻辑错误. 在适当的时候,监听器函数可以使用 <code>setImmediate()</code> 或 <code>process.nextTick()</code> 方法切换到异步的操作模式</p>
+ <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> myEmitter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyEmitter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myEmitter<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'event'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token function">setImmediate</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'this happens asynchronously'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myEmitter<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'event'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<blockquote>
+<p>仅处理事件一次</p>
 </blockquote>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">afterEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> <span class="token keyword">from</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-  <span class="token operator">...</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>当使用<code>eventEmitter.on()</code>方法注册监听器时,每次触发命名事件时都会调用该监听器</p>
+ <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> myEmitter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyEmitter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> m <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+myEmitter<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'event'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token operator">++</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myEmitter<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'event'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 打印: 1</span>
+myEmitter<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'event'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 打印: 2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>使用 <code>eventEmitter.once()</code> 方法,可以注册一个监听器,该监听器最多为特定事件调用一次.一旦事件被触发,则监听器就会被注销然后被调用.</p>
+ <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> myEmitter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyEmitter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> m <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+myEmitter<span class="token punctuation">.</span><span class="token function">once</span><span class="token punctuation">(</span><span class="token string">'event'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token operator">++</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myEmitter<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'event'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 打印: 1</span>
+myEmitter<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'event'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 忽略</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<blockquote>
+<p>错误事件</p>
+</blockquote>
+<ul>
+<li>当<code>EventEmitter</code>实例中发生错误时,典型的操作是触发<code>&#39;error&#39;</code>事件.这些在 Node.js 中被视为特殊情况.</li>
+<li>如果<code>EventEmitter</code>没有为error事件注册至少一个监听器,并且触发<code>error</code>事件,则会抛出错误,打印堆栈跟踪,然后退出Node.js进程</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> myEmitter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyEmitter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myEmitter<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'whoops!'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 抛出错误并使 Node.js 崩溃</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="组件内守卫"><a href="#组件内守卫" class="headerlink" title="组件内守卫"></a>组件内守卫</h3><blockquote>
-<p>参考<a target="_blank" rel="noopener" href="https://next.router.vuejs.org/zh/guide/advanced/composition-api.html#%E5%AF%BC%E8%88%AA%E5%AE%88%E5%8D%AB">https://next.router.vuejs.org/zh/guide/advanced/composition-api.html#%E5%AF%BC%E8%88%AA%E5%AE%88%E5%8D%AB</a></p>
+<ul>
+<li>为了防止 Node.js 进程崩溃,可以使用<code>domain</code>模块.(但请注意,不推荐使用 node:domain 模块)</li>
+<li>作为最佳实践,应始终为<code>error</code>事件添加监听器.</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> myEmitter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyEmitter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myEmitter<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'whoops! there was an error'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myEmitter<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'whoops!'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 打印: whoops! there was an error</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>通过使用符号<code>events.errorMonitor</code>安装监听器,可以在不消费触发的错误的情况下监视<code>error</code>事件.</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token punctuation">&#123;</span> EventEmitter<span class="token punctuation">,</span> errorMonitor <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'node:events'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> myEmitter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EventEmitter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myEmitter<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span>errorMonitor<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  MyMonitoringTool<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+myEmitter<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'whoops!'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 仍然抛出错误并使 Node.js 崩溃</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>Promise</p>
 </blockquote>
+<ul>
+<li>将<code>async</code>函数与事件句柄一起使用是有问题的,因为它会在抛出异常的情况下导致未处理的拒绝</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> ee <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EventEmitter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ee<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'something'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'kaboom'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><code>EventEmitter</code>构造函数中的<code>captureRejections</code>选项或全局的设置可以改变这种行为,在<code>Promise</code>上安装<code>.then(undefined, handler)</code>句柄.此句柄将异常异步地路由到<code>Symbol.for(&#39;nodejs.rejection&#39;)</code>方法(如果有)或<code>error</code>事件句柄(如果没有).</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> ee1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EventEmitter</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> captureRejections<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ee1<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'something'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'kaboom'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ee1<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> console<span class="token punctuation">.</span>log<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> ee2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EventEmitter</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> captureRejections<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ee2<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'something'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'kaboom'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ee2<span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span><span class="token function">for</span><span class="token punctuation">(</span><span class="token string">'nodejs.rejection'</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> console<span class="token punctuation">.</span>log<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>设置 <code>events.captureRejections = true</code> 将更改 <code>EventEmitter</code> 的所有新实例的默认值.</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> events <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'node:events'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+events<span class="token punctuation">.</span>captureRejections <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> ee1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">events<span class="token punctuation">.</span>EventEmitter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ee1<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'something'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'kaboom'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+ee1<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> console<span class="token punctuation">.</span>log<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>由<code>captureRejections</code>行为生成的<code>error</code>事件没有捕获句柄以避免无限的错误循环:建议不要使用<code>async</code>函数作为<code>error</code>事件句柄.</p>
+<h3 id="常用事件"><a href="#常用事件" class="headerlink" title="常用事件"></a>常用事件</h3><ol>
+<li><p><code>emitter.addListener()</code>:<code>emitter.on()</code>的别名</p>
+</li>
+<li><p><code>emitter.on()</code>:添加当事件触发时调用的回调函数</p>
+</li>
+<li><p><code>emitter.emit()</code>:触发事件.按照事件被注册的顺序同步的调用每个事件监听器</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">myEmitter<span class="token punctuation">.</span><span class="token function">emit</span><span class="token punctuation">(</span><span class="token string">"events"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><code>emitter.eventNames()</code>.返回字符串数组(表示在当前<code>EventEmitter</code>对象上注册的事件):</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">myEmitter<span class="token punctuation">.</span><span class="token function">eventNames</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><code>emitter.getMaxListeners()</code>:获取到<code>EventEmitter</code>对象的监听器的最大数量(默认为10,但可以使用<code>setMaxListeners()</code>进行增加或减少)</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">myEmitter<span class="token punctuation">.</span><span class="token function">getMaxListeners</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><code>emitter.setMaxListeners()</code>:设置可以添加到<code>EventEmitter</code>对象的监听器的最大数量(默认为 10,但可以增加或减少)</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">myEmitter<span class="token punctuation">.</span><span class="token function">setMaxListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><code>emitter.listenerCount()</code>:获取作为参数传入的事件监听器的计数</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">myEmitter<span class="token punctuation">.</span><span class="token function">listenerCount</span><span class="token punctuation">(</span><span class="token string">"open"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p><code>emitter.off()</code>:<code>emitter.removeListener</code>的别名</p>
+</li>
+<li><p><code>emitter.removeListener</code>:移除特定的监听器.可以通过将回调函数保存到变量中,方便以后引用</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">doSomething</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+myEvent<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"open"</span><span class="token punctuation">,</span>doSomething<span class="token punctuation">)</span>
+myEvent<span class="token punctuation">.</span><span class="token function">removeListener</span><span class="token punctuation">(</span><span class="token string">"open"</span><span class="token punctuation">,</span>doSomething<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><code>emitter.removeAllListeners()</code>:移除<code>EventEmitter</code>对象的所有监听特定事件的监听器</p>
+</li>
+</ol>
+   <pre class="line-numbers language-js" data-language="js"><code class="language-js">door<span class="token punctuation">.</span><span class="token function">removeAllListeners</span><span class="token punctuation">(</span><span class="token string">'open'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol start="11">
+<li><code>emitter.once()</code>:添加当事件在注册之后首次触发时调用的回调函数.该事件只会被调用一次,不会再被调用.</li>
+</ol>
+   <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> EventEmitter <span class="token keyword">from</span> <span class="token string">"events"</span>
+<span class="token keyword">const</span> ee <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">EventEmitter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+ee<span class="token punctuation">.</span><span class="token function">once</span><span class="token punctuation">(</span><span class="token string">'myevent'</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+  <span class="token comment">//只调用一次</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="12">
+<li><code>emitter.prependListener()</code>:当使用<code>on</code>或<code>addListener</code>添加监听器时,监听器会被添加到监听器队列中的最后一个,并且最后一个被调用.使用<code>prependListener</code>则可以在其他监听器之前添加并调用.</li>
+</ol>
+   <pre class="line-numbers language-js" data-language="js"><code class="language-js">server<span class="token punctuation">.</span><span class="token function">prependListener</span><span class="token punctuation">(</span><span class="token string">'connection'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">stream</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'someone connected!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ol start="13">
+<li><code>emitter.prependOnceListener()</code>:当使用<code>once</code>添加监听器时,监听器会被添加到监听器队列中的最后一个,并且最后一个被调用.使用<code>prependOnceListener</code>则可以在其他监听器之前添加并调用.</li>
+</ol>
 
                 
             </div>
@@ -962,7 +843,7 @@ router<span class="token punctuation">.</span><span class="token function">befor
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://mail.zyjcould.ltd/2021/09/28/vuerouter-4/">http://mail.zyjcould.ltd/2021/09/28/vuerouter-4/</a>
+                    <a href="http://mail.zyjcould.ltd/2022/05/17/node-event/">http://mail.zyjcould.ltd/2022/05/17/node-event/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1004,12 +885,8 @@ router<span class="token punctuation">.</span><span class="token function">befor
                                     <span class="chip bg-color">JS</span>
                                 </a>
                             
-                                <a href="/tags/vue3/">
-                                    <span class="chip bg-color">vue3</span>
-                                </a>
-                            
-                                <a href="/tags/vueRouter/">
-                                    <span class="chip bg-color">vueRouter</span>
+                                <a href="/tags/node/">
+                                    <span class="chip bg-color">node</span>
                                 </a>
                             
                         </div>
@@ -1447,41 +1324,43 @@ router<span class="token punctuation">.</span><span class="token function">befor
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/09/29/vuex-4.0.0/">
+                <a href="/2022/05/17/node-event/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="vuex@4.0.0">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="node_event">
                         
-                        <span class="card-title">vuex@4.0.0</span>
+                        <span class="card-title">node_event</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            vue3的状态管理器
+                            node中的事件模块
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/vue/" class="post-category">
-                                    vue
+                            <a href="/categories/stram/" class="post-category">
+                                    stram
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1489,12 +1368,8 @@ router<span class="token punctuation">.</span><span class="token function">befor
                         <span class="chip bg-color">JS</span>
                     </a>
                     
-                    <a href="/tags/vue3/">
-                        <span class="chip bg-color">vue3</span>
-                    </a>
-                    
-                    <a href="/tags/vuex/">
-                        <span class="chip bg-color">vuex</span>
+                    <a href="/tags/node/">
+                        <span class="chip bg-color">node</span>
                     </a>
                     
                 </div>
@@ -1508,31 +1383,31 @@ router<span class="token punctuation">.</span><span class="token function">befor
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/27/vue3-zhong-zi-ding-yi-zhi-ling/">
+                <a href="/2022/05/14/stream-api/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="vue3中自定义指令">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="stream-api">
                         
-                        <span class="card-title">vue3中自定义指令</span>
+                        <span class="card-title">stream-api</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            vue3的自定义指令
+                            node中的stream机制
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-14
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/vue/" class="post-category">
-                                    vue
+                            <a href="/categories/stram/" class="post-category">
+                                    stram
                                 </a>
                             
                             
@@ -1546,8 +1421,8 @@ router<span class="token punctuation">.</span><span class="token function">befor
                         <span class="chip bg-color">JS</span>
                     </a>
                     
-                    <a href="/tags/vue3/">
-                        <span class="chip bg-color">vue3</span>
+                    <a href="/tags/node/">
+                        <span class="chip bg-color">node</span>
                     </a>
                     
                 </div>
