@@ -546,8 +546,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/stram/" class="post-category">
-                                stram
+                            <a href="/categories/node/" class="post-category">
+                                node
                             </a>
                         
                     </div>
@@ -566,14 +566,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-05-18
+                    2022-05-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.6k
+                    5.7k
                 </div>
                 
 
@@ -748,13 +748,13 @@ process<span class="token punctuation">.</span><span class="token function">next
 <li><code>writable.closed</code>:触发<code>&#39;close&#39;</code>之后为 true</li>
 <li><code>writable.destroyed</code>:在调用 <code>writable.destroy()</code> 之后是 true</li>
 <li><code>writable.writable</code>:如果调用 <code>writable.write()</code> 是安全的,则为 true,这意味着流没有被销毁、出错或结束</li>
-<li><code>writable.writableAborted</code>:返回在触发 ‘finish’ 之前流是被破销毁或出错</li>
-<li><code>writable.writableEnded</code>:在调用<code>writable.end()</code>之后是 true.此属性不指示数据是否已刷新,为此则使用 <code>writable.writableFinished</code> 代替</li>
-<li><code>writable.writableCorked</code>:需要调用 <code>writable.uncork()</code> 以完全解开流的次数</li>
+<li><code>writable.writableAborted</code>:返回在触发<code>finish</code>之前流是被破销毁或出错</li>
+<li><code>writable.writableEnded</code>:在调用<code>writable.end()</code>之后是true.此属性不指示数据是否已刷新,为此则使用<code>writable.writableFinished</code>代替</li>
+<li><code>writable.writableCorked</code>:需要调用<code>writable.uncork()</code>以完全解开流的次数</li>
 <li><code>writable.errored</code>:如果流因错误而被销毁,则返回false</li>
 <li><code>writable.writableFinished</code>:在触发 ‘finish’ 事件之前立即设置为 true</li>
-<li><code>writable.writableHighWaterMark</code>:返回创建此 Writable 时传入的 highWaterMark 的值</li>
-<li><code>writable.writableLength</code>:此属性包含队列中准备写入的字节数(或对象数).该值提供有关 <code>highWaterMark</code>状态的内省数据</li>
+<li><code>writable.writableHighWaterMark</code>:返回创建此<code>Writable</code>时传入的<code>highWaterMark</code>的值</li>
+<li><code>writable.writableLength</code>:此属性包含队列中准备写入的字节数(或对象数).该值提供有关<code>highWaterMark</code>状态的内省数据</li>
 <li><code>writable.writableNeedDrain</code>:如果流的缓冲区已满并且流将触发 ‘drain’,则为 true</li>
 <li><code>writable.writableObjectMode</code>:给定 <code>Writable</code> 流的属性 <code>objectMode</code> 的获取器</li>
 </ol>
@@ -1109,6 +1109,30 @@ readable<span class="token punctuation">.</span><span class="token function">pip
 <li><code>readable.readableLength</code>:此属性包含队列中准备读取的字节数(或对象数).该值提供有关 <code>highWaterMark</code>状态的内省数据</li>
 <li><code>readable.readableObjectMode</code>:给定 Readable 流的属性 objectMode 的获取器</li>
 </ul>
+<h3 id="Duplex-Stream"><a href="#Duplex-Stream" class="headerlink" title="Duplex Stream"></a>Duplex Stream</h3><blockquote>
+<p>Duplex,双工的意思,它的输入和输出可以没有任何关系</p>
+</blockquote>
+<p><img src="./node-stream-duplex.png" alt=" "></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> Duplex <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"node:stream"</span>
+
+<span class="token keyword">const</span> duplex <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Duplex</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">//readable</span>
+<span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">2</span>
+duplex<span class="token punctuation">.</span><span class="token function-variable function">_read</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>i<span class="token operator">--</span> <span class="token operator">?</span> <span class="token string">'read'</span> <span class="token operator">+</span> i <span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+duplex<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"data"</span><span class="token punctuation">,</span> <span class="token parameter">data</span> <span class="token operator">=></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">//writeable</span>
+duplex<span class="token punctuation">.</span><span class="token function-variable function">_write</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">chunk<span class="token punctuation">,</span> encoding<span class="token punctuation">,</span> callback</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>chunk<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+duplex<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"write"</span><span class="token punctuation">)</span>
+<span class="token comment">// write</span>
+<span class="token comment">// read1</span>
+<span class="token comment">// read0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1643,8 +1667,8 @@ readable<span class="token punctuation">.</span><span class="token function">pip
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/stram/" class="post-category">
-                                    stram
+                            <a href="/categories/node/" class="post-category">
+                                    node
                                 </a>
                             
                             
@@ -1696,8 +1720,8 @@ readable<span class="token punctuation">.</span><span class="token function">pip
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/stram/" class="post-category">
-                                    stram
+                            <a href="/categories/node/" class="post-category">
+                                    node
                                 </a>
                             
                             
@@ -1959,7 +1983,7 @@ readable<span class="token punctuation">.</span><span class="token function">pip
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数
                                             :&nbsp;<span class="white-color">
-                                                167k
+                                                168.8k
                                             </span>
                                             
                                                 

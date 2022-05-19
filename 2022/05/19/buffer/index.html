@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="vuex4mapState和mapGetters, 苍穹之下">
+    <meta name="keywords" content="Buffer, 苍穹之下">
     <meta name="description" content="想要属于一个自己的网站,菜鸡前端拼命前行">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>vuex4mapState和mapGetters | 苍穹之下</title>
+    <title>Buffer | 苍穹之下</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -409,12 +409,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">vuex4mapState和mapGetters</h1>
+                    <h1 class="description center-align post-title">Buffer</h1>
                 </div>
             </div>
         </div>
@@ -530,16 +530,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/JS/">
-                                <span class="chip bg-color">JS</span>
-                            </a>
-                        
-                            <a href="/tags/vue3/">
-                                <span class="chip bg-color">vue3</span>
-                            </a>
-                        
-                            <a href="/tags/vuex/">
-                                <span class="chip bg-color">vuex</span>
+                            <a href="/tags/JS-node/">
+                                <span class="chip bg-color">:JS :node</span>
                             </a>
                         
                     </div>
@@ -550,8 +542,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/vue/" class="post-category">
-                                vue
+                            <a href="/categories/node/" class="post-category">
+                                node
                             </a>
                         
                     </div>
@@ -563,28 +555,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-30
+                    2022-05-19
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-19
+                    2022-05-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    395
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    8 分
                 </div>
                 
 
@@ -612,92 +604,212 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="封装mapState和mapGetters"><a href="#封装mapState和mapGetters" class="headerlink" title="封装mapState和mapGetters"></a>封装mapState和mapGetters</h2><blockquote>
-<p>在CompusitionsAPI要将<code>mapState</code>和<code>mapGetters</code>封装</p>
+                <h2 id="Buffer"><a href="#Buffer" class="headerlink" title="Buffer"></a>Buffer</h2><blockquote>
+<p>Buffer是内存区域,帮助开发者处理二进制数据,在此生态系统中处理二进制数据</p>
 </blockquote>
 <ul>
-<li>setup函数中没有this,任何的this都是没有意义的</li>
-<li>解构出来的<code>mapState</code>和<code>mapGetters</code>是一个函数,而不是一个对象</li>
+<li>Buffer与流紧密相连.当处理器接受的数据的速度快于消费的速度,则会将数据收入Buffer</li>
+</ul>
+<h3 id="创建Buffer"><a href="#创建Buffer" class="headerlink" title="创建Buffer"></a>创建Buffer</h3><blockquote>
+<p>在6.0.0之前只能使用Buffer构造函数(new Buffer())创建,该函数会根据提供的参数以不同的方式分配返回的 <code>Buffer</code></p>
+</blockquote>
+<ul>
+<li>可以通过<code>Buffer.from()</code>,<code>Buffer.alloc()</code>与<code>Buffer.allocUnsafe()</code>三种方式来创建</li>
 </ul>
 <blockquote>
-<p>在OptionsAPI不需要封装<code>mapState</code>和<code>mapGetters</code></p>
+<p>使用Buffer.from来创建</p>
 </blockquote>
 <ul>
-<li>解构出来的<code>mapState</code>和<code>mapGetters</code>的函数,<code>computed属性</code>会自动拿到返回值</li>
+<li><p><code>Buffer.from(array)</code>:使用<code>0 ~ 255</code>范围内的字节<code>array</code>分配新的<code>Buffer</code>.该范围之外的数组条目将被截断以符合他</p>
+ <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> buf <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0x00</span><span class="token punctuation">,</span> <span class="token number">0x75</span><span class="token punctuation">,</span> <span class="token number">0x66</span><span class="token punctuation">,</span> <span class="token number">0x66</span><span class="token punctuation">,</span> <span class="token number">0x65</span><span class="token punctuation">,</span> <span class="token number">0x72</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span>
+<span class="token comment">//&lt;Buffer 00 75 66 66 65 72></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><code>Buffer.from(buffer)</code>:buffer,<code>&lt;Buffer&gt; | &lt;Uint8Array&gt;</code>要从中复制的<code>Buffer</code>或者<code>Unit8Array</code>数据</p>
+<ul>
+<li>将传入的buffer数据复制到新的Buffer实例上</li>
+</ul>
+ <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> buf <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> buf2 <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span>
+buf<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0x61</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>buf<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">//aello</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>buf2<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">//hello</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><code>Buffer.from(string[, encoding])</code>:创建包含<code>string</code>的新的Buffer.encoding参数标识将string转换为字节是要使用的字符编码</p>
+<ul>
+<li><code>string</code>要编码的字符串</li>
+<li><code>encoding</code>string的编码.默认值<code>utf8</code></li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> buf2 <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token string">"68656c6c6f"</span><span class="token punctuation">,</span> <span class="token string">"hex"</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>buf2<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">//hello</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p><code>Buffer.from(arrayBuffer[, byteOffset[, length]])</code></p>
+<ul>
+<li><code>object</code>:&lt;Object&gt;支持<code>Symbol.toPrimitive</code>或<code>valueOf()</code>的对象</li>
+<li><code>offsetOrEncoding</code>:&lt;integer&gt; | &lt;string&gt; 字节偏移量或编码</li>
+<li><code>length</code>:&lt;integer&gt; 长度</li>
+</ul>
+ <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> buf2 <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>buf2<span class="token punctuation">)</span><span class="token comment">//&lt;Buffer 68 65 6c 6c 6f></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 </ul>
 <blockquote>
-<p>封装了两个文件</p>
+<p>使用<code>Buffer.alloc</code>来创建</p>
 </blockquote>
+<p><code>Buffer.alloc(size[, fill[, encoding]])</code></p>
 <ul>
-<li><code>proStateStore.js</code>:对<code>mapState</code>和<code>mapGetters</code>的封装</li>
+<li><p><code>size</code>:&lt;integer&gt;新的<code>Buffer</code>所需的长度.</p>
+</li>
+<li><p><code>fill</code>:<strong>默认值: 0</strong>.&lt;string&gt; | &lt;Buffer&gt; | &lt;Uint8Array&gt; | &lt;integer&gt;用于预填充新<code>Buffer</code>的值.</p>
+</li>
+<li><p><code>encoding</code>:<strong>默认值:<code>utf8</code></strong>.&lt;string&gt;如果<code>fill</code>是字符串,则是字符本身的编码</p>
+ <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> buf <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">alloc</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p><span style="background-color:red">如果<code>size</code>大于<code>buffer.constants.MAX_LENGTH</code>或小于0,则抛出<code>ERR_INVALID_ARG_VALUE</code></span></p>
+</li>
 </ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span>mapState<span class="token punctuation">,</span> mapGetters<span class="token punctuation">,</span> createNamespacedHelpers <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vuex'</span>
-<span class="token keyword">import</span>  <span class="token punctuation">&#123;</span>proMapper<span class="token punctuation">&#125;</span>  <span class="token keyword">from</span> <span class="token string">'proMapper.js'</span>
-
-<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">proGetters</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">spaceName<span class="token punctuation">,</span>mapArry</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-  <span class="token keyword">let</span> mapFn <span class="token operator">=</span> mapGetters
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> spaceName <span class="token operator">===</span> <span class="token string">'string'</span> <span class="token operator">&amp;&amp;</span> spaceName<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    mapFn <span class="token operator">=</span> <span class="token function">createNamespacedHelpers</span><span class="token punctuation">(</span>spaceName<span class="token punctuation">)</span><span class="token punctuation">.</span>mapGetters
-  <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-    mapArry <span class="token operator">=</span> spaceName
-  <span class="token punctuation">&#125;</span>
-  <span class="token keyword">return</span> <span class="token function">proMapper</span><span class="token punctuation">(</span>mapArry<span class="token punctuation">,</span> mapFn<span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">proState</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">spaceName<span class="token punctuation">,</span> mapArry</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">let</span> mapFn <span class="token operator">=</span> mapState
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> spaceName <span class="token operator">===</span> <span class="token string">'string'</span> <span class="token operator">&amp;&amp;</span> spaceName<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    mapFn <span class="token operator">=</span> <span class="token function">createNamespacedHelpers</span><span class="token punctuation">(</span>spaceName<span class="token punctuation">)</span><span class="token punctuation">.</span>mapState
-  <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-    mapArry <span class="token operator">=</span> spaceName
-  <span class="token punctuation">&#125;</span>
-  <span class="token keyword">return</span> <span class="token function">proMapper</span><span class="token punctuation">(</span>mapArry<span class="token punctuation">,</span> mapFn<span class="token punctuation">)</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<ol>
+<li><p>如果指定了<code>fill</code>,则分配的 <code>Buffer</code>将通过调用<code>buf.fill(fill)</code>进行初始化</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> buf <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">alloc</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">a</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span>
+<span class="token comment">//&lt;Buffer 61 61 61 61 61></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>如果同时指定了fill和encoding,则分配的<code>Buffer</code>将通过调用<code>buf.fill(fill, encoding)</code>进行初始化</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> buf <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">alloc</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">agudGQ=</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token string">"base64"</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span>
+<span class="token comment">//&lt;Buffer 6a 0b 9d 19 6a></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ol>
 <ul>
-<li><code>proMapper.js</code>:对<code>mapState</code>和<code>mapGetters</code>共同遍历功能的封装</li>
+<li>调用<code>Buffer.alloc()</code>可能比替代的<code>Buffer.allocUnsafe()</code>慢得多,但可确保新创建的<code>Buffer</code>实例的内容永远<span style="color:red">不会包含来自先前分配的敏感数据</span>,包括可能尚未分配给<code>Buffer</code>的数据</li>
 </ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> useStore <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"vuex"</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> computed <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"@vue/reactivity"</span><span class="token punctuation">;</span>
-<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">proMapper</span><span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">mapArry<span class="token punctuation">,</span>mapFn</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-  <span class="token keyword">const</span> store<span class="token operator">=</span><span class="token function">useStore</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token keyword">const</span> stateStoreFn<span class="token operator">=</span><span class="token function">mapFn</span><span class="token punctuation">(</span>mapArry<span class="token punctuation">)</span>
-  <span class="token keyword">let</span> stateStore<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
-  Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>stateStoreFn<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">const</span> fn<span class="token operator">=</span>stateStoreFn<span class="token punctuation">[</span>item<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>$store<span class="token operator">:</span>store<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-    stateStore<span class="token punctuation">[</span>item<span class="token punctuation">]</span><span class="token operator">=</span><span class="token function">computed</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-  <span class="token keyword">return</span> stateStore
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <blockquote>
-<p>封装对于大型项目的解耦合是有必要的,如果在组件中并没有太多属性,冗长的封装加大了阅读性的难度</p>
+<p><code>Buffer.allocUnsafe(size)</code>:以这种方式创建的Buffer实例的底层内存不会被初始化.新创建的Buffer的内容是未知的,可能包含敏感的数据</p>
 </blockquote>
-<h2 id="使用解构赋值"><a href="#使用解构赋值" class="headerlink" title="使用解构赋值"></a>使用解构赋值</h2><blockquote>
-<p>使用对象的解构赋值,可以拿到所有属性,更容易阅读🐕🐕🐕</p>
-</blockquote>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
-<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> useStore <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"vuex"</span>
-<span class="token keyword">export</span> <span class="token keyword">default</span><span class="token punctuation">&#123;</span>
-  <span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">const</span> store<span class="token operator">=</span><span class="token function">useStore</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span><span class="token punctuation">&#123;</span>
-      <span class="token operator">...</span>store<span class="token punctuation">.</span>getters<span class="token punctuation">,</span>
-      <span class="token operator">...</span>store<span class="token punctuation">.</span>state
-    <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="解构出的值并不是响应式"><a href="#解构出的值并不是响应式" class="headerlink" title="解构出的值并不是响应式"></a>解构出的值并不是响应式</h3><ul>
-<li>使用reactive包裹<code>let counter=reactive(&#123;...store.state&#125;)</code><ul>
-<li>同时可以使用<code>toRefs</code>去解包</li>
+<ul>
+<li><p>分配size个字节的新Buffer.如果size大于<code>buffer.constants.MAX_LENGTH</code>或小于0,则抛出<code>ERR_INVALID_ARG_VALUE</code></p>
+ <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> buf <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">allocUnsafe</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 打印(内容可能会有所不同): &lt;Buffer a0 8b 28 3f 01 00 00 00 50 32></span>
+buf<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 打印: &lt;Buffer 00 00 00 00 00 00 00 00 00 00></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><code>Buffer</code>模块预先分配了大小为<code>Buffer.poolSize</code>的内部Buffer实例作为池,用于快速分配使用<code>Buffer.allocUnsafe()</code>,<code>Buffer.from(array)</code>,<code>Buffer.concat()</code>创建的新Buffer实例</p>
+<ul>
+<li>仅当size小于或等于<code>Buffer.poolSize &gt;&gt; 1</code>(Buffer.poolSize除以二再向下取整)时才使用弃用的new Buffer(size)构造函数.</li>
 </ul>
 </li>
-<li>使用ref包裹单个值</li>
+<li><p>使用此预先分配的内部内存池是调用<code>Buffer.alloc(size, fill)</code>与调用<code>Buffer.allocUnsafe(size)</code>之间的关键区别.</p>
+<ul>
+<li><code>Buffer.alloc(size, fill)</code>永远不会使用内部的Buffer池,而<code>Buffer.allocUnsafe(size).fill(fill)</code>会在size小于或等于 <code>Buffer.poolSize</code>的一半时使用内部的Buffer池.</li>
+<li>当应用程序需要<code>Buffer.allocUnsafe()</code>提供的额外性能时,差异很细微,但可能很重要.</li>
 </ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> <span class="token punctuation">&#123;</span>counter<span class="token punctuation">&#125;</span> <span class="token operator">=</span>  <span class="token punctuation">&#123;</span><span class="token operator">...</span>store<span class="token punctuation">.</span>state<span class="token punctuation">&#125;</span>
-<span class="token keyword">let</span> counter<span class="token operator">=</span><span class="token function">ref</span><span class="token punctuation">(</span>counter<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h3 id="Buffer的字符编码"><a href="#Buffer的字符编码" class="headerlink" title="Buffer的字符编码"></a>Buffer的字符编码</h3><ul>
+<li><code>ascii</code>:仅适用于7位ASCII数据.此编码速度很快,如果设置则会剥离高位.</li>
+<li><code>utf8</code>:多字节编码的Unicode字符.许多网页和其他文档格式都使用UTF-8.</li>
+<li><code>utf16le</code>:2或4个字节,小端序编码的Unicode字符.支持代理对(U+10000至U+10FFFF)</li>
+<li><code>ucs2</code>:<code>utf16le</code>的别名.</li>
+<li><code>base64</code>:Base64编码.当从字符串创建<code>Buffer</code>时,(此编码也会正确地接受 RFC 4648 第5节中指定的<code>URL和文件名安全字母</code>).</li>
+<li><code>latin1</code>:一种将<code>Buffer</code>编码成单字节编码字符串的方法(由RFC 1345中的IANA定义,第63页,作为Latin-1的补充块和<code>C0/C1</code>控制码)</li>
+<li><code>binary</code>:<code>latin1</code>的别名.</li>
+<li><code>hex</code>:将每个字节编码成两个十六进制的字符</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> buf <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">,</span> <span class="token string">"ascii"</span><span class="token punctuation">)</span>
+<span class="token comment">//转换成16进制编码</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>buf<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">"hex"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">//68656c6c6f</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>字符串与Buffer类型互转</p>
+</blockquote>
+<ul>
+<li><p><code>Buffer.form()</code>实现,如果不传递<code>encoding</code>默认按照UTF-8格式转换存储</p>
+ <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> buf <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token string">"hello 世界"</span><span class="token punctuation">,</span> <span class="token string">"utf8"</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>buf<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token comment">//12</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>buf<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">//hello �</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>中文在 UTF-8 下占用3个字节,所以<code>世</code>这个字在buf中对应的字节为<code>e4 b8 96</code>,而这里只截取了前两个.所以会造成字符被剪断的乱码现象</p>
+</li>
+</ul>
+<h3 id="Buffer的内存机制"><a href="#Buffer的内存机制" class="headerlink" title="Buffer的内存机制"></a>Buffer的内存机制</h3><ul>
+<li>由于Buffer是大量的二进制数据,假如用一点就像系统去申请,则会造成频繁的像系统内存调用的情况.所以Buffer占用的内存不会再由<code>V8</code>分配,而是在Nodejs的C++层面申请,再在js中进行内存分配,这部分内存称之为<strong>堆外内存</strong></li>
+</ul>
+<blockquote>
+<p>Buffer内存的分配原理</p>
+</blockquote>
+<ul>
+<li>node采用<code>slab</code>机制进行<strong>预先申请,事后分配</strong>,是一种动态的管理机制</li>
+<li><code>Buffer.alloc(size)</code>传入指定的size就会申请一个固定大小的内存区域,slab具有如下的三种状态</li>
+</ul>
+<ol>
+<li><code>full</code>:完全分配状态</li>
+<li><code>partial</code>:部分分配状态</li>
+<li><code>empty</code>:没有被分配状态</li>
+</ol>
+<ul>
+<li><span style="color:red">Buffer 在创建时大小已经被确定且是无法调整的</span>,并且以8kb限制区分是大对象还是小对象<ol>
+<li>在初次加载时就会初始化1个8KB的内存空间,buffer.js源码有体现</li>
+<li>根据申请的内存大小分为小Buffer对象和大Buffer对象</li>
+<li>小Buffer情况,会继续判断这个slab空间是否足够<ul>
+<li>如果空间足够就去使用剩余空间同时更新slab分配状态,偏移量会增加</li>
+<li>如果空间不足,slab空间不足,就会去创建一个新的slab空间用来分配</li>
+</ul>
+</li>
+<li>大Buffer情况,则会直接走<code>createUnsafeBuffer(size)</code>函数</li>
+<li>不论是小Buffer对象还是大Buffer对象,内存分配是在C++层面完成,内存管理在JavaScript层面,最终还是可以被V8的垃圾回收标记所回收</li>
+</ol>
+</li>
+</ul>
+<h3 id="Buffer的应用"><a href="#Buffer的应用" class="headerlink" title="Buffer的应用"></a>Buffer的应用</h3><ol>
+<li><p><code>I/O</code>操作</p>
+<ul>
+<li>fs.createReadStream()</li>
+<li>fs.createWriteStream()</li>
+</ul>
+</li>
+<li><p><code>zlib.js</code>:zlib.js为<code>Node.js</code>的核心库之一其利用了缓冲区(Buffer)的功能来操作二进制数据流,提供了压缩或解压功能</p>
+</li>
+<li><p><code>加解密</code>:重点使用了 <code>Buffer.alloc()</code>初始化一个实例,之后使用了fill方法做了填充,这里重点在看下这个方法的使用</p>
+<ul>
+<li><code>buf.fill(value[, offset[, end]][, encoding])</code><ul>
+<li><code>value</code>: 第一个参数为要填充的内容</li>
+<li><code>offset</code>: 偏移量,填充的起始位置</li>
+<li><code>end</code>: 结束填充 buf 的偏移量</li>
+<li><code>encoding</code>: 编码集</li>
+</ul>
+</li>
+</ul>
+ <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//Cipher 的对称加密</span>
+<span class="token keyword">const</span> crypto <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'crypto'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token punctuation">[</span>key<span class="token punctuation">,</span> iv<span class="token punctuation">,</span> algorithm<span class="token punctuation">,</span> encoding<span class="token punctuation">,</span> cipherEncoding<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token string">'a123456789'</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">'aes-128-ecb'</span><span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">,</span> <span class="token string">'base64'</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">handleKey</span> <span class="token operator">=</span> <span class="token parameter">key</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> bytes <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">alloc</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 初始化一个 Buffer 实例,每一项都用 00 填充</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>bytes<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &lt;Buffer 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00></span>
+  bytes<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token comment">// 填充</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>bytes<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &lt;Buffer 61 31 32 33 34 35 36 37 38 39 00 00 00 00 00 00></span>
+   
+  <span class="token keyword">return</span> bytes<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">let</span> cipher <span class="token operator">=</span> crypto<span class="token punctuation">.</span><span class="token function">createCipheriv</span><span class="token punctuation">(</span>algorithm<span class="token punctuation">,</span> <span class="token function">handleKey</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">,</span> iv<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> crypted <span class="token operator">=</span> cipher<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token string">'Node.js 技术栈'</span><span class="token punctuation">,</span> encoding<span class="token punctuation">,</span> cipherEncoding<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    crypted <span class="token operator">+=</span> cipher<span class="token punctuation">.</span><span class="token function">final</span><span class="token punctuation">(</span>cipherEncoding<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<ul>
+<li><strong>缓冲(Buffer)</strong><ul>
+<li>**缓冲(Buffer)**是用于处理二进制流数据,将数据缓冲起来,它是临时性的,对于流式数据,会采用缓冲区将数据临时存储起来,等缓冲到一定的大小之后在存入硬盘中.</li>
+<li>视频播放器:有时你会看到一个缓冲的图标,这意味着此时这一组缓冲区并未填满,当数据到达填满缓冲区并且被处理之后,此时缓冲图标消失,你可以看到一些图像数据.</li>
+</ul>
+</li>
+<li><strong>缓存(Cache)</strong><ul>
+<li>**缓存(Cache)**我们可以看作是一个中间层,它可以是永久性的将热点数据进行缓存,使得访问速度更快,例如我们通过<code>Memory</code>,<code>Redis</code>等将数据从硬盘或其它第三方接口中请求过来进行缓存,目的就是将数据存于内存的缓存区中,这样对同一个资源进行访问,速度会更快,也是性能优化一个重要的点.</li>
+</ul>
+</li>
+</ul>
 
                 
             </div>
@@ -724,7 +836,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://mail.zyjcould.ltd/2021/09/30/vuex4mapstate-he-mapgetters/">http://mail.zyjcould.ltd/2021/09/30/vuex4mapstate-he-mapgetters/</a>
+                    <a href="http://mail.zyjcould.ltd/2022/05/19/buffer/">http://mail.zyjcould.ltd/2022/05/19/buffer/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -762,16 +874,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/JS/">
-                                    <span class="chip bg-color">JS</span>
-                                </a>
-                            
-                                <a href="/tags/vue3/">
-                                    <span class="chip bg-color">vue3</span>
-                                </a>
-                            
-                                <a href="/tags/vuex/">
-                                    <span class="chip bg-color">vuex</span>
+                                <a href="/tags/JS-node/">
+                                    <span class="chip bg-color">:JS :node</span>
                                 </a>
                             
                         </div>
@@ -1209,54 +1313,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/10/01/tsconfig.json-de-pei-zhi/">
+                <a href="/2022/05/19/buffer/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="tsconfig.json的配置">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Buffer">
                         
-                        <span class="card-title">tsconfig.json的配置</span>
+                        <span class="card-title">Buffer</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            tsconfig.json中的配置
+                            node中的stream机制
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/TS/" class="post-category">
-                                    TS
+                            <a href="/categories/node/" class="post-category">
+                                    node
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JS/">
-                        <span class="chip bg-color">JS</span>
-                    </a>
-                    
-                    <a href="/tags/TS/">
-                        <span class="chip bg-color">TS</span>
-                    </a>
-                    
-                    <a href="/tags/config/">
-                        <span class="chip bg-color">config</span>
+                    <a href="/tags/JS-node/">
+                        <span class="chip bg-color">:JS :node</span>
                     </a>
                     
                 </div>
@@ -1270,31 +1368,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/29/vuex-4.0.0/">
+                <a href="/2022/05/17/node-event/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="vuex@4.0.0">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="node_event">
                         
-                        <span class="card-title">vuex@4.0.0</span>
+                        <span class="card-title">node_event</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            vue3的状态管理器
+                            node中的事件模块
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-17
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/vue/" class="post-category">
-                                    vue
+                            <a href="/categories/node/" class="post-category">
+                                    node
                                 </a>
                             
                             
@@ -1308,12 +1406,8 @@
                         <span class="chip bg-color">JS</span>
                     </a>
                     
-                    <a href="/tags/vue3/">
-                        <span class="chip bg-color">vue3</span>
-                    </a>
-                    
-                    <a href="/tags/vuex/">
-                        <span class="chip bg-color">vuex</span>
+                    <a href="/tags/node/">
+                        <span class="chip bg-color">node</span>
                     </a>
                     
                 </div>
@@ -1560,7 +1654,7 @@
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数
                                             :&nbsp;<span class="white-color">
-                                                167k
+                                                168.8k
                                             </span>
                                             
                                                 
