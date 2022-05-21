@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="musics, 苍穹之下">
+    <meta name="keywords" content="githubAction元数据, 苍穹之下">
     <meta name="description" content="想要属于一个自己的网站,菜鸡前端拼命前行">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>musics | 苍穹之下</title>
+    <title>githubAction元数据 | 苍穹之下</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -409,12 +409,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">musics</h1>
+                    <h1 class="description center-align post-title">githubAction元数据</h1>
                 </div>
             </div>
         </div>
@@ -528,12 +528,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/git/">
+                                <span class="chip bg-color">git</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/git/" class="post-category">
+                                git
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -542,28 +555,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-22
+                    2022-05-21
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-19
+                    2022-05-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    828
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -591,7 +604,147 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <blockquote>
+<p>创建action和使用workflows是两个不同的操作</p>
+</blockquote>
+<ol>
+<li>使用<a target="_blank" rel="noopener" href="https://docs.github.com/cn/actions/using-workflows/about-workflows">workflows</a>是一个自动化的过程<ul>
+<li>由<code>.github/workflows</code>下的<code>yaml</code>文件定义,可以是事件,事件或者手动触发</li>
+</ul>
+</li>
+<li>创建<a target="_blank" rel="noopener" href="https://docs.github.com/cn/actions/creating-actions/about-custom-actions">action</a>可以创建自己的操作或者使用和自定义github社区分享的操作<ul>
+<li>在操作主要元数据文件按来定义操作的输入,输出和主要进入点.元数据的文件名必须要<code>action.yml</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="javascript操作"><a href="#javascript操作" class="headerlink" title="javascript操作"></a><a target="_blank" rel="noopener" href="https://docs.github.com/cn/actions/creating-actions/creating-a-javascript-action">javascript操作</a></h2><ul>
+<li>这里尝试演示一个使用actions元数据去编写一个issue自动提交</li>
+</ul>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://docs.github.com/cn/actions/creating-actions/metadata-syntax-for-github-actions">GitHub Actions的元数据语法</a></p>
+</blockquote>
+<ul>
+<li>在根目录下创建一个<code>action.yml</code>文件,并且文件名称只能是这个</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">name<span class="token operator">:</span> <span class="token string">"test one create issues"</span>
+description<span class="token operator">:</span> <span class="token string">"test create issues"</span>
+inputs<span class="token operator">:</span>
+  token<span class="token operator">:</span>
+    description<span class="token operator">:</span> <span class="token string">"ACTION_ACCESS"</span>
+    required<span class="token operator">:</span> <span class="token boolean">true</span>
+runs<span class="token operator">:</span>
+  using<span class="token operator">:</span> <span class="token string">"node16"</span>
+  main<span class="token operator">:</span> <span class="token string">"index.mjs"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><code>inputs</code>是指定从工作流(workflows)中获取对应的输入字段,<code>token</code>是工作流(workflows)中的名称</li>
+<li><code>runs</code>:指定的操作,这里必须指定是JavaScript操作,复合操作还是Docker容器操作以及操作的执行方式<ul>
+<li><p><code>using</code>:<strong>必要</strong>.指定<code>main</code>中代码的执行环境</p>
+</li>
+<li><p><code>main</code>:<strong>必要</strong>.包含操作的文件</p>
+</li>
+<li><p><code>pre</code>:允许您在<code>main:</code>操作开始之前，在作业开始时运行脚本</p>
+</li>
+<li><p><code>pre-if</code>:允许定义<code>pre</code>操作执行的条件.pre操作只会在满足<code>pre-if</code>中的条件运行.如果未设置,则<code>pre-if</code>默认使用<code>always()</code></p>
+ <pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">pre</span><span class="token punctuation">:</span> <span class="token string">'cleanup.js'</span>
+<span class="token key atrule">pre-if</span><span class="token punctuation">:</span> runner.os == 'linux'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p><code>post</code>:允许您在<code>main:</code>操作完成后,在作业结束时运行脚本</p>
+<ul>
+<li>例如,您可以使用<code>post:</code>终止某些进程或删除不需要的文件</li>
+</ul>
+</li>
+<li><p><code>post-if</code>:允许定义的<code>post</code>操作执行的条件.和<code>pre-if</code>类似</p>
+ <pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">runs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">using</span><span class="token punctuation">:</span> <span class="token string">'node16'</span>
+  <span class="token key atrule">main</span><span class="token punctuation">:</span> <span class="token string">'index.js'</span>
+  <span class="token key atrule">post</span><span class="token punctuation">:</span> <span class="token string">'cleanup.js'</span>
+  <span class="token key atrule">post</span><span class="token punctuation">:</span> <span class="token string">'cleanup.js'</span>
+  <span class="token key atrule">post-if</span><span class="token punctuation">:</span> runner.os == 'linux'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><code>steps</code>:操作中的步骤.这里是符合操作,using必须指定–&gt;<code>using:&quot;composite&quot;</code></p>
+<ul>
+<li><code>shell</code>: <span style="color:red">如果有run操作,必须指定<code>shell</code></span></li>
+</ul>
+ <pre class="line-numbers language-js" data-language="js"><code class="language-js">runs<span class="token operator">:</span>
+  using<span class="token operator">:</span> <span class="token string">"composite"</span>
+  steps<span class="token operator">:</span>
+    <span class="token operator">-</span> run<span class="token operator">:</span> $<span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> github<span class="token punctuation">.</span>action_path <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">/</span>test<span class="token operator">/</span>script<span class="token punctuation">.</span>sh
+      shell<span class="token operator">:</span> bash<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>…</p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>编写index.js文件</p>
+</blockquote>
+<ul>
+<li><p>下载octokit:<code>pnpm add octokit</code>,这里需要使用这个包对github暴露的接口进行操作</p>
+</li>
+<li><p>下载<code>@actions/core</code>:<code>pnpm add @actions/core</code>,该包提供一个接口,用于工作流程命令,输入和输出变量,退出状态以及调试</p>
+ <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> Octokit <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"octokit"</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> getInput <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"@actions/core"</span>
+<span class="token keyword">import</span> dayjs <span class="token keyword">from</span> <span class="token string">"dayjs"</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> token <span class="token operator">=</span> <span class="token function">getInput</span><span class="token punctuation">(</span><span class="token string">"token"</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> octokit <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Octokit</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  auth<span class="token operator">:</span> token
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">await</span> octokit<span class="token punctuation">.</span>rest<span class="token punctuation">.</span>issues<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  owner<span class="token operator">:</span> <span class="token string">"Jack-Zhang-1314"</span><span class="token punctuation">,</span>
+  repo<span class="token operator">:</span> <span class="token string">"demo"</span><span class="token punctuation">,</span>
+  title<span class="token operator">:</span> <span class="token function">getTitle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  body<span class="token operator">:</span> <span class="token function">getBody</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">getTitle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> <span class="token function">dayjs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"YYYY-MM-DD"</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">function</span> <span class="token function">getBody</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">return</span> <span class="token string">"* test a new task"</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>这里的<code>auth:token</code>,是获取的<code>workflows</code>中<code>with</code>关键字设置的输入参数</p>
+</li>
+</ul>
+<blockquote>
+<p>编写工作流<code>workflows</code></p>
+</blockquote>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">on<span class="token operator">:</span> <span class="token punctuation">[</span>push<span class="token punctuation">]</span>
+
+jobs<span class="token operator">:</span>
+  test_one_issues<span class="token operator">:</span>
+    runs<span class="token operator">-</span>on<span class="token operator">:</span> ubuntu<span class="token operator">-</span>latest
+    name<span class="token operator">:</span> create issues action
+    steps<span class="token operator">:</span>
+      <span class="token operator">-</span> name<span class="token operator">:</span> Checkout
+        uses<span class="token operator">:</span> actions<span class="token operator">/</span>checkout@v3
+      <span class="token operator">-</span> name<span class="token operator">:</span> node
+        uses<span class="token operator">:</span> actions<span class="token operator">/</span>setup<span class="token operator">-</span>node@v3<span class="token punctuation">.</span><span class="token number">0.0</span>
+        <span class="token keyword">with</span><span class="token operator">:</span>
+          node<span class="token operator">-</span>version<span class="token operator">:</span> <span class="token string">"16.x"</span>
+      <span class="token operator">-</span> name<span class="token operator">:</span> install
+        run<span class="token operator">:</span> npm install
+      <span class="token operator">-</span> name<span class="token operator">:</span> create issues
+        uses<span class="token operator">:</span> <span class="token punctuation">.</span><span class="token operator">/</span>
+        <span class="token keyword">with</span><span class="token operator">:</span>
+          token<span class="token operator">:</span> $<span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>secrets<span class="token punctuation">.</span><span class="token constant">ACTION_ACCESS</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>最后一个<code>create issues</code>中的<code>uses:./</code>就是指定根路径下自己的action元数据<code>action.yml</code></li>
+<li><code>with</code>就是传给<code>action.yml</code>的键值对.并且在index.js中使用了<code>@action/core</code>中的<code>getInput</code>获取</li>
+</ul>
+<blockquote>
+<p>如果只想打包dist文件到仓库,可以使用<code>@vercel/ncc</code>这个包.这个包只会把引用的模块加载到dist包中</p>
+</blockquote>
+<ul>
+<li>下载ncc包:<code>pnpm add @vercel/ncc</code></li>
+<li>然后添加脚本:<code>&quot;build&quot;: &quot;ncc build index.mjs --license licenses.txt&quot;</code></li>
+<li>运行之后就可以使用dist包每天更新issue了</li>
+</ul>
+
                 
             </div>
             <hr/>
@@ -617,7 +770,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://mail.zyjcould.ltd/Medias/musics/index.html">http://mail.zyjcould.ltd/Medias/musics/index.html</a>
+                    <a href="http://mail.zyjcould.ltd/2022/05/21/githubaction-yuan-shu-ju/">http://mail.zyjcould.ltd/2022/05/21/githubaction-yuan-shu-ju/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -654,7 +807,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/git/">
+                                    <span class="chip bg-color">git</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1095,34 +1252,46 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/Medias/musics/index.html">
+                <a href="/2022/05/21/githubaction-yuan-shu-ju/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="musics">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="githubAction元数据">
                         
-                        <span class="card-title">musics</span>
+                        <span class="card-title">githubAction元数据</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            使用javascript来操作githubAction
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-21
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Jack-zhang
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/git/" class="post-category">
+                                    git
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1130,37 +1299,48 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/Medias/musics/index.html">
+                <a href="/2022/05/19/buffer/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="musics">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Buffer">
                         
-                        <span class="card-title">musics</span>
+                        <span class="card-title">Buffer</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            node中的stream机制
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-19
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Jack-zhang
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/node/" class="post-category">
+                                    node
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JS-node/">
+                        <span class="chip bg-color">:JS :node</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
