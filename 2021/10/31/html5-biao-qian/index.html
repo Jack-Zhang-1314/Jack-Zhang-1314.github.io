@@ -36,7 +36,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 6.1.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="alternate" href="/atom.xml" title="苍穹之下" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="苍穹之下" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 
@@ -566,21 +566,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-04-15
+                    2022-05-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.8k
+                    2.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    14 分
+                    8 分
                 </div>
                 
 
@@ -898,109 +898,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </ul>
 </li>
 </ul>
-<h3 id="音频视频标签"><a href="#音频视频标签" class="headerlink" title="音频视频标签"></a>音频视频标签</h3><ol>
-<li><p>视频标签</p>
-<ul>
-<li><code>&lt;video src=&quot;url&quot; controls=&quot;controls&quot;&gt;&lt;/video&gt;</code>视频标签</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>autoplay</td>
-<td>autoplay</td>
-<td>视频就绪自动播放(谷歌浏览器需要添加<code>muted=&quot;muted&quot;</code>来解决)</td>
-</tr>
-<tr>
-<td>controls</td>
-<td>controls</td>
-<td>向用户显示播放控件</td>
-</tr>
-<tr>
-<td>width</td>
-<td>pixels(像素)</td>
-<td>设置播放器宽度</td>
-</tr>
-<tr>
-<td>height</td>
-<td>pixels(像素)</td>
-<td>设置播放器高度</td>
-</tr>
-<tr>
-<td>loop</td>
-<td>loop</td>
-<td>播放完是否继续播放该视频，循环播放</td>
-</tr>
-<tr>
-<td>preload</td>
-<td>proload</td>
-<td>是否等加载完再播放</td>
-</tr>
-<tr>
-<td>src</td>
-<td>url</td>
-<td>视频url地址</td>
-</tr>
-<tr>
-<td>poster</td>
-<td>Imgurl</td>
-<td>加载等待的画面图片</td>
-</tr>
-<tr>
-<td>autobuffer</td>
-<td>autobuffer</td>
-<td>设置为浏览器缓冲方式，不设置autopaly才有效</td>
-</tr>
-<tr>
-<td>muted</td>
-<td>muted</td>
-<td>静音播放</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>音频标签</p>
-<ul>
-<li><code>&lt;audio src=&quot;url&quot; controls=&quot;controls&quot;&gt;&lt;/audio&gt;</code>音频标签</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>autoplay</td>
-<td>autoplay</td>
-<td>音频就绪自动播放</td>
-</tr>
-<tr>
-<td>controls</td>
-<td>controls</td>
-<td>向用户显示播放控件</td>
-</tr>
-<tr>
-<td>loop</td>
-<td>loop</td>
-<td>播放完是否继续播放该音频，循环播放</td>
-</tr>
-<tr>
-<td>src</td>
-<td>url</td>
-<td>音频url地址</td>
-</tr>
-</tbody></table>
-<ul>
-<li>注意:谷歌浏览器把音频和视频自动播放禁止了</li>
-</ul>
-</li>
-</ol>
 <h3 id="新增的input类型"><a href="#新增的input类型" class="headerlink" title="新增的input类型"></a>新增的input类型</h3><blockquote>
 <p>表示必须输入什么样的类型</p>
 </blockquote>
@@ -1033,56 +930,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </tr>
 </tbody></table>
 <h3 id="新增的属性"><a href="#新增的属性" class="headerlink" title="新增的属性"></a>新增的属性</h3><blockquote>
-<p>表单相关的属性</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>描述</th>
-<th>适用于标签</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>autofocus</td>
-<td>画面打开自动获取焦点</td>
-<td>input,select,textarea,button</td>
-</tr>
-<tr>
-<td>placeholder</td>
-<td>对用户输入进行提示内容</td>
-<td>input,textarea</td>
-</tr>
-<tr>
-<td>form</td>
-<td>声明它属于哪个表单,可以不放在表单内,属性值为该表单id</td>
-<td>input,select,textarea,button…</td>
-</tr>
-<tr>
-<td>multiple</td>
-<td>允许上传文件一次上传多个</td>
-<td>input</td>
-</tr>
-<tr>
-<td>required</td>
-<td>提交时,检查该元素内一定要有内容</td>
-<td>input,textarea</td>
-</tr>
-<tr>
-<td>…</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<ul>
-<li>input与button新增属性:<ul>
-<li><code>formaction</code>重载action:传入一个url</li>
-<li><code>formenctype</code>重载enctype:设置请求头中的<code>content-type</code></li>
-<li><code>formmethod</code>重载method:设置请求方法</li>
-</ul>
-</li>
-</ul>
-<blockquote>
 <p>链接相关的属性</p>
 </blockquote>
 <table>
@@ -1165,235 +1012,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <blockquote>
 <p><strong>designMode</strong>和<strong>contentEditable</strong>(略)</p>
 </blockquote>
-<h2 id="表单属性"><a href="#表单属性" class="headerlink" title="表单属性"></a>表单属性</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form<span class="token punctuation">"</span></span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>test<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>account<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>账号
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>account<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>账号
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>密码
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ol>
-<li><p>在html5中可以直接使用id的签名获取标签对象</p>
-</li>
-<li><p>如果只有一个不重名的name属性,使用<code>document.name</code>会获取该对象</p>
-<ul>
-<li>如果有多个重名的name属性,会<span style="color:red">获取一个数组</span>(这个方式就是<code>nameItem()</code>的简写)</li>
-<li>同样可以使用<code>document.forms.namedItem(&#39;test&#39;)</code>获取元素,’test’是<code>name</code>属性的名称<ul>
-<li>如果<strong>有重名的name属性</strong>,只会获取第一个name属性</li>
-</ul>
-</li>
-</ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span>test <span class="token operator">===</span> form<span class="token punctuation">)</span><span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p><code>document.forms</code>获得的是一个表单的集合(<code>HTMLCollection</code>)</p>
-<ul>
-<li>可以使用索引的方式:<code>document.forms[0]</code>.其实这也就是<code>document.forms.item(0)</code>的属性的简写</li>
-</ul>
-</li>
-</ol>
-<blockquote>
-<p>获取表单的元素.同样,由于forms返回的是<code>HTMLCollections</code>,完全可以使用Item,nameItem()等或者简写的方式</p>
-</blockquote>
-<ul>
-<li><p>当然同样可以使用id元素或者索引来获取元素</p>
- <pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>form<span class="token punctuation">.</span>accountOne <span class="token operator">===</span> form<span class="token punctuation">.</span>elements<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p>和表单元素不同的是,获取表单内元素需要使用<code>elements</code>属性</p>
-<ul>
-<li>可以使用<code>name</code>属性的名称来获取表单元素</li>
-</ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>form<span class="token punctuation">.</span>elements<span class="token punctuation">[</span><span class="token string">"account"</span><span class="token punctuation">]</span> <span class="token operator">===</span> form<span class="token punctuation">.</span>elements<span class="token punctuation">.</span>account<span class="token punctuation">)</span><span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-</ul>
-<h3 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h3><blockquote>
-<p><code>required</code>可用在大多数元素上(除了隐藏元素,图片元素按钮上)</p>
-</blockquote>
-<ul>
-<li>如果元素内容为空白,则不允许提交</li>
-</ul>
-<blockquote>
-<p><code>pattern</code>的属性值为一个正则表达式,在提交时会检查是否符合给定格式</p>
-</blockquote>
-<ul>
-<li>适用于input元素中email,number,url等</li>
-</ul>
-<blockquote>
-<p>mix和max属性:数值类型或日期类型的input元素专用属性</p>
-</blockquote>
-<ul>
-<li>限制输入的数值与日期的范围</li>
-</ul>
-<blockquote>
-<p>step属性控制input元素中的值增加或减少的步幅</p>
-</blockquote>
-<h2 id="文件API"><a href="#文件API" class="headerlink" title="文件API"></a>文件API</h2><blockquote>
-<p>添加multiple属性,file控件内允许一次放置多个文件</p>
-</blockquote>
-<h3 id="Blob对象"><a href="#Blob对象" class="headerlink" title="Blob对象"></a>Blob对象</h3><blockquote>
-<p>Blob表示二进制数据,提供一个slice方法,通过该方法可以访问到字节内部的原始数据块</p>
-</blockquote>
-<ul>
-<li>size属性表示一个Blob对象的字节长度</li>
-<li>type属性表示MIME类型,如果是未知类型,返回一个空字符串</li>
-</ul>
-<h3 id="FileReader接口"><a href="#FileReader接口" class="headerlink" title="FileReader接口"></a>FileReader接口</h3><blockquote>
-<p>用于把文件读入内存,并且读取文件中的数据.且提供了一个异步API,使用该API可以在浏览器主线程中异步访问文件系统,读取文件中的数据</p>
-</blockquote>
-<ul>
-<li>在js脚本中<code>new FileReader()</code></li>
-</ul>
-<blockquote>
-<p>接口的方法</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>方法名</th>
-<th>参数</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>readAsBinaryString</td>
-<td>file</td>
-<td>将文件读取为二进制码,传送到后端,后端通过这段字符串存储文件</td>
-</tr>
-<tr>
-<td>readAsText</td>
-<td>file,[encoding]</td>
-<td>将文件读取为文本,默认值UTF-8</td>
-</tr>
-<tr>
-<td>readAsDataURL</td>
-<td>file</td>
-<td>将文件读取为DataURL,是将雄安文件以一种特殊格式的URL地址直接读入页面</td>
-</tr>
-<tr>
-<td>abort</td>
-<td>(none)</td>
-<td>终断读取操作</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>接口的事件</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>事件</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>onabort</td>
-<td>读取数据中断时触发</td>
-</tr>
-<tr>
-<td>onerror</td>
-<td>读取数据出错时触发</td>
-</tr>
-<tr>
-<td>onloadstart</td>
-<td>读取数据开始时触发</td>
-</tr>
-<tr>
-<td>onprogress</td>
-<td>读取数据中</td>
-</tr>
-<tr>
-<td>onload</td>
-<td>读取数据成功完成时触发</td>
-</tr>
-<tr>
-<td>onloadend</td>
-<td>读取数据完成时触发,无论成功或者失败</td>
-</tr>
-</tbody></table>
-<h2 id="拖放API"><a href="#拖放API" class="headerlink" title="拖放API"></a>拖放API</h2><blockquote>
-<p>实现拖放的步骤</p>
-<blockquote>
-<p>想要拖放对象元素的draggable属性设为true<code>(daggable=&quot;true&quot;)</code>.这样才能时该元素进行拖放.另外img与a元素(必须指定href)默认允许拖放</p>
-</blockquote>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>事件</th>
-<th>产生事件的元素</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>dragstart</td>
-<td>被拖放的元素</td>
-<td>开始拖放的操作</td>
-</tr>
-<tr>
-<td>drag</td>
-<td>被拖放的元素</td>
-<td>拖放过程中</td>
-</tr>
-<tr>
-<td>dragenter</td>
-<td>拖放过程中鼠标经过的元素</td>
-<td>被拖放的元素开始进入本元素的范围内</td>
-</tr>
-<tr>
-<td>dragover</td>
-<td>拖放过程中鼠标经过的元素</td>
-<td>被拖放的元素正则本元素的范围内移动</td>
-</tr>
-<tr>
-<td>dragleave</td>
-<td>拖放过程中鼠标经过的元素</td>
-<td>被拖放的元素离开本元素的范围</td>
-</tr>
-<tr>
-<td>drop</td>
-<td>被拖放的元素</td>
-<td>有其他的元素被拖放到本元素中</td>
-</tr>
-<tr>
-<td>dragend</td>
-<td>拖放的对象元素</td>
-<td>拖放操作结束</td>
-</tr>
-</tbody></table>
-<ul>
-<li>拖动处理的MIME类型<ul>
-<li>text&#x2F;plain:文本文字</li>
-<li>text&#x2F;html:HTML文字</li>
-<li>text&#x2F;xml:xml文字</li>
-<li>text&#x2F;url-list:url列表,每个url为一行</li>
-</ul>
-</li>
-</ul>
-<h3 id="DataTransfer对象的属性和方法"><a href="#DataTransfer对象的属性和方法" class="headerlink" title="DataTransfer对象的属性和方法"></a>DataTransfer对象的属性和方法</h3><table>
-<thead>
-<tr>
-<th>属性&#x2F;方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>dropEffect</td>
-<td>拖放操作的视觉效果,允许指定的值为none,copy,link,move</td>
-</tr>
-<tr>
-<td>effectAllowed</td>
-<td>用来指定当元素被拖放时的视觉效果,可以指定none,copy,copyLink,copyMove,link,linkMove,all,unintialize</td>
-</tr>
-<tr>
-<td>types</td>
-<td>存入数据的种类,字符串的伪数组</td>
-</tr>
-<tr>
-<td>clearData(DOMString format)</td>
-<td>清楚DataTransfer对象中存放的数据,省略参数format,则清楚全部数据</td>
-</tr>
-<tr>
-<td>setDragImage(Element image,long x,long y)</td>
-<td>用img元素来设置拖放图标</td>
-</tr>
-</tbody></table>
 
                 
             </div>
@@ -2240,7 +1858,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数
                                             :&nbsp;<span class="white-color">
-                                                169.7k
+                                                140k
                                             </span>
                                             
                                                 
