@@ -562,7 +562,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-19
+                    2022-05-26
                 </div>
                 
 
@@ -576,7 +576,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    6 分
                 </div>
                 
 
@@ -607,6 +607,10 @@
                 <blockquote>
 <p>github Action是github提供的持续集成的操作,可以抓取代码,运行测试,登录远程服务器,发布到第三方服务器等等</p>
 </blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://docs.github.com/cn/actions/learn-github-actions/environment-variables">GITHUB ACTION 默认环境变量</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.github.com/cn/actions/security-guides/automatic-token-authentication#permissions-for-the-">GITHUB_TOKEN</a></li>
+</ul>
 <h2 id="创建一个工作流程"><a href="#创建一个工作流程" class="headerlink" title="创建一个工作流程"></a>创建一个工作流程</h2><blockquote>
 <p>基本概念</p>
 </blockquote>
@@ -627,7 +631,7 @@
 <blockquote>
 <p><code>name</code>字段:是workflow的名称.如果省略该字段,默认为当前workflow的文件名</p>
 </blockquote>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">name</span><span class="token punctuation">:</span> GitHub Actions Demo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">name: GitHub Actions Demo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <blockquote>
 <p><code>on</code>:指定触发<code>workflow</code>的条件,通常是某些事件</p>
@@ -637,27 +641,27 @@
 <li>指定多个事件:<code>on:[push,pull_request]</code></li>
 <li>指定事件流程</li>
 </ol>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">on</span><span class="token punctuation">:</span>
-  <span class="token key atrule">push</span><span class="token punctuation">:</span>
-    <span class="token key atrule">branches</span><span class="token punctuation">:</span>    
-      <span class="token punctuation">-</span> master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">on:
+  push:
+    branches:    
+      - master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
 <p>使用[活动类型]<a target="_blank" rel="noopener" href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows">https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows</a>:更好地控制工作流的运行时间</p>
 </blockquote>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">on</span><span class="token punctuation">:</span>
-  <span class="token key atrule">label</span><span class="token punctuation">:</span>
-    <span class="token key atrule">types</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>created<span class="token punctuation">,</span> edited<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">on:
+  label:
+    types: [created, edited]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="push-x2F-pull-request"><a href="#push-x2F-pull-request" class="headerlink" title="push&#x2F;pull_request"></a>push&#x2F;pull_request</h4><blockquote>
 <p>分支<code>branches</code>(包括分支),<code>branches-ignore</code>(排除分支)<span style="color:red">push ,pull_request</span>可用</p>
 </blockquote>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">on</span><span class="token punctuation">:</span>
-  <span class="token key atrule">pull_request</span><span class="token punctuation">:</span>
-    <span class="token key atrule">branches</span><span class="token punctuation">:</span>    
-      <span class="token punctuation">-</span> main
-      <span class="token punctuation">-</span> <span class="token string">'mona/octocat'</span>
-      <span class="token punctuation">-</span> <span class="token string">'releases/**'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">on:
+  pull_request:
+    branches:    
+      - main
+      - &#39;mona&#x2F;octocat&#39;
+      - &#39;releases&#x2F;**&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li><code>main</code>:只有运行main分支才会触发</li>
@@ -675,18 +679,18 @@
 <ul>
 <li>只要推送带有js的文件,就会触发</li>
 </ul>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">on</span><span class="token punctuation">:</span>
-  <span class="token key atrule">push</span><span class="token punctuation">:</span>
-    <span class="token key atrule">paths</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> <span class="token string">'**.js'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">on:
+  push:
+    paths:
+      - &#39;**.js&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>如果推送的所有文件路径都和<code>paths-ignore</code>中的正则匹配,则不会触发</li>
 </ul>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">on</span><span class="token punctuation">:</span>
-  <span class="token key atrule">push</span><span class="token punctuation">:</span>
-    <span class="token key atrule">paths-ignore</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> <span class="token string">'docs/**'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">on:
+  push:
+    paths-ignore:
+      - &#39;docs&#x2F;**&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="schedule"><a href="#schedule" class="headerlink" title="schedule"></a>schedule</h4><blockquote>
 <p>定义工作流的时间表。可以使用 <a target="_blank" rel="noopener" href="https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07"><code>POSIX cron</code></a> 语法将工作流安排在特定 UTC 时间运行。计划的工作流在默认分支或基本分支上的最新提交上运行。可以运行计划工作流的最短间隔为每 5 分钟一次</p>
@@ -698,25 +702,25 @@
 <li>一年中的月份 [1,12]</li>
 <li>星期几([0,6] 与 0 &#x3D;星期日)</li>
 </ol>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">on</span><span class="token punctuation">:</span>
-  <span class="token key atrule">schedule</span><span class="token punctuation">:</span>
-    <span class="token comment"># 每天的5.30和17.30触发</span>
-    <span class="token punctuation">-</span> <span class="token key atrule">cron</span><span class="token punctuation">:</span>  <span class="token string">'30 5,17 * * *'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">on:
+  schedule:
+    # 每天的5.30和17.30触发
+    - cron:  &#39;30 5,17 * * *&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="workflow-call"><a href="#workflow-call" class="headerlink" title="workflow_call"></a>workflow_call</h4><p>…</p>
 <h3 id="env"><a href="#env" class="headerlink" title="env"></a>env</h3><blockquote>
 <p><code>workflow</code>中所有作业的步骤的环境变量.也可以设置仅可用于单个作业的步骤或单个步骤的环境变量<code>jobs.&lt;job_id&gt;.env</code>和<code>jobs.&lt;job_id&gt;.steps[*].env</code></p>
 </blockquote>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token comment"># env</span>
-<span class="token key atrule">env</span><span class="token punctuation">:</span>
-  <span class="token key atrule">SERVER</span><span class="token punctuation">:</span> production
-<span class="token comment"># steps</span>
-<span class="token key atrule">steps</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> My first action
-    <span class="token key atrule">env</span><span class="token punctuation">:</span>
-      <span class="token key atrule">GITHUB_TOKEN</span><span class="token punctuation">:</span> $<span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> secrets.GITHUB_TOKEN <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
-      <span class="token key atrule">FIRST_NAME</span><span class="token punctuation">:</span> Mona
-      <span class="token key atrule">LAST_NAME</span><span class="token punctuation">:</span> Octocat<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"># env
+env:
+  SERVER: production
+# steps
+steps:
+  - name: My first action
+    env:
+      GITHUB_TOKEN: $&#123;&#123; secrets.GITHUB_TOKEN &#125;&#125;
+      FIRST_NAME: Mona
+      LAST_NAME: Octocat<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="jobs"><a href="#jobs" class="headerlink" title="jobs"></a>jobs</h3><blockquote>
 <p><code>jobs</code>是<code>workflow</code>中的主体字段,表示要执行一项或多项任务</p>
@@ -725,21 +729,21 @@
 <h4 id="jobs-name"><a href="#jobs-name" class="headerlink" title="jobs..name"></a>jobs.<job_id>.name</h4><blockquote>
 <p>name字段是对任务的说明</p>
 </blockquote>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">jobs</span><span class="token punctuation">:</span>
-  <span class="token key atrule">my_first_job</span><span class="token punctuation">:</span>
-    <span class="token key atrule">name</span><span class="token punctuation">:</span> My first job
-  <span class="token key atrule">my_second_job</span><span class="token punctuation">:</span>
-    <span class="token key atrule">name</span><span class="token punctuation">:</span> My second job<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">jobs:
+  my_first_job:
+    name: My first job
+  my_second_job:
+    name: My second job<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="jobs-needs"><a href="#jobs-needs" class="headerlink" title="jobs..needs"></a>jobs.<job_id>.needs</h4><blockquote>
 <p>needs:指定当前任务的依赖关系,即运行顺序</p>
 </blockquote>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">jobs</span><span class="token punctuation">:</span>
-  <span class="token key atrule">job1</span><span class="token punctuation">:</span>
-  <span class="token key atrule">job2</span><span class="token punctuation">:</span>
-    <span class="token key atrule">needs</span><span class="token punctuation">:</span> job1
-  <span class="token key atrule">job3</span><span class="token punctuation">:</span>
-    <span class="token key atrule">needs</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>job1<span class="token punctuation">,</span> job2<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">jobs:
+  job1:
+  job2:
+    needs: job1
+  job3:
+    needs: [job1, job2]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li><code>job1</code>必须先于<code>job2</code>完成,而<code>job3</code>等待<code>job1和job2</code>的完成才能运行</li>
@@ -747,7 +751,7 @@
 <h4 id="jobs-runs-on"><a href="#jobs-runs-on" class="headerlink" title="jobs..runs-on"></a>jobs.<job_id>.runs-on</h4><blockquote>
 <p>用于定义要在其上运行作业的计算机的类型</p>
 </blockquote>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">runs-on: ubuntu-latest<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h4 id="jobs-steps"><a href="#jobs-steps" class="headerlink" title="jobs..steps"></a>jobs.<job_id>.steps</h4><ul>
 <li><code>jobs.&lt;job_id&gt;.steps.name</code>:步骤名称</li>
@@ -763,10 +767,10 @@
 <li><p>当前操作系统中安装 <code>node:16</code> 的 action 示例</p>
 </li>
 </ul>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> use Node.js 16.x
-  <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/setup<span class="token punctuation">-</span>node@v1
-  <span class="token key atrule">with</span><span class="token punctuation">:</span>
-    <span class="token key atrule">node-version</span><span class="token punctuation">:</span> 16.x<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">- name: use Node.js 16.x
+  uses: actions&#x2F;setup-node@v1
+  with:
+    node-version: 16.x<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>使用docker镜像<ul>
@@ -778,31 +782,31 @@
 </ul>
 </li>
 </ul>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">jobs</span><span class="token punctuation">:</span>
-  <span class="token key atrule">build</span><span class="token punctuation">:</span>
-    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
-    <span class="token key atrule">container</span><span class="token punctuation">:</span>
-      <span class="token key atrule">image</span><span class="token punctuation">:</span> node<span class="token punctuation">:</span><span class="token number">16</span>
-    <span class="token key atrule">steps</span><span class="token punctuation">:</span> 
-     <span class="token punctuation">-</span> <span class="token key atrule">uses</span><span class="token punctuation">:</span> action/checkout@v1
-     <span class="token punctuation">-</span> <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string"> 
-         node -v</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: node:16
+    steps: 
+     - uses: action&#x2F;checkout@v1
+     - run: | 
+         node -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>自己发布的镜像:<code>docker://&#123;host&#125;/&#123;image&#125;:&#123;tag&#125;</code></li>
 </ul>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">jobs</span><span class="token punctuation">:</span>
-  <span class="token key atrule">build</span><span class="token punctuation">:</span>
-    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Install
-        <span class="token key atrule">uses</span><span class="token punctuation">:</span> docker<span class="token punctuation">:</span>//node<span class="token punctuation">:</span>alpine
-        <span class="token key atrule">with</span><span class="token punctuation">:</span>
-          <span class="token key atrule">args</span><span class="token punctuation">:</span> npm install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">jobs:
+  build:
+    steps:
+      - name: Install
+        uses: docker:&#x2F;&#x2F;node:alpine
+        with:
+          args: npm install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
 <p><code>with</code>:有的 Action可能会需要我们传入一些特定的值：比如上面的 node 版本啊之类的,这些需要我们传入的参数由 with 关键字来引入</p>
 </blockquote>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">with</span><span class="token punctuation">:</span>
-  <span class="token key atrule">node-version</span><span class="token punctuation">:</span> 16.x<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">with:
+  node-version: 16.x<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <blockquote>
 <p><code>run</code>:可以运行操作系统中原有的shell命令</p>
@@ -810,22 +814,22 @@
 <ul>
 <li>单行命令:</li>
 </ul>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Install Dependencies
-  <span class="token key atrule">run</span><span class="token punctuation">:</span> npm install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">- name: Install Dependencies
+  run: npm install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <ul>
 <li>多行命令</li>
 </ul>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Clean install dependencies and build
-  <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">- name: Clean install dependencies and build
+  run: |
     npm ci
-    npm run build</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+    npm run build<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>指定运行的工作目录</li>
 </ul>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">run</span><span class="token punctuation">:</span> npm install
-<span class="token key atrule">working-directory</span><span class="token punctuation">:</span> ./temp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">run: npm install
+working-directory: .&#x2F;temp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <blockquote>
 <p><code>shell</code>:指定终端运行脚本命令(run)</p>
@@ -836,40 +840,40 @@
 <h2 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h2><blockquote>
 <p>部署hexo到服务器</p>
 </blockquote>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">name</span><span class="token punctuation">:</span> CI
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">name: CI
 
-<span class="token key atrule">on</span><span class="token punctuation">:</span>
-  <span class="token key atrule">push</span><span class="token punctuation">:</span>
-    <span class="token key atrule">branches</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>master<span class="token punctuation">]</span>
-  <span class="token key atrule">workflow_dispatch</span><span class="token punctuation">:</span>
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
 
-<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
-  <span class="token key atrule">build</span><span class="token punctuation">:</span>
-    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v2
+    steps:
+      - uses: actions&#x2F;checkout@v2
 
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> install nodejs
-        <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/setup<span class="token punctuation">-</span>node@v3.0.0
-        <span class="token key atrule">with</span><span class="token punctuation">:</span>
-          <span class="token key atrule">node-version</span><span class="token punctuation">:</span> <span class="token string">"16.x"</span>
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> install pkg
-        <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+      - name: install nodejs
+        uses: actions&#x2F;setup-node@v3.0.0
+        with:
+          node-version: &quot;16.x&quot;
+      - name: install pkg
+        run: |
           npm install
-          npm install hexo-cli -g</span>
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> build app
-        <span class="token key atrule">run</span><span class="token punctuation">:</span> npm run build
-      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> scp action
-        <span class="token key atrule">uses</span><span class="token punctuation">:</span> betanzos/scp<span class="token punctuation">-</span>upload@v1
-        <span class="token key atrule">with</span><span class="token punctuation">:</span>
-          <span class="token key atrule">source</span><span class="token punctuation">:</span> <span class="token string">"public/"</span>
-          <span class="token key atrule">host</span><span class="token punctuation">:</span> $<span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> secrets.HOST <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
-          <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">22</span>
-          <span class="token key atrule">username</span><span class="token punctuation">:</span> root
-          <span class="token key atrule">key</span><span class="token punctuation">:</span> $<span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> secrets.SSH_KEY <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
-          <span class="token key atrule">remote_dir</span><span class="token punctuation">:</span> <span class="token string">"/www"</span>
-          <span class="token key atrule">recursive</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+          npm install hexo-cli -g
+      - name: build app
+        run: npm run build
+      - name: scp action
+        uses: betanzos&#x2F;scp-upload@v1
+        with:
+          source: &quot;public&#x2F;&quot;
+          host: $&#123;&#123; secrets.HOST &#125;&#125;
+          port: 22
+          username: root
+          key: $&#123;&#123; secrets.SSH_KEY &#125;&#125;
+          remote_dir: &quot;&#x2F;www&quot;
+          recursive: true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>其中最要注意的点是ssh密钥的问题<ol>
