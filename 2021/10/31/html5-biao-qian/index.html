@@ -1033,7 +1033,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>print.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>print<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mobile.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>screen and (max-width: 600px)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
-<li><p>使用<code>rel=&quot;preload&quot;</code>:使用 fetch 请求,指定页面资源在页面生命周期的早期就开始加载.还需要设置以下值</p>
+<li><p>使用<code>rel=&quot;preload&quot;</code>或者<code>rel=&quot;prefetch&quot;</code>:使用 fetch 请求,指定页面资源在页面生命周期的早期就开始加载.还需要设置以下值</p>
 <ul>
 <li><code>href</code>:属性中的资源路径</li>
 <li><code>as</code>:属性中的资源类型</li>
@@ -1045,18 +1045,32 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p>as可以预加载以下内容</p>
 </blockquote>
 <ul>
-<li><code>audio</code>:音频文件,通常用于&lt;audio&gt;</li>
-<li><code>document</code>:旨在由&lt;frame&gt;或&lt;iframe&gt;嵌入的 HTML 文档</li>
-<li><code>embed</code>:要嵌入到&lt;embed&gt;元素中的资源</li>
-<li><code>fetch</code>:由 fetch 或 XHR 请求访问的资源,例如 ArrayBuffer 或 JSON 文件</li>
-<li><code>font</code>:字体文件</li>
-<li><code>image</code>:图像文件</li>
-<li><code>object</code>:要嵌入到&lt;object&gt;元素中的资源</li>
-<li><code>script</code>:JavaScript 文件</li>
-<li><code>style</code>:CSS 样式表</li>
-<li><code>track</code>:WebVTT 文件</li>
-<li><code>worker</code>:JavaScript Web worker 或 shared worker</li>
-<li><code>video</code>:视频文件,通常用于&lt;video&gt;</li>
+<li><p><code>audio</code>:音频文件,通常用于&lt;audio&gt;</p>
+</li>
+<li><p><code>document</code>:旨在由&lt;frame&gt;或&lt;iframe&gt;嵌入的 HTML 文档</p>
+</li>
+<li><p><code>embed</code>:要嵌入到&lt;embed&gt;元素中的资源</p>
+</li>
+<li><p><code>fetch</code>:由 fetch 或 XHR 请求访问的资源,例如 ArrayBuffer 或 JSON 文件</p>
+</li>
+<li><p><code>font</code>:字体文件</p>
+</li>
+<li><p><code>image</code>:图像文件</p>
+</li>
+<li><p><code>object</code>:要嵌入到&lt;object&gt;元素中的资源</p>
+</li>
+<li><p><code>script</code>:JavaScript 文件</p>
+</li>
+<li><p><code>style</code>:CSS 样式表</p>
+</li>
+<li><p><code>track</code>:WebVTT 文件</p>
+</li>
+<li><p><code>worker</code>:JavaScript Web worker 或 shared worker</p>
+</li>
+<li><p><code>video</code>:视频文件,通常用于&lt;video&gt;</p>
+</li>
+<li><p><code>rel</code>:参考<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Link_types">https://developer.mozilla.org/zh-CN/docs/Web/HTML/Link_types</a></p>
+</li>
 </ul>
 
                 
