@@ -562,21 +562,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-07-02
+                    2022-07-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    90
+                    767
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -605,7 +605,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><blockquote>
-<p>通过<code>HEAD</code>文件可以知道当前在哪个分支工作,并且总是指向最新的<code>commit</code></p>
+<p>通过<code>HEAD</code>文件可以知道当前在哪个分支工作,并且<strong>HEAD指向的分支</strong>总是指向最新的<code>commit</code></p>
 </blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">                            HEAD
                               <span class="token operator">|</span>
@@ -629,6 +629,151 @@
 <span class="token comment"># b27787b75a99a614f3b26fe482f0cd47bc3c186b (当前分支指向最新的 commit)</span>
 <span class="token function">git</span> cat-file -t b27787b
 <span class="token comment"># commit</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>创建分支</p>
+</blockquote>
+<ul>
+<li><code>git branch dev</code>:创建一个<code>dev</code>的分支</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> log
+<span class="token comment"># master dev分支刚好指向同一条线上   </span>
+<span class="token comment"># commit b27787b75a99a614f3b26fe482f0cd47bc3c186b (HEAD -> master, dev)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><code>git checkout dev</code>:切换到<code>dev</code>分支</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> checkout dev
+<span class="token function">cat</span> .git/HEAD
+<span class="token comment"># ref: refs/heads/dev</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>如果在dev上做完一次<code>commit</code>之后,分支之间会分叉</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> log
+<span class="token comment"># commit 609f9e53903da9cc53127619044bb8a02f36519a (HEAD -> dev)</span>
+<span class="token comment"># Author: Jack-Zhang-1314 &lt;zyj17715640603@gmail.com></span>
+<span class="token comment"># Date:   Sat Jul 2 05:25:37 2022 +0800</span>
+<span class="token comment"># </span>
+<span class="token comment">#     dev 1st</span>
+<span class="token comment"># </span>
+<span class="token comment"># commit b27787b75a99a614f3b26fe482f0cd47bc3c186b (master)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>删除分支,只是删除分支的指针,分支上的对象不会被删除</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># D-->强制删除</span>
+<span class="token function">git</span> branch -d dev
+<span class="token function">git</span> branch -D dev
+
+<span class="token comment"># 查看dev删除后的commit内容</span>
+<span class="token function">git</span> cat-file -p 609f9e5
+<span class="token comment"># tree fd59d47bd5ca961d23037b22377a89bc4debdce0</span>
+<span class="token comment"># parent b27787b75a99a614f3b26fe482f0cd47bc3c186b</span>
+<span class="token comment"># author Jack-Zhang-1314 &lt;zyj17715640603@gmail.com> 1656710737 +0800</span>
+<span class="token comment"># committer Jack-Zhang-1314 &lt;zyj17715640603@gmail.com> 1656710737 +0800</span>
+<span class="token comment"># </span>
+<span class="token comment"># dev 1st</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="git-checkout"><a href="#git-checkout" class="headerlink" title="git checkout"></a>git checkout</h2><blockquote>
+<p>使用<code>git checkout</code>叉出某一次<code>commit</code></p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> checkout a3d91d1
+<span class="token function">git</span> branch
+<span class="token comment"># 指向(HEAD detached at a3d91d1)</span>
+<span class="token function">git</span> checkout -b tem
+<span class="token comment">#将当前的提交叉到新的分支</span>
+<span class="token function">git</span> log 
+<span class="token comment"># commit a3d91d125103f57b7b60d7ebd6502aa0987828ab (HEAD -> tem)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>将删除的分支找回</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> reflog
+<span class="token comment"># a3d91d1 (HEAD -> tem) HEAD@&#123;0&#125;: checkout: moving from a3d91d125103f57b7b60d7ebd6502aa0987828ab to tem</span>
+<span class="token comment"># a3d91d1 (HEAD -> tem) HEAD@&#123;1&#125;: checkout: moving from master to a3d91d12</span>
+<span class="token comment"># b27787b (master) HEAD@&#123;2&#125;: checkout: moving from dev to master</span>
+<span class="token comment"># 609f9e5 HEAD@&#123;3&#125;: commit: dev 1st</span>
+<span class="token comment"># b27787b (master) HEAD@&#123;4&#125;: checkout: moving from master to dev</span>
+<span class="token comment"># b27787b (master) HEAD@&#123;5&#125;: commit: 2st commit</span>
+<span class="token comment"># a3d91d1 (HEAD -> tem) HEAD@&#123;6&#125;: commit (initial): 1st commit</span>
+<span class="token function">git</span> checkout 609f9e5
+<span class="token function">git</span> switch -c dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="远程分支"><a href="#远程分支" class="headerlink" title="远程分支"></a>远程分支</h2><blockquote>
+<p>添加远程分支</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote <span class="token function">add</span> origin ssh<span class="token punctuation">..</span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>查看添加的内容<code>cat .git/config</code></p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>remote <span class="token string">"origin"</span><span class="token punctuation">]</span>
+        url <span class="token operator">=</span> https://github.com/Jack-Zhang-1314/hexoPage.git
+        fetch <span class="token operator">=</span> +refs/heads/*:refs/remotes/origin/*<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">├─logs
+│  │  HEAD
+│  │
+│  ├─refs
+│  │    ├─heads
+│  │    │      dev
+│  │    │      master
+│  │    │
+│  │    └─remotes
+│  │        └─origin
+│  │            │  HEAD
+│  │            └─ master
+├─origin
+│  │     HEAD
+│  └---  master              <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>当提交远程之后,本地分支和远程分支是同步的</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># commit 4a71286c54dc6629322f13cfded0dfcdb417a1aa (HEAD -> master, origin/master, origin/HEAD)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="对象压缩"><a href="#对象压缩" class="headerlink" title="对象压缩"></a>对象压缩</h2><ol>
+<li><p>查看git对象文件的大小</p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">du</span> -h .git/objects
+<span class="token comment"># ...</span>
+<span class="token comment"># 1.1M    .git/objects/fa</span>
+<span class="token comment"># 944K    .git/objects/fd</span>
+<span class="token comment"># 0       .git/objects/info</span>
+<span class="token comment"># 22M     .git/objects/pack</span>
+<span class="token comment"># 42M     .git/objects</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>使用<code>git gc</code>来压缩文件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> gc
+<span class="token function">du</span> -h .git/objects
+<span class="token comment"># 9.0K    .git/objects/info</span>
+<span class="token comment"># 23M     .git/objects/pack</span>
+<span class="token comment"># 23M     .git/objects</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>查看<code>pack</code>文件下文件的大小.文件被压缩到<code>.pack</code>文件中</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ls</span> -l .git/objects/pack
+<span class="token comment"># total 23092</span>
+<span class="token comment"># -r--r--r-- 1 15531 197609   122816  7月  2 06:21 pack-04c2ed0bfb1961df8ecdaf3a6a602936173ffc88.idx</span>
+<span class="token comment"># -r--r--r-- 1 15531 197609 23521212  7月  2 06:21 pack-04c2ed0bfb1961df8ecdaf3a6a602936173ffc88.pack</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<blockquote>
+<p>解压缩<code>git unpack-objects</code></p>
+</blockquote>
+<ul>
+<li>首先<code>.pack</code>文件不能再<code>objects</code>文件下,将它移到<code>.git</code>下后,使用解压缩的命令</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> unpack-objects <span class="token operator">&lt;</span> .git/pack-04c2ed0bfb1961df8ecdaf3a6a602936173ffc88.pack<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="垃圾对象清理"><a href="#垃圾对象清理" class="headerlink" title="垃圾对象清理"></a>垃圾对象清理</h2><blockquote>
+<p>在大部分时候每次使用<code>git add</code>会产生不必要的垃圾对象,这时候就需要使用<code>git prune</code>去清理这些不必要的对象</p>
+</blockquote>
+<ul>
+<li>不过一般情况下在使用<code>git gc</code>完全足够,他会去调用<code>git prune</code>清理不必要的对象</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> prune -n
+<span class="token comment"># 查看将会删除的不必要的垃圾对象</span>
+<span class="token function">git</span> <span class="token function">fsck</span>
+<span class="token comment">#查看仓库的垃圾对象</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -1132,30 +1277,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/07/02/git-yuan-li-fen-zhi/">
+                <a href="/2022/07/09/git-hooks/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="git原理分支.md">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="git-hooks">
                         
-                        <span class="card-title">git原理分支.md</span>
+                        <span class="card-title">git-hooks</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            git原理(分支)
+                            git提交的钩子
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-02
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-09
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1168,7 +1312,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1469,7 +1612,7 @@
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数
                                             :&nbsp;<span class="white-color">
-                                                140.9k
+                                                141.7k
                                             </span>
                                             
                                                 

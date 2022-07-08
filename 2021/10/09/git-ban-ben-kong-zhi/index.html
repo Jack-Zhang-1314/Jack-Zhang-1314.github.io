@@ -562,21 +562,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-04-01
+                    2022-07-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    8 分
                 </div>
                 
 
@@ -796,7 +796,7 @@
 <h4 id="版本回退-revert和resert"><a href="#版本回退-revert和resert" class="headerlink" title="版本回退(revert和resert)"></a>版本回退(revert和resert)</h4><blockquote>
 <p><code>git log</code></p>
 <blockquote>
-<p><code>git reflog</code>只要是HEAD有变化,那么<code>git rsflog</code>就会记录下来</p>
+<p><code>git reflog</code>只要是HEAD有变化,那么<code>git reflog</code>就会记录下来</p>
 </blockquote>
 </blockquote>
 <ol>
@@ -830,6 +830,7 @@
 </blockquote>
 <h4 id="远程分支"><a href="#远程分支" class="headerlink" title="远程分支"></a>远程分支</h4><ol>
 <li><code>git remote –v</code>:查看远程版本库信息</li>
+<li><code>git remote show origin</code>:查看远程仓库的信息</li>
 <li><code>git remote set-url origin git@...</code>:更改远程仓库地址(ssh)</li>
 </ol>
 <blockquote>
@@ -837,12 +838,21 @@
 </blockquote>
 <ul>
 <li><code>git branch -a</code>:查看所有分支</li>
+<li><code>git branch -vv</code>:查看本地的分支对应远程的分支</li>
 </ul>
 <blockquote>
 <p><code>git fetch &lt;远程主机&gt; &lt;分支名&gt;</code>:取回远程主机的分支</p>
 </blockquote>
 <ul>
-<li>例如<code>git fetch origin master</code>:取回origin的master分支</li>
+<li><p>例如<code>git fetch origin master</code>:取回origin的master分支</p>
+</li>
+<li><p><code>git fetch --prune</code>:删除本地有而远程没有的分支或者一些多余的<code>commit</code></p>
+<ul>
+<li><code>git remote prune</code>:也可以使用这个</li>
+</ul>
+</li>
+<li><p><code>git fetch -v</code>:查看远程分支的信息</p>
+</li>
 </ul>
 <blockquote>
 <p>合并远程分支</p>
@@ -866,6 +876,7 @@
 </blockquote>
 <ul>
 <li>可以看作这两个的简写:<code>git fetch</code>和 <code>git merge FETCH_HEAD</code></li>
+<li><code>git pull -v</code>:同时显示拉取信息</li>
 </ul>
 <ol>
 <li>更新操作:<ul>
@@ -920,27 +931,34 @@
 </tr>
 <tr>
 <td>git tag -l 1.<em>.</em></td>
-<td>打印符合检索田间的标签</td>
+<td>打印符合检索的标签</td>
 </tr>
 <tr>
 <td>git checkout 1.0.0</td>
 <td>查看对应标签的状态</td>
 </tr>
+<tr>
+<td>git show v1.4</td>
+<td>完整标签的信息</td>
+</tr>
 </tbody></table>
 <blockquote>
 <p>创建本地标签</p>
 </blockquote>
-<ul>
+<ol>
 <li>针对特定commit版本SHA创建标签<ul>
-<li><code>git tag -a v1.0.0 0c3b62d -m &quot;这是备注信息&quot;</code></li>
-<li>-a:创建附注标签</li>
+<li><code>git tag -a v1.0.0 (0c3b62d) -m &quot;message&quot;</code></li>
+<li><code>-a</code>:创建附注标签</li>
 <li>&lt;哈希值&gt;:特定commit版本SHA</li>
-<li>-m:附注</li>
+<li><code>-m</code>:附注</li>
 <li>都是可选的</li>
 </ul>
 </li>
-<li>创建轻量标签<code>git tag v1.0.0</code></li>
+<li>创建轻量标签<ul>
+<li><code>git tag v1.0.0</code></li>
 </ul>
+</li>
+</ol>
 <blockquote>
 <p>推送标签到远程仓库</p>
 </blockquote>
@@ -952,9 +970,6 @@
 <p>删除本地标签<code>git tag -d v1.0.0</code></p>
 <p>删除远程仓库对应的标签<code>git push origin --delete v1.0.0</code></p>
 </blockquote>
-<ul>
-<li><code>git show v1.0.0</code>:该标签完整的信息</li>
-</ul>
 
                 
             </div>
@@ -1797,7 +1812,7 @@
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数
                                             :&nbsp;<span class="white-color">
-                                                140.9k
+                                                141.7k
                                             </span>
                                             
                                                 
