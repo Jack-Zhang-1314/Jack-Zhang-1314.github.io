@@ -562,21 +562,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-29
+                    2022-07-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.4k
+                    3.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    13 分
+                    14 分
                 </div>
                 
 
@@ -879,8 +879,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <ul>
 <li><span style="color:red">注意:</span>对新数组变化不会影响原数组的改变</li>
 </ul>
-<h4 id="map-不改变原数组"><a href="#map-不改变原数组" class="headerlink" title="map()(不改变原数组)"></a>map()(<span style="color:red">不改变原数组</span>)</h4><blockquote>
-<p>对数组的每一项运行给定函数.返回每次函数调用结果所组成的数组</p>
+<h4 id="map-和-flatMap-不改变原数组"><a href="#map-和-flatMap-不改变原数组" class="headerlink" title="map() 和 flatMap()(不改变原数组)"></a>map() 和 flatMap()(<span style="color:red">不改变原数组</span>)</h4><blockquote>
+<ul>
+<li><code>map</code>:对数组的每一项运行给定函数.返回每次函数调用结果所组成的数组</li>
+</ul>
 </blockquote>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> arr<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
 <span class="token keyword">let</span> a<span class="token operator">=</span>arr<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
@@ -890,22 +892,43 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token comment">//[3,6,9,12,15]</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//(5)[1,2,3,4,5]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="find-不改变原数组"><a href="#find-不改变原数组" class="headerlink" title="find()(不改变原数组)"></a>find()(<span style="color:red">不改变原数组</span>)</h4><blockquote>
+<blockquote>
+<ul>
+<li><code>flatMap()</code>:方法首先使用映射函数映射每个元素,然后将结果压缩成一个新数组.它与 map 连着深度值为1的flat几乎相同</li>
+</ul>
+</blockquote>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> flattened <span class="token operator">=</span> arr1<span class="token punctuation">.</span><span class="token function">flatMap</span><span class="token punctuation">(</span><span class="token parameter">num</span> <span class="token operator">=></span> num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>flattened<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// expected output: Array [1, 2, 3, 4, 5, 6]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="find-和-findLast-不改变原数组"><a href="#find-和-findLast-不改变原数组" class="headerlink" title="find() 和 findLast()(不改变原数组)"></a>find() 和 findLast()(<span style="color:red">不改变原数组</span>)</h4><blockquote>
 <p>返回符合测试条件的第一个数组元素的值.如果没有符合条件的则返回undefined</p>
 </blockquote>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>
 
 <span class="token keyword">let</span> value <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
    <span class="token keyword">return</span> value <span class="token operator">></span> <span class="token number">4</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token comment">//5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token comment">//5</span>
+<span class="token keyword">let</span> value <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">findLast</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+   <span class="token keyword">return</span> value <span class="token operator">></span> <span class="token number">4</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token comment">//6</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<ul>
-<li>补充<ul>
-<li><code>findIndex()</code>:与find()方法相同,只是返回的是符合条件的索引</li>
-</ul>
-</li>
-</ul>
-<h3 id="迭代方法"><a href="#迭代方法" class="headerlink" title="迭代方法"></a>迭代方法</h3><blockquote>
+<h4 id="findIndex-和-findLastIndex-不改变原数组"><a href="#findIndex-和-findLastIndex-不改变原数组" class="headerlink" title="findIndex() 和 findLastIndex()(不改变原数组)"></a>findIndex() 和 findLastIndex()(<span style="color:red">不改变原数组</span>)</h4><blockquote>
+<p>findIndex()方法返回数组中满足提供的测试函数的第一个元素的索引,若没有找到对应元素则返回-1</p>
+</blockquote>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>
+
+<span class="token keyword">let</span> value <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">findIndex</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+   <span class="token keyword">return</span> value <span class="token operator">></span> <span class="token number">4</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token comment">//4</span>
+<span class="token keyword">let</span> value <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">findLastIndex</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+   <span class="token keyword">return</span> value <span class="token operator">></span> <span class="token number">4</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token comment">//5</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h4><blockquote>
 <p>ES5新增了两个归并数组的方法：reduce（）和 reduceRight().这两个方法都会迭代数组所有的项.然后构建一个最终的值返回.</p>
 </blockquote>
 <ul>
@@ -927,7 +950,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <ul>
 <li><span style="color:red">注意:</span>reduceRight（）与reduce（）使用一样.只不过是从后往前遍历.</li>
 </ul>
-<h2 id="数组扁平化-flat-不改变原数组"><a href="#数组扁平化-flat-不改变原数组" class="headerlink" title="数组扁平化(flat)(不改变原数组)"></a>数组扁平化(flat)(不改变原数组)</h2><ul>
+<h2 id="数组扁平化-flat-不改变原数组"><a href="#数组扁平化-flat-不改变原数组" class="headerlink" title="数组扁平化(flat())(不改变原数组)"></a>数组扁平化(flat())(不改变原数组)</h2><ul>
 <li><code>flat()</code>:默认参数为1<ul>
 <li>可选参数一:整数(拉平几层嵌套)</li>
 <li>可选参数二:<code>Infinity</code>(任意拉平几层嵌套)</li>
@@ -1791,7 +1814,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数
                                             :&nbsp;<span class="white-color">
-                                                141.7k
+                                                132.5k
                                             </span>
                                             
                                                 
