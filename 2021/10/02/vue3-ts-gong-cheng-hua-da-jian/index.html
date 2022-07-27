@@ -530,16 +530,16 @@
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/config/">
+                                <span class="chip bg-color">config</span>
+                            </a>
+                        
                             <a href="/tags/JS/">
                                 <span class="chip bg-color">JS</span>
                             </a>
                         
                             <a href="/tags/TS/">
                                 <span class="chip bg-color">TS</span>
-                            </a>
-                        
-                            <a href="/tags/config/">
-                                <span class="chip bg-color">config</span>
                             </a>
                         
                             <a href="/tags/vue/">
@@ -742,7 +742,7 @@ trim_trailing_whitespace = false<span aria-hidden="true" class="line-numbers-row
 <ul>
 <li>插件的安装(vue创建项目时,如果选择<code>prettier</code>,这两个插件会自动安装):</li>
 </ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">npm i eslint-plugin-prettier eslint-config-prettier -D<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">npm</span> i eslint-plugin-prettier eslint-config-prettier -D<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>在<code>.eslintrc.js</code>继承中添加插件</p>
 </li>
@@ -778,7 +778,7 @@ trim_trailing_whitespace = false<span aria-hidden="true" class="line-numbers-row
 </li>
 <li>初始化<code>pre-commit</code>脚本</li>
 </ol>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">npx husky add .husky&#x2F;pre-commit &quot;npm run lint&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">npx husky <span class="token function">add</span> .husky/pre-commit <span class="token string">"npm run lint"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <blockquote>
 <p>这个时候我们执行git commit的时候会自动对代码进行lint校验.</p>
@@ -807,7 +807,7 @@ trim_trailing_whitespace = false<span aria-hidden="true" class="line-numbers-row
 <li>安装<code>cz-conventional-changelog</code>并且初始化<code>cz-conventional-changelog</code></li>
 </ol>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">npx commitizen init cz-conventional-changelog --save-dev --save-exact
-# --save-exact固定依赖包的版本,不要带^或~,避免出现小版本<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<span class="token comment"># --save-exact固定依赖包的版本,不要带^或~,避免出现小版本</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <ul>
 <li>在项目中安装<code>cz-conventional-changelog</code> 适配器依赖</li>
@@ -942,12 +942,12 @@ trim_trailing_whitespace = false<span aria-hidden="true" class="line-numbers-row
 <li><p>使用husky生成<code>commit-msg</code>文件,验证提交信息</p>
 </li>
 </ol>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">npx husky add .husky&#x2F;commit-msg &quot;npx --no-install commitlint --edit $1&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">npx husky <span class="token function">add</span> .husky/commit-msg <span class="token string">"npx --no-install commitlint --edit <span class="token variable">$1</span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h4 id="Commitizen日志"><a href="#Commitizen日志" class="headerlink" title="Commitizen日志"></a><a href="#Commitizen%E6%97%A5%E5%BF%97">Commitizen日志</a></h4><blockquote>
 <p>如果使用了以上的工具集,那么就可以使用<code>conventional-changelog-cli</code>快速生成开发日志</p>
 </blockquote>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">npm install conventional-changelog-cli -g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">npm</span> <span class="token function">install</span> conventional-changelog-cli -g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ul>
 <li>在<code>package.json</code>脚本中添加日志命令</li>
@@ -1054,16 +1054,16 @@ export &#123; BASE_URL, TIME_OUT &#125;<span aria-hidden="true" class="line-numb
                     
                         <div class="article-tag">
                             
+                                <a href="/tags/config/">
+                                    <span class="chip bg-color">config</span>
+                                </a>
+                            
                                 <a href="/tags/JS/">
                                     <span class="chip bg-color">JS</span>
                                 </a>
                             
                                 <a href="/tags/TS/">
                                     <span class="chip bg-color">TS</span>
-                                </a>
-                            
-                                <a href="/tags/config/">
-                                    <span class="chip bg-color">config</span>
                                 </a>
                             
                                 <a href="/tags/vue/">
@@ -1848,7 +1848,7 @@ export &#123; BASE_URL, TIME_OUT &#125;<span aria-hidden="true" class="line-numb
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数
                                             :&nbsp;<span class="white-color">
-                                                132.5k
+                                                132.8k
                                             </span>
                                             
                                                 

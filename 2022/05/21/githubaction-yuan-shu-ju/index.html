@@ -569,7 +569,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    846
+                    828
                 </div>
                 
 
@@ -646,8 +646,8 @@ runs<span class="token operator">:</span>
 <li><p><code>pre</code>:允许您在<code>main:</code>操作开始之前，在作业开始时运行脚本</p>
 </li>
 <li><p><code>pre-if</code>:允许定义<code>pre</code>操作执行的条件.pre操作只会在满足<code>pre-if</code>中的条件运行.如果未设置,则<code>pre-if</code>默认使用<code>always()</code></p>
- <pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">pre: &#39;cleanup.js&#39;
-pre-if: runner.os &#x3D;&#x3D; &#39;linux&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+ <pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">pre</span><span class="token punctuation">:</span> <span class="token string">'cleanup.js'</span>
+<span class="token key atrule">pre-if</span><span class="token punctuation">:</span> runner.os == 'linux'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 <li><p><code>post</code>:允许您在<code>main:</code>操作完成后,在作业结束时运行脚本</p>
 <ul>
@@ -655,12 +655,12 @@ pre-if: runner.os &#x3D;&#x3D; &#39;linux&#39;<span aria-hidden="true" class="li
 </ul>
 </li>
 <li><p><code>post-if</code>:允许定义的<code>post</code>操作执行的条件.和<code>pre-if</code>类似</p>
- <pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">runs:
-  using: &#39;node16&#39;
-  main: &#39;index.js&#39;
-  post: &#39;cleanup.js&#39;
-  post: &#39;cleanup.js&#39;
-  post-if: runner.os &#x3D;&#x3D; &#39;linux&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ <pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">runs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">using</span><span class="token punctuation">:</span> <span class="token string">'node16'</span>
+  <span class="token key atrule">main</span><span class="token punctuation">:</span> <span class="token string">'index.js'</span>
+  <span class="token key atrule">post</span><span class="token punctuation">:</span> <span class="token string">'cleanup.js'</span>
+  <span class="token key atrule">post</span><span class="token punctuation">:</span> <span class="token string">'cleanup.js'</span>
+  <span class="token key atrule">post-if</span><span class="token punctuation">:</span> runner.os == 'linux'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p><code>steps</code>:操作中的步骤.这里是符合操作,using必须指定–&gt;<code>using:&quot;composite&quot;</code></p>
 <ul>
@@ -1582,7 +1582,7 @@ jobs<span class="token operator">:</span>
                                     
                                         &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数
                                             :&nbsp;<span class="white-color">
-                                                132.5k
+                                                132.8k
                                             </span>
                                             
                                                 
